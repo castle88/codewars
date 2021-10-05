@@ -6,7 +6,11 @@
 
 
 function order(words){
-  
+  let arr = words.split(' ')
+  let answer = arr.sort((a,b)=>{
+	return a.match(/\d/g)-b.match(/\d/g)
+  })
+  return answer.join(' ')
 }
 
 
