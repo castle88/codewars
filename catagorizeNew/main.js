@@ -18,7 +18,7 @@
 //["Open", "Open", "Senior", "Open", "Open", "Senior"]
 
 function openOrSenior(data){
-	return data.filter(x=>x[0]>=55&&x[1]>7?'senior':'open')
+	return data.map(x=>x[0]>=55&&x[1]>7?'Senior':'Open')
 }
 
 
