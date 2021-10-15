@@ -9,7 +9,8 @@
 
 
 function findUniq(arr) {
-  return arr.sort()
+  let answer = arr.sort()
+  return answer[0]===answer[1]?answer[answer.length-1]:answer[0]
 }
 
 
