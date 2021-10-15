@@ -14,9 +14,15 @@
 
 
 var number = function(busStops){
-  
+	let answer = 0
+	for(let i = 0; i < busStops.length; i++){
+		answer += busStops[i][0]-busStops[i][1]
+	}
+	return answer
 }
 
+
+//  busStops[0][0]-busStops[0][1]
 
 
 console.log(number([[10,0],[3,5],[5,8]]))				//	5
