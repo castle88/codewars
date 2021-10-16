@@ -11,18 +11,26 @@
 
 function tickets(peopleInLine){
   const peep = peopleInLine
-  if(peep[0] > 25) return 'no'
-  peep.reduce((a,b)=>{
-	if(!b > a) return a + b
+  let til = 0
+  if(peep[0]===25){
+	for(let i = 0; i < peep.length; i++){
+		if(peep[i]===25){
+			til += peep[i]
+		}else{
+			if((peep[i] - 25) > til) return 'no'
+			return 'yes'
+		}
+	}
+   }else{
 	return 'no'
-  })
-  return peep
+   }
 }
 
 
 console.log(tickets([25, 25, 50, 50]))		// yes
 console.log(tickets([25, 100]))			// no
 console.log(tickets([25,25,50,50,100]))		// no
+console.log(tickets([50,25]))			// no
 
 // tickets([25, 25, 50]) // => YES 
 // tickets([25, 100]) // => NO. Vasya will not have enough money to give change to 100 dollars
