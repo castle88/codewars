@@ -12,26 +12,31 @@
 function tickets(peopleInLine){
   const peep = peopleInLine
   let til = 0
+  if(peep[0] > 25) return 'NO'
   for(let i = 0; i < peep.length; i++){
 	let change = peep[i] - 25
-	if(change > til) return 'NO'
+	console.log(`change: ${change}`)
+	console.log(`til: ${til+25}`)
+	if(change > til + 25) return 'NO'
 	til += 25
 	til -= change
-	console.log(til)
   }
   return 'YES'
 }
 
 
-// console.log(tickets([25, 25, 50, 50]))								// yes
-// console.log(tickets([25, 100]))									// no
-// console.log(tickets([25,25,50,50,100]))								// no
-// console.log(tickets([50,25]))									// no
-console.log(tickets([25,25,50,100,25,50,25,100,25,50,25,100,25,25,25,100,25,50,25,100]))	// yes
-// console.log(tickets([25,25,50,100,25,25,50,100,25,50,25,100,25,50,25,100]))			// yes
-
+//console.log(tickets([25, 25, 50, 50]))							// yes
+//console.log(tickets([25, 100]))								// no
+console.log(tickets([25,25,50,50,100]))								// no
+//console.log(tickets([50,25]))									// no
+//console.log(tickets([25,25,50,100,25,50,25,100,25,50,25,100,25,25,25,100,25,50,25,100]))	// yes
+//console.log(tickets([25,25,50,100,25,25,50,100,25,50,25,100,25,50,25,100]))			// yes
+console.log(tickets([25,25,25,100,25,50,25,100,25,25,25,100,50,25]))				// no
 
 
 // tickets([25, 25, 50]) // => YES 
 // tickets([25, 100]) // => NO. Vasya will not have enough money to give change to 100 dollars
 // tickets([25, 25, 50, 50, 100]) // => NO. Vasya will not have the right bills to give 75 dollars of change (you can't make two bills of 25 from one of 50)
+
+
+//Incorrect answer for input: 25,25,25,100,25,50,25,100,25,25,25,100,50,25
