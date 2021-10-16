@@ -11,7 +11,10 @@
 
 
 function removeSmallest(numbers) {
-  return numbers.join('').replace(Math.min(...numbers),'').split('')
+	let min = numbers.indexOf(Math.min(...numbers))
+	console.log(min)
+	return numbers.slice(0,min).concat(numbers.slice(min+1))
+
 }
 
 
@@ -24,3 +27,6 @@ console.log(removeSmallest([1, 2, 3, 4, 5]))		// [2, 3, 4, 5]
 console.log(removeSmallest([5, 3, 2, 1, 4]))		// [5, 3, 2, 4]
 console.log(removeSmallest([2, 2, 1, 2, 1]))		// [2, 2, 2, 1]
 console.log(removeSmallest([]))				// []
+
+
+// [ 4, 8, 1, 3, 7, 2, 2, 0, 2, 5, 3, 1, 5, 3, 2, 8, 1, 9, 7, 3, 2, 5, 3, 6, 5, 3, 6, 8 ] to deeply equal [ 48, 137, 220, 25, 315, 328, 197, 325, 365, 368 ]
