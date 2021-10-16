@@ -23,16 +23,14 @@
 
 
 function countSmileys(arr) {
-	let answer = [].length
+	let answer = []
 	for(let i = 0; i < arr.length; i++){
 		if(arr[i] === ':D' || arr[i] ===  ';D' || arr[i] === ':)' || arr[i] === ';)' || arr[i] === ':-D' || arr[i] === ':-)' || arr[i] === ':~D' || arr[i] === ':~)' || arr[i] === ';-D' || arr[i] === ';-)' || arr[i] === ':~D' || arr[i] === ':~)' || arr[i] === ';~D' || arr[i] === ';~)'){
 			answer.push(arr[i])
 		}
 	}
-	return answer
+	return answer.length
 }
-
-
 
 console.log(countSmileys([]))								// 0
 console.log(countSmileys([':D',':~)',';~D',':)']))					// 4
