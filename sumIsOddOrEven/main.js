@@ -6,10 +6,15 @@
 
 
 function oddOrEven(array) {
-   let sum = array.reduce((a,b)=>a+b)
-   console.log(sum)
-   return sum % 2 === 0 ? 'even' : 'odd'
+	if(array.length >= 1){
+	   let sum = array.reduce((a,b)=>a+b)
+	   return sum % 2 === 0 ? 'even' : 'odd'
+	}
+	else{
+	   return 'even'
+	}
 }
+
 
 
 
@@ -17,3 +22,5 @@ function oddOrEven(array) {
 console.log(oddOrEven([0, 1, 5]))	// 'even'
 console.log(oddOrEven([0, 1, 3]))	// 'even'
 console.log(oddOrEven([1023, 1, 2]))	// 'even'
+console.log(oddOrEven([1,2,3,4,5,6]))	// 'odd'
+console.log(oddOrEven([]))		// 'even'
