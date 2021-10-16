@@ -10,7 +10,13 @@
 
 
 function tickets(peopleInLine){
-  
+  const peep = peopleInLine
+  if(peep[0] > 25) return 'no'
+  peep.reduce((a,b)=>{
+	if(!b > a) return a + b
+	return 'no'
+  })
+  return peep
 }
 
 
