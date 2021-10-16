@@ -12,18 +12,13 @@
 function tickets(peopleInLine){
   const peep = peopleInLine
   let til = 0
-  if(peep[0]===25){
-	for(let i = 0; i < peep.length; i++){
-		if(peep[i]===25){
-			til += peep[i]
-		}else{
-			if((peep[i] - 25) > til) return 'no'
-			return 'yes'
-		}
-	}
-   }else{
-	return 'no'
-   }
+  for(let i = 0; i < peep.length; i++){
+	let change = peep[i] - 25
+	if(change > til) return 'no'
+	til += 25
+	til -= change
+  }
+  return 'yes'
 }
 
 
