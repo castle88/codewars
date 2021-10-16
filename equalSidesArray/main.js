@@ -29,9 +29,17 @@
 
 
 function findEvenIndex(arr){
-  //Code goes here!
+	let forwardTot = 0
+	let reverseTot = 0
+	for(let i = 0; i < arr.length; i++){
+		for(let j = arr.length - 1; j >= 0; j--){
+			forwardTot += arr[i]
+			reverseTot += j
+			if(forwardTot === reverseTot) return arr.indexOf(arr[i+1])
+		}
+	}
 }
-
+// look up O of N alorigthm 
 
 
 
