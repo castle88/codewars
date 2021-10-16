@@ -6,7 +6,9 @@
 
 
 function oddOrEven(array) {
-   
+   let sum = array.reduce((a,b)=>a+b)
+   console.log(sum)
+   return sum % 2 === 0 ? 'even' : 'odd'
 }
 
 
