@@ -10,7 +10,9 @@
 // Don't change the order of the elements that are left.
 
 
-
+function removeSmallest(numbers) {
+  return numbers.join('').replace(Math.min(...numbers),'').split('')
+}
 
 
 
