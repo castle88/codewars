@@ -11,6 +11,7 @@
 // Valid smiley face examples: :) :D ;-D :~)
 // Invalid smiley faces: ;( :> :} :]
 // Example
+// :D || ;D || :) || ;) || :-D || :-) || :~D || :~) || ;-D || ;-) || :~D || :~) || ;~D || ;~)
 
 // countSmileys([':)', ';(', ';}', ':-D']);       // should return 2;
 // countSmileys([';D', ':-(', ':-)', ';~)']);     // should return 3;
@@ -22,7 +23,13 @@
 
 
 function countSmileys(arr) {
-	return arr.filter(x=> x.match(/[:;]-?~?[D)]/gm)).length
+	let answer = [].length
+	for(let i = 0; i < arr.length; i++){
+		if(arr[i] === ':D' || arr[i] ===  ';D' || arr[i] === ':)' || arr[i] === ';)' || arr[i] === ':-D' || arr[i] === ':-)' || arr[i] === ':~D' || arr[i] === ':~)' || arr[i] === ';-D' || arr[i] === ';-)' || arr[i] === ':~D' || arr[i] === ':~)' || arr[i] === ';~D' || arr[i] === ';~)'){
+			answer.push(arr[i])
+		}
+	}
+	return answer
 }
 
 
@@ -31,6 +38,5 @@ console.log(countSmileys([]))								// 0
 console.log(countSmileys([':D',':~)',';~D',':)']))					// 4
 console.log(countSmileys([':)',':(',':D',':O',':;']))					// 2
 console.log(countSmileys([';]', ':[', ';*', ':$', ';-D']))				// 1
-console.log(countSmileys([';(' , ':o>' , ';(' , ':~>' , ';>' , ';>' , ':~>']))		// 0?
-
-console.log(countSmileys([';~)' , ':~)' , ';)' , ';~>' , ':)' , ';~>' , ':o)']))	// 4
+console.log(countSmileys([';(', ':o>', ';(', ':~>', ';>', ';>', ':~>']))		// 0?
+console.log(countSmileys([';~)', ':~)', ';)', ';~>', ':)', ';~>', ':o)']))		// 4
