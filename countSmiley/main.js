@@ -22,12 +22,15 @@
 
 
 function countSmileys(arr) {
-	return arr.filter(x=> x.match(/[:;][D)-~]?[D)]/gm)).length
+	return arr.filter(x=> x.match(/[:;]-?~?[D)]/gm)).length
 }
 
 
 
-console.log(countSmileys([]))					// 0
-console.log(countSmileys([':D',':~)',';~D',':)']))		// 4
-console.log(countSmileys([':)',':(',':D',':O',':;']))		// 2
-console.log(countSmileys([';]', ':[', ';*', ':$', ';-D']))	// 1
+console.log(countSmileys([]))								// 0
+console.log(countSmileys([':D',':~)',';~D',':)']))					// 4
+console.log(countSmileys([':)',':(',':D',':O',':;']))					// 2
+console.log(countSmileys([';]', ':[', ';*', ':$', ';-D']))				// 1
+console.log(countSmileys([';(' , ':o>' , ';(' , ':~>' , ';>' , ';>' , ':~>']))		// 0?
+
+console.log(countSmileys([';~)' , ':~)' , ';)' , ';~>' , ':)' , ';~>' , ':o)']))	// 4
