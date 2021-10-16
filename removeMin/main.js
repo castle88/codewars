@@ -12,7 +12,6 @@
 
 function removeSmallest(numbers) {
 	let min = numbers.indexOf(Math.min(...numbers))
-	console.log(min)
 	return numbers.slice(0,min).concat(numbers.slice(min+1))
 
 }
