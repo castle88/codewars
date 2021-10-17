@@ -44,20 +44,19 @@ function tickets(people){
 					return "NO"
 				}
 			}
-
 			til.splice(til.indexOf(change),1)
 		}
 	}
 	return 'YES'
 }
 
-//console.log(tickets([25, 25, 50, 50]))							// yes
-//console.log(tickets([25, 100]))								// no
-//console.log(tickets([25,25,50,50,100]))							// no	NEED TO TRACK INDIVIDUAL BILLS FROM ARRAY
-//console.log(tickets([50,25]))									// no
+console.log(tickets([25, 25, 50, 50]))								// yes
+console.log(tickets([25, 100]))									// no
+console.log(tickets([25,25,50,50,100]))								// no	NEED TO TRACK INDIVIDUAL BILLS FROM ARRAY
+console.log(tickets([50,25]))									// no
 console.log(tickets([25,25,50,100,25,50,25,100,25,50,25,100,25,25,25,100,25,50,25,100]))	// yes
-//console.log(tickets([25,25,50,100,25,25,50,100,25,50,25,100,25,50,25,100]))			// yes
-//console.log(tickets([25,25,25,100,25,50,25,100,25,25,25,100,50,25]))				// no
+console.log(tickets([25,25,50,100,25,25,50,100,25,50,25,100,25,50,25,100]))			// yes
+console.log(tickets([25,25,25,100,25,50,25,100,25,25,25,100,50,25]))				// no
 
 
 // tickets([25, 25, 50]) // => YES 
