@@ -43,8 +43,10 @@ function tickets(people){
 				}else{
 					return "NO"
 				}
+			}else if(change === 25){
+				if(til.includes(25)===false) return "NO"
+				til.splice(til.indexOf(change),1)
 			}
-			til.splice(til.indexOf(change),1)
 		}
 	}
 	return 'YES'
