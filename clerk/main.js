@@ -52,18 +52,19 @@ function tickets(people){
 	return 'YES'
 }
 
-console.log(tickets([25, 25, 50, 50]))								// yes
-console.log(tickets([25, 100]))									// no
-console.log(tickets([25,25,50,50,100]))								// no	NEED TO TRACK INDIVIDUAL BILLS FROM ARRAY
-console.log(tickets([50,25]))									// no
-console.log(tickets([25,25,50,100,25,50,25,100,25,50,25,100,25,25,25,100,25,50,25,100]))	// yes
-console.log(tickets([25,25,50,100,25,25,50,100,25,50,25,100,25,50,25,100]))			// yes
-console.log(tickets([25,25,25,100,25,50,25,100,25,25,25,100,50,25]))				// no
-
+//console.log(tickets([25, 25, 50, 50]))								// yes
+//console.log(tickets([25, 100]))									// no
+//console.log(tickets([25,25,50,50,100]))								// no	NEED TO TRACK INDIVIDUAL BILLS FROM ARRAY
+//console.log(tickets([50,25]))									// no
+//console.log(tickets([25,25,50,100,25,50,25,100,25,50,25,100,25,25,25,100,25,50,25,100]))	// yes
+//console.log(tickets([25,25,50,100,25,25,50,100,25,50,25,100,25,50,25,100]))			// yes
+//console.log(tickets([25,25,25,100,25,50,25,100,25,25,25,100,50,25]))				// no
+console.log(tickets([25,25,25,25,25,25,25,50,50,50,100,100,100,100]))				// NO
+console.log(tickets([25,25,50,100,25,50,25,100,25,50,25,100,25,50,25,100,25,100,25]))		// NO
 
 // tickets([25, 25, 50]) // => YES 
 // tickets([25, 100]) // => NO. Vasya will not have enough money to give change to 100 dollars
 // tickets([25, 25, 50, 50, 100]) // => NO. Vasya will not have the right bills to give 75 dollars of change (you can't make two bills of 25 from one of 50)
-
-
+//Incorrect answer for input: 25,25,50,100,25,50,25,100,25,50,25,100,25,50,25,100,25,100,25	 	 NO
+//Incorrect answer for input: 25,25,25,25,25,25,25,50,50,50,100,100,100,100				NO
 //Incorrect answer for input: 25,25,25,100,25,50,25,100,25,25,25,100,50,25
