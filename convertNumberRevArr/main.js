@@ -4,7 +4,11 @@
 
 
 function digitize(n) {
-  
+  let arr = n.toString().split('')
+  let answer = arr.reverse().map(x=>{
+	return Number(x)
+  })
+  return answer
 }
 
 
