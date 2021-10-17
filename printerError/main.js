@@ -13,8 +13,9 @@ function printerError(s) {
     let errRegex = /[n-z]/gm
     let errors = [ 'n','o','p','q','r','s','t','u','v','w','x','y','z' ]
     let answer = []
-    let strArr = s.split('').forEach(x=>errors.includes(x)?answer.push(x):console.log('no'))
-    return answer
+    // let strArr = s.split('').forEach(x=>errors.includes(x)?answer.push(x):console.log('no'))
+    let strArr = s.split('').forEach(x => x.match(errRegex)? answer.push(x) : console.log('no'))
+    return answer.length
 }
 
 
