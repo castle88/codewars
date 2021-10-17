@@ -4,8 +4,8 @@
 
 
 function reverseWords(str) {
-	let arr = str.split(' ')
-	return arr.map(x => x.split('').reverse().join(''))
+	
+	return str.split(' ').map(x => x.split('').reverse().join('')).join(' ')
 }
 
 
