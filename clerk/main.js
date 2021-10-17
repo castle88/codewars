@@ -41,7 +41,7 @@ function tickets(people){
 }
 
 console.log(tickets([25, 25, 50, 50]))								// yes
-//console.log(tickets([25, 100]))									// no
+//console.log(tickets([25, 100]))								// no
 console.log(tickets([25,25,50,50,100]))								// no	NEED TO TRACK INDIVIDUAL BILLS FROM ARRAY
 //console.log(tickets([50,25]))									// no
 //console.log(tickets([25,25,50,100,25,50,25,100,25,50,25,100,25,25,25,100,25,50,25,100]))	// yes
