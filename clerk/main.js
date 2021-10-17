@@ -32,8 +32,12 @@ function tickets(people){
 		til.push(people[i])
 		let change = people[i] - 25
 		if(change !== 0){
-			if(change === 75 && til.includes(25)===false && til.includes(50) === false) return "NO"
-			if(change === 25 && til.includes(25)=== false && i !== people.length - 1) return "NO"
+			if(change === 75){
+				if(!til.includes(25) && til.includes(50)) return "NO"
+				til.splice(til.indexOf(25),1)
+				til.splice(til.indexOf(50),1)
+			}
+
 			til.splice(til.indexOf(change),1)
 		}
 	}
@@ -41,12 +45,12 @@ function tickets(people){
 }
 
 console.log(tickets([25, 25, 50, 50]))								// yes
-//console.log(tickets([25, 100]))								// no
+console.log(tickets([25, 100]))									// no
 console.log(tickets([25,25,50,50,100]))								// no	NEED TO TRACK INDIVIDUAL BILLS FROM ARRAY
-//console.log(tickets([50,25]))									// no
-//console.log(tickets([25,25,50,100,25,50,25,100,25,50,25,100,25,25,25,100,25,50,25,100]))	// yes
-//console.log(tickets([25,25,50,100,25,25,50,100,25,50,25,100,25,50,25,100]))			// yes
-//console.log(tickets([25,25,25,100,25,50,25,100,25,25,25,100,50,25]))				// no
+console.log(tickets([50,25]))									// no
+console.log(tickets([25,25,50,100,25,50,25,100,25,50,25,100,25,25,25,100,25,50,25,100]))	// yes
+console.log(tickets([25,25,50,100,25,25,50,100,25,50,25,100,25,50,25,100]))			// yes
+console.log(tickets([25,25,25,100,25,50,25,100,25,25,25,100,50,25]))				// no
 
 
 // tickets([25, 25, 50]) // => YES 
