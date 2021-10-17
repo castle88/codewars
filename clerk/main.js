@@ -9,28 +9,42 @@
 
 
 
-function tickets(peopleInLine){
-  const peep = peopleInLine
-  let til = 0
-  if(peep[0] > 25) return 'NO'
-  for(let i = 0; i < peep.length; i++){
-	let change = peep[i] - 25
-	console.log(`change: ${change}`)
-	console.log(`til: ${til+25}`)
-	if(change > til + 25) return 'NO'
-	til += 25
-	til -= change
-  }
-  return 'YES'
+// function tickets(peopleInLine){
+//   const peep = peopleInLine
+//   let til = 0
+//   if(peep[0] > 25) return 'NO'
+//   for(let i = 0; i < peep.length; i++){
+// 	let change = peep[i] - 25
+// 	console.log(`change: ${change}`)
+// 	console.log(`til: ${til+25}`)
+// 	if(change > til + 25) return 'NO'
+// 	til += 25
+// 	til -= change
+//   }
+//   return 'YES'
+// }
+
+
+function tickets(people){
+	if(people[0]>25) return 'NO'
+	let til = []
+	for(let i = 0; i < people.length; i++){
+		til.push(people[i])
+		let change = people[i] - 25
+		if(change !== 0){
+			if(!til.includes(change)) return 'NO'
+			til.splice(til.indexOf(change),1)
+		}
+	}
+	return 'YES'
 }
 
-
-//console.log(tickets([25, 25, 50, 50]))							// yes
-//console.log(tickets([25, 100]))								// no
+console.log(tickets([25, 25, 50, 50]))								// yes
+console.log(tickets([25, 100]))									// no
 console.log(tickets([25,25,50,50,100]))								// no	NEED TO TRACK INDIVIDUAL BILLS FROM ARRAY
-//console.log(tickets([50,25]))									// no
-//console.log(tickets([25,25,50,100,25,50,25,100,25,50,25,100,25,25,25,100,25,50,25,100]))	// yes
-//console.log(tickets([25,25,50,100,25,25,50,100,25,50,25,100,25,50,25,100]))			// yes
+console.log(tickets([50,25]))									// no
+console.log(tickets([25,25,50,100,25,50,25,100,25,50,25,100,25,25,25,100,25,50,25,100]))	// yes
+console.log(tickets([25,25,50,100,25,25,50,100,25,50,25,100,25,50,25,100]))			// yes
 console.log(tickets([25,25,25,100,25,50,25,100,25,25,25,100,50,25]))				// no
 
 
