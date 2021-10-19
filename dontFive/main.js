@@ -21,9 +21,9 @@
 function dontGiveMeFive(start, end){
   let answer = []
   for(let i = start; i <= end; i++){
-	if(!i.includes(5)) answer.push(i)
+	if(!i.toString().match('5')) answer.push(i)
   }
-  return answer.join(',')
+  return answer.length
 }
 
 
