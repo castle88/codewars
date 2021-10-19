@@ -28,12 +28,15 @@
 
 
 function calculateYears(principal, interest, tax, desired) {
-	for(let i = 0; principal <= desired; i++){
+	let i = 0
+	while(principal <= desired){
 		let earned = principal * interest
 		let taxed = earned * interest 
 		let yearly = earned + principal - taxed
 		principal += yearly
+		i++
 	}
+	return i
 }
 
 
