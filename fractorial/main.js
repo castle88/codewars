@@ -6,7 +6,12 @@
 
 
 function factorial(n){
-	
+	if(n < 0 || n > 12) throw new RangeError('must be greater than zero and less than 12')
+	if(n === 0 || n ===1) return 1
+	for(let i = n - 1; i >= 1; i--){
+		n *= i
+	}
+	return n
 }
 
 
@@ -17,3 +22,5 @@ console.log(factorial(0))		// 1, "factorial for 0 is 1");
 console.log(factorial(1))		// 1, "factorial for 1 is 1");
 console.log(factorial(2))		// 2, "factorial for 2 is 2");
 console.log(factorial(3))		// 6, "factorial for 3 is 6");
+//console.log(factorial(-1))
+//console.log(factorial(13))
