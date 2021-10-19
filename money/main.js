@@ -28,12 +28,14 @@
 
 
 function calculateYears(principal, interest, tax, desired) {
+	if(principal >= desired) return 0
 	let i = 0
 	while(principal <= desired){
 		let earned = principal * interest
-		let taxed = earned * interest 
+		let taxed = earned * tax 
 		let yearly = earned + principal - taxed
-		principal += yearly
+		principal = yearly
+		console.log(`earned: ${earned}, taxed: ${taxed}, yearly: ${yearly}, principal: ${principal}`)
 		i++
 	}
 	return i
