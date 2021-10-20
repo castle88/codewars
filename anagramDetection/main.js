@@ -11,7 +11,11 @@
 
 // write the function isAnagram
 var isAnagram = function(test, original) {
-
+	const arrTest = test.toLowerCase().split('')
+	const arrOrig = original.toLowerCase().split('')
+	const equalLengths = test.length === original.length
+	const sameChar = arrTest.every(x => arrOrig.includes(x))
+	return equalLengths && sameChar ? true : false
 };
 
 
