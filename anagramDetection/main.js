@@ -11,18 +11,20 @@
 
 // write the function isAnagram
 var isAnagram = function(test, original) {
-	const arrTest = test.toLowerCase().split('')
-	const arrOrig = original.toLowerCase().split('')
+	const arrTest = test.toLowerCase().trim().split('')
+	const arrOrig = original.toLowerCase().trim().split('')
+	const areSameWord = test !== original
 	const equalLengths = test.length === original.length
 	const sameChar = arrTest.every(x => arrOrig.includes(x))
-	return equalLengths && sameChar ? true : false
+	return equalLengths && sameChar && areSameWord ? true : false
 };
 
 
 
-console.log(isAnagram("foefet", "toffee"))			//	 true
-console.log(isAnagram("Buckethead", "DeathCubeK"))		//	 true
+console.log(isAnagram("foefet", "toffee"))				//	 true
+console.log(isAnagram("Buckethead", "DeathCubeK"))			//	 true
 console.log(isAnagram("Twoo", "WooT"))				//	 true
 console.log(isAnagram("dumble", "bumble"))			//	 false
 console.log(isAnagram("ound", "round"))				//	 false
 console.log(isAnagram("apple", "pale"))				//	 false
+console.log(isAnagram('lisa', 'lisa'))				// 	 false
