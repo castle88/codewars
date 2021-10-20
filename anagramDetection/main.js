@@ -16,7 +16,8 @@ var isAnagram = function(test, original) {
 	const areSameWord = test !== original
 	const equalLengths = test.length === original.length
 	const sameChar = arrTest.every(x => arrOrig.includes(x))
-	return equalLengths && sameChar && areSameWord ? true : false
+	const sameCahrOpp = arrOrig.every(x => arrTest.includes(x))
+	return equalLengths && sameChar && areSameWord && sameCahrOpp ? true : false
 };
 
 
@@ -28,3 +29,4 @@ console.log(isAnagram("dumble", "bumble"))			//	 false
 console.log(isAnagram("ound", "round"))				//	 false
 console.log(isAnagram("apple", "pale"))				//	 false
 console.log(isAnagram('lisa', 'lisa'))				// 	 false
+//console.log(isAnagram('trouble', 'brubble'))
