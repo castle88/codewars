@@ -14,7 +14,7 @@
 
 
 const sequenceSum = (begin, end, step) => {
-  let answer
+  let answer = 0
   for(let i = begin; i <= end; i+=step){
 	answer += i
   }
