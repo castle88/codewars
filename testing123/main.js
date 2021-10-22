@@ -13,7 +13,7 @@
 var number=function(array){
   let answer = []
   for(let i = 0; i < array.length; i++){
-	answer.push(`${i}: ${array[i]}`)
+	answer.push(`${i+1}: ${array[i]}`)
   }
   return answer
 }
