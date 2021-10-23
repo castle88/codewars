@@ -9,9 +9,11 @@
 // A coupon is no more valid on the day AFTER the expiration date. All dates will be passed as strings in this format: "MONTH DATE, YEAR".
 
 function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
-  let cDate = currentDate.split(' ')
-  let eDate = expirationDate.split(' ')
-  return `${cDate} ${eDate}`
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  const cDate = currentDate.split(' ')
+  const eDate = expirationDate.split(' ')
+  const formatDate = (date) => `${months.indexOf(date[0])+1}${date[1]}${date[2]}`
+  return formatDate(cDate)
 }
 
 console.log(checkCoupon('123','123','September 5, 2014','October 1, 2014'))	//true
