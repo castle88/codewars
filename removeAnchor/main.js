@@ -2,7 +2,8 @@
 
 
 function removeUrlAnchor(url){
-	
+	let answer = url.split('#')
+	return answer[0]
 }
 
 
