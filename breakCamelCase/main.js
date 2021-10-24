@@ -2,6 +2,7 @@
 
 
 function solution(string) {
+	if(!string.match(/[A-Z]/gm)) return string
 	let splitted = string.split('')
 	let differentSplit = string.split(/[A-Z]/gm)
 	let caps = splitted.filter(x => x.match(/[A-Z]/gm))
@@ -11,7 +12,7 @@ function solution(string) {
 	return `${differentSplit[0]} ${caps.join(' ')}`
 }
 
-
+console.log(solution('camel'))			// 'camel'
 console.log(solution('camelCasing'))		// 'camel Casing'
 console.log(solution('camelCasingTest'))	// 'camel Casing Test'
 
