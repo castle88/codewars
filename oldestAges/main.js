@@ -4,8 +4,11 @@
 
 function twoOldestAges(ages){
 	let sorted = ages.sort((a,b)=>a-b)
-	return sorted
+	let last = sorted[sorted.length - 1],
+	secondLast = sorted[sorted.length - 2]
+	return [secondLast, last]
 }
+
 
 
 console.log(twoOldestAges( [1, 2, 10, 8] ))	// [8, 10]
