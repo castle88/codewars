@@ -3,9 +3,12 @@
 
 function solution(string) {
 	let splitted = string.split('')
+	let differentSplit = string.split(/[A-Z]/gm)
 	let caps = splitted.filter(x => x.match(/[A-Z]/gm))
-	let indexes = caps.map(x => splitted.indexOf(x))
-	
+	for(let i = 0; i < caps.length; i++){
+		caps[i] += differentSplit[i+1]
+	}
+	return `${differentSplit[0]} ${caps.join(' ')}`
 }
 
 
