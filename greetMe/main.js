@@ -2,9 +2,12 @@
 
 
 var greet = function(name) {
-	let first = name.slice(name.charAt(0),1)
-	let answer = name.replace(first, first.toUpperCase())
-	return `Hello ${answer}!`
+	let arr = name.split('').map((x,i) => {
+		if(i === 0) return x.toUpperCase()
+		return x.toLowerCase()
+	})
+	return arr.join('')
+	//return `Hello ${answer}!`
 };
 
 
