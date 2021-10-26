@@ -10,7 +10,16 @@
 
 
 function high(x){
-
+	let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+	let words = x.split(' ')
+	let scoreArr =  words.map(y => {
+		let score = 0
+		for(let i = 0; i < y.length; i++){
+			score += alphabet.indexOf(y[i])+1
+		}
+		return score
+	})
+	return words[scoreArr.indexOf(Math.max(...scoreArr))]
 }
 
 
