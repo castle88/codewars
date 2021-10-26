@@ -6,8 +6,7 @@ var greet = function(name) {
 		if(i === 0) return x.toUpperCase()
 		return x.toLowerCase()
 	})
-	return arr.join('')
-	//return `Hello ${answer}!`
+	return `Hello ${arr.join('')}!`
 };
 
 
