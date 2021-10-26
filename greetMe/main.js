@@ -2,7 +2,9 @@
 
 
 var greet = function(name) {
-	return name.charAt(0).toUpperCase()
+	let first = name.slice(name.charAt(0),1)
+	let answer = name.replace(first, first.toUpperCase())
+	return `Hello ${answer}!`
 };
 
 
