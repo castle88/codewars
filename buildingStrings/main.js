@@ -6,9 +6,10 @@
 function solution(pairs){
 	let answer = []
 	for(key in pairs){
-		answer.push(`${key} = ${pairs.key}`)
+		answer.push(`${key} = ${pairs[key]}`)
 	}
+	return answer.join(',')
 }
 
 
-solution({a: 1, b: '2'}) 	//  "a = 1,b = 2"
+console.log(solution({a: 1, b: '2'})) 	//  "a = 1,b = 2"
