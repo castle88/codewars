@@ -3,9 +3,16 @@
 // Find max(abs(length(x) − length(y)))
 
 // If a1 and/or a2 are empty return -1 in each language except in Haskell (F#) where you will return Nothing (None).
+// I think should be in the original description:
+// ''For every string x in the first array and for every string y in the second array calculate abs(length(x) − length(y)) and then take the max of these numbers.'' - this is more clear description of what you need to do.
+
 
 function mxdiflg(a1, a2) {
-    return a1.join(' ').length - a2.join(' ').length
+	let difference = a1.length - a2.length
+	let answer = a2.map((x, i) => {
+		return a1[i].length - x.length
+	})
+	return answer
 }
 
 
