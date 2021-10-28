@@ -9,15 +9,18 @@
 //     Number of files that can be fully saved in the HD.
 
 function save(sizes, hd) {
-  
+	let answer = sizes.reduce((acc, cur) => {
+		if(acc + cur <= hd) return acc += cur
+	})
+	return answer
 }
 
 
-save([4, 4, 4, 3, 3], 12)		// 3
-save([4, 4, 4, 3, 3], 11)		// 2
-save([4, 8, 15, 16, 23, 42], 108)	// 6
-save([13], 13)				// 1
-save([1, 2, 3, 4], 250)			// 4
-save([100], 500)			// 1
-save([11, 13, 15, 17, 19], 8)		// 0
-save([45], 12)				// 0
+console.log(save([4, 4, 4, 3, 3], 12))		// 3
+console.log(save([4, 4, 4, 3, 3], 11))		// 2
+console.log(save([4, 8, 15, 16, 23, 42], 108))	// 6
+console.log(save([13], 13))				// 1
+console.log(save([1, 2, 3, 4], 250))			// 4
+console.log(save([100], 500))			// 1
+console.log(save([11, 13, 15, 17, 19], 8))		// 0
+console.log(save([45], 12))				// 0
