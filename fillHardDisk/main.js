@@ -9,10 +9,15 @@
 //     Number of files that can be fully saved in the HD.
 
 function save(sizes, hd) {
-	let answer = sizes.reduce((acc, cur) => {
-		if(acc + cur <= hd) return acc += cur
-	})
-	return answer
+	let tot = 0
+	let answer = []
+	if(tot < hd){
+		for(let i = 0; i < sizes.length; i++){
+			answer.push(sizes[i])
+			tot += sizes[i]
+		}
+	}
+	return answer.length
 }
 
 
