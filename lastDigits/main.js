@@ -5,7 +5,8 @@
 //     If D <= 0, return an empty list.
 
 function lastDigit(n, d) {
-	let numbers = n.toString().split('')
+	if(d <= 0) return []
+	let numbers = n.toString().split('').map(x => Number(x))
 	return numbers.slice(-d)
 }
 
