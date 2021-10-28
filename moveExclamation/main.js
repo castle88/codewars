@@ -10,9 +10,9 @@
 // remove("Hi! Hi!! Hi!") === "Hi Hi Hi!!!!"
 
 function remove(s){
-  //coding and coding....
-  
-  
+	let split = s.split('')
+	let filtered = split.filter(x => x !== '!')
+	return filtered
 }
 
 
