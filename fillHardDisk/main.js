@@ -11,21 +11,21 @@
 function save(sizes, hd) {
 	let tot = 0
 	let answer = []
-	if(tot < hd){
-		for(let i = 0; i < sizes.length; i++){
-			answer.push(sizes[i])
-			tot += sizes[i]
-		}
+	let i = 0
+	while(tot <= hd){
+		answer.push(sizes[i])
+		tot += sizes[i]
+		i++
 	}
-	return answer.length
+	return answer.length -1
 }
 
 
-console.log(save([4, 4, 4, 3, 3], 12))		// 3
-console.log(save([4, 4, 4, 3, 3], 11))		// 2
-console.log(save([4, 8, 15, 16, 23, 42], 108))	// 6
+console.log(save([4, 4, 4, 3, 3], 12))			// 3
+console.log(save([4, 4, 4, 3, 3], 11))			// 2
+console.log(save([4, 8, 15, 16, 23, 42], 108))		// 6
 console.log(save([13], 13))				// 1
 console.log(save([1, 2, 3, 4], 250))			// 4
-console.log(save([100], 500))			// 1
+console.log(save([100], 500))				// 1
 console.log(save([11, 13, 15, 17, 19], 8))		// 0
 console.log(save([45], 12))				// 0
