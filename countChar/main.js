@@ -5,8 +5,11 @@
 
 
 function count (string) {  
-  // The function code should be here
-   return {};
+	let splitStr = string.split('')
+	return splitStr.reduce((acc, cur) => {
+		acc[cur] = (acc[cur] || 0) + 1
+		return acc
+	},{})
 }
 
 
