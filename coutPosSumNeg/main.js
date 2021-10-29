@@ -9,11 +9,17 @@
 
 
 function countPositivesSumNegatives(input) {
-    let count = input.filter(x => x > 0).length
-    let sum = input.filter(x => x < 0).reduce((acc, cur) => acc += cur)
-    return [count, sum]
+	if(input.length > 0){
+		let count = input.filter(x => x > 0).length
+		let sum = input.filter(x => x < 0).reduce((acc, cur) => acc += cur)
+		return [count, sum]
+	}else{
+		return [0,0]
+	}
 }
+		
 
 
 
 console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))	// [10, -65].
+console.log(countPositivesSumNegatives([]))
