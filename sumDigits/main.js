@@ -8,9 +8,10 @@
 
 
 function sumDigits(number){
-	return number.toString().split('').reduce((acc, cur) => {
-		acc += cur
-	})
+	let arr = number.toString().split('').filter(x => Number(x))
+	return arr.reduce((acc, cur) => {
+		return acc += Number(cur)
+	},0)
 }
 
 
