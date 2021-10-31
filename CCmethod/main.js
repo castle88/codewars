@@ -10,11 +10,14 @@
 
 function camelCase(string) {
 	let words = string.split(' ')
-	return words
+	let caps = words.map(word => {
+		return word.replace(word.charAt(0), word.charAt(0).toUpperCase())
+	})
+	return caps.join('')
 }
 
-console.log("test case".camelCase())			// "TestCase"
-console.log("camel case method".camelCase())		// "CamelCaseMethod"
-console.log("say hello ".camelCase())			// "SayHello"
-console.log(" camel case word".camelCase())		// "CamelCaseWord"
-console.log("".camelCase())				//  ""
+console.log(camelCase("test case"))			// "TestCase"
+console.log(camelCase("camel case method"))		// "CamelCaseMethod"
+console.log(camelCase("say hello "))			// "SayHello"
+console.log(camelCase(" camel case word"))		// "CamelCaseWord"
+console.log(camelCase(""))				//  ""
