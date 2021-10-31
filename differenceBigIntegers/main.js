@@ -13,8 +13,10 @@
 // Arrays
 
 function diffBig2(arr) {
-	let sort = arr.sort((a,b) => b-a)
-	return sort[0] - sort[1]
+	let max = Math.max(...arr)
+	arr.splice(arr.indexOf(max),1)
+	let newMax = Math.max(...arr)
+	return max - newMax
 }
 
 
