@@ -13,7 +13,8 @@
 // Arrays
 
 function diffBig2(arr) {
-	let sort = arr.sort((a,b) => a-b)
+	let sort = arr.sort((a,b) => b-a)
+	return sort[0] - sort[1]
 }
 
 
