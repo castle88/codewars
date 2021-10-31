@@ -9,7 +9,13 @@
 var capitals = function (word) {
 	let capLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 	let splitted = word.split('')
-	return splitted
+	let answer = []
+	for(let i = 0; i < splitted.length; i++){
+		if(capLetters.includes(splitted[i])){
+			answer.push(i)
+		}
+	}
+	return answer
 }
 
 
