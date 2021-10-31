@@ -14,10 +14,25 @@
 //         this.toString = function() { return this.name; }
 // }
 
+class Fighter {
+	constructor(name, health, damagePerAttack) {
+		this.name = name,
+		this.health = health,
+		this.damagePerAttack = damagePerAttack
+	}
+}
 
 
 function declareWinner(fighter1, fighter2, firstAttacker) {
-	
+	const fighterATurns = () => {
+		return Math.ceil(fighter2.health / fighter1.damagePerAttack)
+	}
+	const fighterBTurns = () => {
+		return Math.ceil(fighter1.health / fighter2.damagePerAttack)
+	}
+	if(fighterATurns() < fighterBTurns()) return fighter1.name
+	if(fighterBTurns() < fighterATurns()) return fighter2.name
+	if(fighterATurns() === fighterBTurns()) return firstAttacker
 }
 
 console.log((declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew")))		// "Lew"
