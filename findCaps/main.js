@@ -8,10 +8,9 @@
 
 var capitals = function (word) {
 	let capLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
-	return word.filter((x, i) => {
-		if(capLetters.match(x)) return 	i
-	})
-};
+	let splitted = word.split('')
+	return splitted
+}
 
 
 console.log(capitals('CodEWaRs'))  	// [0,3,4,6] 
