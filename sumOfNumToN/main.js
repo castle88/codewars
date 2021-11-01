@@ -33,7 +33,7 @@ var SequenceSum = (function() {
 	SequenceSum.showSequence = function(count) {
 	  // for
 	  let answer = 0
-	  for(let i = 0; i < count; i++){
+	  for(let i = 0; i <= count; i++){
 		answer += i
 	  }
 	  return answer
