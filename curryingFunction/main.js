@@ -10,12 +10,12 @@
 
 // Here's a nice Youtube video about currying, which might help you if this is new to you.
 
-function multiplyAll(array, multiplier){
-	return array.map(x => x * multiplier)
-}
+// function multiplyAll(array, multiplier){
+// 	return array.map(x => x * multiplier)
+// }
 
 
-console.log(multiplyAll([1, 2, 3],1))		// [1, 2, 3]);
-console.log(multiplyAll([1, 2, 3],2))		// [2, 4, 6]);
-console.log(multiplyAll([1, 2, 3],0))		// [0, 0, 0]);
-console.log(multiplyAll([],10))		// [], "should return an empty array");
+// console.log(multiplyAll([1, 2, 3],1))		// [1, 2, 3]);
+// console.log(multiplyAll([1, 2, 3],2))		// [2, 4, 6]);
+// console.log(multiplyAll([1, 2, 3],0))		// [0, 0, 0]);
+// console.log(multiplyAll([],10))		// [], "should return an empty array");
