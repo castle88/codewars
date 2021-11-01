@@ -30,9 +30,45 @@
 
 // Alphabet war Collection
 
-function alphabetWar(fight)
-{
-   return "Let's fight again!";
+function alphabetWar(fight){
+	const right = {
+		'm': 4,
+		'q': 3,
+		'd': 2,
+		'z': 1
+	}
+	const left = {
+		'w': 4,
+		'p': 3,
+		'b': 2,
+		's': 1
+	}
+	
+	let fightArr = fight.split('')
+
+	let rightPow = 0
+	let leftPow = 0
+
+	let rightFighters = fightArr.filter(x => {
+		return right[x]
+	}).map(x => right[x])//.reduce((acc, cur) => acc += cur)
+
+	let leftFighters = fightArr.filter(x => {
+		return left[x]
+	}).map(x => left[x])//.reduce((acc, cur) => acc += cur)
+	
+	if(rightFighters.length > 0){
+		rightPow = rightFighters.reduce((acc, cur) => acc += cur)
+	}
+
+	if(leftFighters.length > 0){
+		leftPow = leftFighters.reduce((acc, cur) => acc += cur)
+	}
+
+	if(rightPow > leftPow) return 'Right side wins!'
+	if(leftPow > rightPow) return 'Left side wins!'
+	return `Let's fight again!`
+	//return "Let's fight again!"
 }
 
 console.log( alphabetWar("z"))			// "Right side wins!" );
