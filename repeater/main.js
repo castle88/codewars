@@ -6,9 +6,11 @@
 
 
 function repeater(string, n){
-  //Your code goes here.
+	for(let i = 0; i < n; i++){
+		return string += string	
+	}
 }
 
-assert.strictEqual(repeater('a', 5))		// 'aaaaa'
-assert.strictEqual(repeater('Na', 16))		// 'NaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNa'
-assert.strictEqual(repeater('Wub ', 6))		// 'Wub Wub Wub Wub Wub Wub '
+console.log(repeater('a', 5))		// 'aaaaa'
+console.log(repeater('Na', 16))		// 'NaNaNaNaNaNaNaNaNaNaNaNaNaNaNaNa'
+console.log(repeater('Wub ', 6))		// 'Wub Wub Wub Wub Wub Wub '
