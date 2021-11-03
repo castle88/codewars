@@ -22,11 +22,12 @@ function titleCase(title, minorWords) {
   if(title.length < 1) return ''
   if(minorWords){
 	let words = title.split(' ')
-	let minorWordsSplit = minorWords.split(' ')
-	return words.map((x, i) => {
-		if(minorWordsSplit.includes(x)) return x.toLowerCase()
-		return x.toLowerCase().replace(x.charAt(0), x.charAt(0).toUpperCase())
-	})
+	let minorWordsSplit = minorWords.split(' ').map(x => x.toLowerCase())
+	let answer = words.map(x => x.toLowerCase())
+	return answer.map((x, i) => {
+		if(minorWordsSplit.includes(x) && i !== 0) return x
+		return x.replace(x.charAt(0), x.charAt(0).toUpperCase())
+	}).join(' ')
   }else{
 	let words = title.split(' ')
 	return words.map(x => x.toLowerCase().replace(x.charAt(0), x.charAt(0).toUpperCase())).join(' ')
