@@ -15,7 +15,15 @@
 // median([3,2,1]) // => 2
 
 function median(array) {
-//code here
+	array.sort((a,b) => a - b)
+	console.log(array)
+	if(array.length % 2 === 0){
+		let low = array[(array.length / 2) - 1]
+		let high = array[(array.length / 2)]
+		return (low + high) / 2
+	}else{
+		return array[Math.floor(array.length / 2)]
+	}
 }
 
 
