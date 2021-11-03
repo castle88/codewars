@@ -22,6 +22,7 @@
 
 
 function sum (numbers) {
+    if(numbers.length < 1) return 0
     return numbers.reduce((acc, cur) => acc += cur)
 };
 

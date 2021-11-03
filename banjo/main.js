@@ -9,7 +9,7 @@
 // Names given are always valid strings.
 
 function areYouPlayingBanjo(name) {
-	if(name.charAt(0) == 'r') return `${name} plays banjo`
+	if(name.charAt(0).toLowerCase() === 'r') return `${name} plays banjo`
 	return `${name} does not play banjo`
 }
 
