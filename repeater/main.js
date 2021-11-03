@@ -6,9 +6,11 @@
 
 
 function repeater(string, n){
-	for(let i = 0; i < n; i++){
-		return string += string	
+	let answer = string
+	for(let i = 1; i < n; i++){
+		answer += string
 	}
+	return answer
 }
 
 console.log(repeater('a', 5))		// 'aaaaa'
