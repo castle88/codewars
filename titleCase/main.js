@@ -30,13 +30,17 @@ function titleCase(title, minorWords) {
 	}).join(' ')
   }else{
 	let words = title.split(' ')
-	return words.map(x => x.toLowerCase().replace(x.charAt(0), x.charAt(0).toUpperCase())).join(' ')
+	let answer = words.map(x => x.toLowerCase())
+	return answer.map(x => {
+		return x.replace(x.charAt(0), x.charAt(0).toUpperCase())
+	}).join(' ')
   }
 }
 	  
 
 
-console.log(titleCase(''))						// ''
-console.log(titleCase('a clash of KINGS', 'a an the of'))		// 'A Clash of Kings'
-console.log(titleCase('THE WIND IN THE WILLOWS', 'The In'))		// 'The Wind in the Willows'
-console.log(titleCase('the quick brown fox'))		 		// 'The Quick Brown Fox'
+//console.log(titleCase(''))						// ''
+//console.log(titleCase('a clash of KINGS', 'a an the of'))		// 'A Clash of Kings'
+//console.log(titleCase('THE WIND IN THE WILLOWS', 'The In'))		// 'The Wind in the Willows'
+//console.log(titleCase('the quick brown fox'))		 		// 'The Quick Brown Fox'
+console.log(titleCase('aBC deF Ghi'))					// 'Abc Def Ghi'
