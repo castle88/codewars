@@ -8,7 +8,8 @@
 
 
 function makeString(s){
-  // ...
+	let arr = s.split(' ')
+	return arr.map(x => x.charAt(0)).join('')
 }
 
 
