@@ -10,7 +10,7 @@
 
 
 function solve(s){
- return 0;
+	return [...s.match(/[aeiou]+/gm)].sort((a,b) => b.length - a.length)[0].length
 }
 
 
