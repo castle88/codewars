@@ -4,7 +4,7 @@
 
 
 function findLongest(array){
-	let answer = array.map(x => String(x)).sort((a,b) => a - b)
+	let answer = array.map(x => String(x)).sort((a,b) => a.length - b.length)
 	return Number(answer[answer.length - 1])
 }
 
