@@ -13,14 +13,20 @@
 // Note: The original string should be included in the output array The order matters. Each element of the output array should be the rotated version of the previous element. The output array SHOULD be the same length as the input string The function should return an emptry array with a 0 length string, '', as input
 
 function rotate(str){
-//code here
-
+	let arr = str.split('')
+	let answer = arr.map(x => {
+		let first = arr.shift()
+		arr.push(first)
+		return arr.join('')
+	})
+	return answer
 }
 
 
 
-console.log(testOut.includes("elloH")) 		// true
-console.log(testOut.includes("lloHe")) 		// true
-console.log(testOut.includes("loHel")) 		// true
-console.log(testOut.includes("oHell")) 		// true
-console.log(testOut.includes("Hello")) 		// true
+
+console.log(rotate("elloH")) 		// true
+console.log(rotate("lloHe")) 		// true
+console.log(rotate("loHel")) 		// true
+console.log(rotate("oHell")) 		// true
+console.log(rotate("Hello")) 		// true
