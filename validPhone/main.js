@@ -11,7 +11,17 @@
 // "(098) 123 4567"  => false
 
 function validPhoneNumber(phoneNumber){
-  //TODO: Return whether phoneNumber is in the proper form
+	let regex1 = /\(([0-9][0-9][0-9])\)(\s)([0-9][0-9][0-9])-([0-9][0-9][0-9][0-9])/gm
+	let arr = phoneNumber.split('')
+	console.log(phoneNumber)
+	if(arr.every(x => x === /\w/gm)) return false
+	if(phoneNumber.match(regex1)) return true
+	return false
 }
 
 console.log(validPhoneNumber("(123) 456-7890"))		// true
+console.log(validPhoneNumber("(1111)555 2345"))		// false
+console.log(validPhoneNumber("(098) 123 4567"))		// false
+console.log(validPhoneNumber('(123)456-7890'))		// false
+console.log(validPhoneNumber('(123)456-7890abc'))	// false
+console.log(validPhoneNumber('abc(123)234-2341'))	// false
