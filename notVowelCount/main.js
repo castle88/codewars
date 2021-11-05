@@ -17,13 +17,50 @@
 // If you like this Kata, please try:
 
 function solve(s) {
-	
+	let values = {
+		a: 1,
+		b: 2,
+		c: 3,
+		d: 4,
+		e: 5,
+		f: 6,
+		g: 7,
+		h: 8,
+		i: 9,
+		j: 10,
+		k: 11,
+		l: 12,
+		m: 13,
+		n: 14,
+		o: 15,
+		p: 16,
+		q: 17,
+		r: 18,
+		s: 19,
+		t: 20,
+		u: 21,
+		v: 22,
+		w: 23,
+		x: 24,
+		y: 25,
+		z: 26,		
+	}
+	let cons = [...s.match(/[bcdfghjklmnpqrstvwxyz]+/gm)]
+	let arr = cons.map(x => x.length > 1 ? x.split('') : x)
+	return arr
+	// return Math.max(...arr.map(x => {
+	// 	if(typeof x === 'Object'){
+	// 		return x.reduce((acc, cur)=> acc += values[cur],0)
+	// 	}else{
+	// 		return values[x]
+	// 	}
+	//}))
 }
 
-console.log(solve("zodiac"))				// 26
+//console.log(solve("zodiac"))				// 26
 console.log(solve("chruschtschov"))			// 80
-console.log(solve("khrushchev"))			// 38
-console.log(solve("strength"))				// 57
-console.log(solve("catchphrase"))			// 73
-console.log(solve("twelfthstreet"))			// 103
-console.log(solve("mischtschenkoana"))			// 80
+//console.log(solve("khrushchev"))			// 38
+//console.log(solve("strength"))				// 57
+//console.log(solve("catchphrase"))			// 73
+//console.log(solve("twelfthstreet"))			// 103
+//console.log(solve("mischtschenkoana"))			// 80
