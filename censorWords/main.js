@@ -22,9 +22,23 @@
 
 
 function censorThis(text, forbiddenWords) {
-  //coding and coding..
-  
-  
+	let answer = text.split(' ')
+	let replacers = forbiddenWords.map(x => {
+		let star = '*'
+		let str = ''
+		for(let i = 0; i < x.length; i++){
+			str += star
+		}
+		return str
+	})
+	return answer.map(x => {
+		
+		if(forbiddenWords.includes(x.toLowerCase())){
+			return replacers[forbiddenWords.indexOf(x.toLowerCase())]
+		}else{
+			return x
+		}
+	}).join(' ')
 }
 
 
