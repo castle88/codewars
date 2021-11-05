@@ -31,7 +31,19 @@
 
 
 function foldArray(array, runs){
-
+	let lastHalf
+	for(let i = 1; i <= runs; i++){
+		let half = Math.ceil(array.length / 2)
+		let firstHalf = array.slice(0, half)
+		lastHalf = array.slice(half).reverse()
+		if(firstHalf.length > lastHalf.length){
+			lastHalf.push(0)
+			array = firstHalf.map((x, i) => x += lastHalf[i])
+		}else{
+			array = firstHalf.map((x, i) => x += lastHalf[i])
+		}
+	}
+	return array
 }
 
 
