@@ -47,20 +47,19 @@ function solve(s) {
 	}
 	let cons = [...s.match(/[bcdfghjklmnpqrstvwxyz]+/gm)]
 	let arr = cons.map(x => x.length > 1 ? x.split('') : x)
-	return arr
-	// return Math.max(...arr.map(x => {
-	// 	if(typeof x === 'Object'){
-	// 		return x.reduce((acc, cur)=> acc += values[cur],0)
-	// 	}else{
-	// 		return values[x]
-	// 	}
-	//}))
+	return Math.max(...arr.map(x => {
+		if(typeof x === 'object'){
+			return x.reduce((acc, cur)=> acc += values[cur],0)
+		}else{
+			return values[x]
+		}
+	}))
 }
 
-//console.log(solve("zodiac"))				// 26
+console.log(solve("zodiac"))				// 26
 console.log(solve("chruschtschov"))			// 80
-//console.log(solve("khrushchev"))			// 38
-//console.log(solve("strength"))				// 57
-//console.log(solve("catchphrase"))			// 73
-//console.log(solve("twelfthstreet"))			// 103
-//console.log(solve("mischtschenkoana"))			// 80
+console.log(solve("khrushchev"))			// 38
+console.log(solve("strength"))				// 57
+console.log(solve("catchphrase"))			// 73
+console.log(solve("twelfthstreet"))			// 103
+console.log(solve("mischtschenkoana"))			// 80
