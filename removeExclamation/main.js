@@ -4,9 +4,7 @@
 
 
 function remove(s){
-  //coding and coding....
-  
-  
+	return s.split(' ')
 }
 
 
