@@ -20,16 +20,20 @@
 
 function wordCount(s) {
 	const exceptions = ["a", "the", "on", "at", "of", "upon", "in", "as"]
-	let ron = s.replace(`'`, '')
-	let arr = ron.replace(/\W|\d/gi, ',').split(',').filter(x => x.length >= 1)
-	return arr//.filter(x => exceptions.includes(x) === false).length
+	//let ron = s.replace(`'`, '')
+	//let arr = ron.replace(/\W|\d/gi, ',').split(',').filter(x => x.length >= 1)
+	//return arr.filter(x => exceptions.includes(x) === false)
+	let close = s.split(/\W|\d/gm).filter(x => x !== '')
+	return close.filter(x => exceptions.includes(x) === false).length
 }
 
-
-console.log(wordCount("hello there"))							// 2
-console.log(wordCount("hello there and a hi"))						// 4
-console.log(wordCount("I'd like to say goodbye"))					// 6
-console.log(wordCount("Slow-moving user6463 has been here"))				// 6
-console.log(wordCount("%^&abc!@# wer45tre"))						// 3
-console.log(wordCount("abc123abc123abc"))						// 3
-console.log(wordCount("Really2374239847 long ^&#$&(*@# sequence"))			// 3
+//console.log(wordCount('hello there on the comp of at upon'))				// 3
+//console.log(wordCount("hello there"))							// 2
+//console.log(wordCount("hello there and a hi"))						// 4
+//console.log(wordCount("I'd like to say goodbye"))					// 6
+//console.log(wordCount("Slow-moving user6463 has been here"))				// 6
+//console.log(wordCount("%^&abc!@# wer45tre"))						// 3
+//console.log(wordCount("abc123abc123abc"))						// 3
+//console.log(wordCount("Really2374239847 long ^&#$&(*@# sequence"))			// 3
+let longText = "I’d been using my sphere as a stool. I traced counterclockwise circles on it with my fingertips and it shrank until I could palm it. My bolt had shifted while I’d been sitting. I pulled it up and yanked the pleats straight as I careered around tables, chairs, globes, and slow-moving fraas. I passed under a stone arch into the Scriptorium. The place smelled richly of ink. Maybe it was because an ancient fraa and his two fids were copying out books there. But I wondered how long it would take to stop smelling that way if no one ever used it at all; a lot of ink had been spent there, and the wet smell of it must be deep into everything."
+console.log(wordCount(longText))							// 112
