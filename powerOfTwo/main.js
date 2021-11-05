@@ -12,7 +12,8 @@
 // Beware of certain edge cases - for example, 1 is a power of 2 since 2^0 = 1 and 0 is not a power of 2.
 
 function isPowerOfTwo(n){
-	
+	if(n === 1) return true
+	return n % 2 === 0
 }
 
 console.log(isPowerOfTwo(2))		// true
