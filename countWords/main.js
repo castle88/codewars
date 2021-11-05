@@ -19,7 +19,10 @@
 // 112
 
 function wordCount(s) {
-	
+	const exceptions = ["a", "the", "on", "at", "of", "upon", "in", "as"]
+	let ron = s.replace(`'`, '')
+	let arr = ron.replace(/\W|\d/gi, ',').split(',').filter(x => x.length >= 1)
+	return arr//.filter(x => exceptions.includes(x) === false).length
 }
 
 
