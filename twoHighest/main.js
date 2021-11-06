@@ -9,7 +9,10 @@
 // []  =>  []
 
 function twoHighest(arr) {
-  
+	if(arr.length === 0 || arr.length === 1) return arr
+	let setted = [...new Set(arr)]
+	let sort = setted.sort((a, b) => b - a)
+	return [sort[0], sort[1]]
 }
 
 console.log(twoHighest([]))			// [])
