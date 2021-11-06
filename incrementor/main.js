@@ -14,8 +14,17 @@
 //                                        #  9+3 = 12  -->  2
 
 function incrementer(nums) { 
-	
+	return nums.map((x, i) => {
+		if(x + (i+1) >= 10){
+			let num = String(x + (i + 1)).split('')
+			return Number(num[1])
+		}else{
+			return x + (i + 1)
+		}
+	})
 }
 
 
-console.log(incrementor([1,2,3]))	// [2,4,6]
+console.log(incrementer([1,2,3]))		// [2,4,6]
+
+console.log(incrementer([4, 6, 9, 1, 3]))  	// [5, 8, 2, 5, 8] 
