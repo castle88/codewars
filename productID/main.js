@@ -14,10 +14,12 @@
 
 
 function getProductId(url){
-	
+	let backwards = url.split('').reverse().join('')
+	let almost = backwards.slice(0, backwards.indexOf('-p-')).split('').reverse().join('')
+	return almost.slice(0, almost.indexOf('-'))
 }
 
 
-console.log(getProductId("http://www.exampleshop.com/fancy-coffee-cup-p-90764-12052019.html"))					// "90764", 'should return 90764'
-console.log(getProductId("http://www.exampleshop.com/dry-water-just-add-water-to-get-water-p-147-24122017.html"))		// "147", 'should return 147'
-console.log(getProductId("http://www.exampleshop.com/public-toilet-proximity-radar-p-942312798-01012020.html"))			// "942312798", 'should return 942312798'
+console.log(getProductId("http://www.exampleshop.com/fancy-coffee-cup-p-90764-12052019.html"))					// "90764"
+console.log(getProductId("http://www.exampleshop.com/dry-water-just-add-water-to-get-water-p-147-24122017.html"))		// "147"
+console.log(getProductId("http://www.exampleshop.com/public-toilet-proximity-radar-p-942312798-01012020.html"))			// "942312798"
