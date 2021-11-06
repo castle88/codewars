@@ -4,7 +4,15 @@
 
 
 function remove(s){
-	return s.split(' ')
+	let arr = s.split(' ')
+	let answer = arr.map((x, i) =>{ 
+		if(i === arr.length - 1){
+			return x.charAt(0) === '!' ? x.replace('!','') : x
+		}else{
+			return x.replace(/!/gm, '')
+		}
+	})
+	return answer.join(' ')
 }
 
 
