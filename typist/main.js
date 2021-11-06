@@ -35,11 +35,37 @@
 // John hit button Caps Lock, A, Caps Lock, a.
 
 
-function typist(s){
-  //coding and coding..
-    
-}
+// function typist(s){
+// 	let arr = s.split('')
+// 	let caps = arr.filter(x => x.match(/[A-Z]/gm))
+// 	let lower = arr.filter(x => x.match(/[a-z]/gm))
+// 	if(lower.length > 0){
+// 		lower = lower.map(x => 1).reduce((acc, cur) => acc += cur) || 0
+// 	}else{
+// 		lower = 0
+// 	}
+// 	if(caps.length > 0){
+// 		caps = caps.map(x => 3).reduce((acc, cur) => acc += cur) || 0
+// 	}else{
+// 		caps = 0
+// 	}
+// 	return Math.ceil(caps/2) + lower
+// }
 
+function typist(s){
+	let arr = s.split('')
+	console.log(`length: ${arr.length}`)
+	let answer = arr.reduce((acc, cur, index) => {
+		if(cur.match(/[A-Z]/gm)){
+			return acc += 2
+		}else if(cur.match(/[A-Z]/gm && arr.length > 1 && index !== arr.length - 1)){
+			return acc += 2
+		}else{
+			return acc += 1
+		}
+	},0)
+	return answer
+}
 
 console.log(typist("a"))			// 1
 console.log(typist("aa"))			// 2
