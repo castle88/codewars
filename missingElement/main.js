@@ -9,7 +9,9 @@
 // [9, 2, 4, 5, 7, 0, 8, 6, 1] --> 3
 
 function getMissingElement(superImportantArray){
-  //TODO
+	let sorted = superImportantArray.sort((a, b) => a - b)
+	let mapped = superImportantArray.map((x, i) => i + 1)
+	return Number(mapped.filter((x, i) => !sorted.includes(x)).join(''))
 }
 
 
