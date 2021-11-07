@@ -27,8 +27,8 @@ function sortVowels(s){
 	if(typeof s !== 'string') return ''
 	let arr = s.split('')
 	return arr.map((x, i) => {
-		if(i === arr.length - 1) return x.match(/[aeiou]/gm) ? `|${x}` : `${x}|`
-		if(x.match(/[aeiou]/gm)){
+		if(i === arr.length - 1) return x.match(/[aeiouAEIOU]/gm) ? `|${x}` : `${x}|`
+		if(x.match(/[aeiouAEIOU]/gm)){
 			return `|${x}\n`
 		}else{
 			return `${x}|\n`
@@ -44,3 +44,6 @@ console.log(sortVowels(undefined))			// '');
 
 //  'C|\n  |o\n  d|\n  |e\n  w|\n  |a\n  r|\n  s|', 
 //: 'C|\n  |o\n  d|\n  |e\n  w|\n  |a\n  r|\n  s|\n  '
+
+// Expected: 'M|\n|E\nN|\nN|\nT|\nL|\nB|\n|E\nN|\nT|\nT|\nF|\nG|\nN|\n|I\nT|' 
+// Instead : 'M|\nE|\nN|\nN|\nT|\nL|\nB|\nE|\nN|\nT|\nT|\nF|\nG|\nN|\nI|\nT|'
