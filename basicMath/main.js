@@ -10,7 +10,8 @@
 // ('/', 49, 7) --> 7
 
 function basicOp(operation, value1, value2){
-  // Code
+	let answer = eval(`${value1}${operation}${value2}`)
+	return answer
 }
 
 
