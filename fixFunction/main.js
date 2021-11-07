@@ -4,27 +4,32 @@
 
 
 function getPlanetName(id){
-  var name;
   switch(id){
     case 1:
-      name = 'Mercury'
+      return 'Mercury'
+      break;
     case 2:
-      name = 'Venus'
+      return 'Venus'
+      break;
     case 3:
-      name = 'Earth'
+      return 'Earth'
+      break;
     case 4:
-      name = 'Mars'
+      return 'Mars'
+      break;
     case 5:
-      name = 'Jupiter'
+      return 'Jupiter'
+      break;
     case 6:
-      name = 'Saturn'
+      return 'Saturn'
+      break;
     case 7:
-      name = 'Uranus'
+      return 'Uranus'
+      break;
     case 8:
-      name = 'Neptune'
+      return 'Neptune'
+      break;
   }
-  
-  return name;
 }
 
 
