@@ -20,8 +20,17 @@
 // NOTE: Each rider travels as far as he can, but never more than 100 miles.
 
 function riders(stations) {
-  // Your code here!
-  return 1
+	let distance = 100
+	let riders = 1
+	for(let i = 0; i < stations.length; i++){
+		if(stations[i] > distance){
+			riders += 1
+			distance = 100
+		}else{
+			distance -= stations[i]
+		}
+	}
+	return riders
 }
 
 
@@ -29,3 +38,4 @@ console.log(riders([18, 15]))								// 1
 console.log(riders([43, 23, 40, 13]))							// 2
 console.log(riders([33, 8, 16, 47, 30, 30, 46]))					// 3
 console.log(riders([6, 24, 6, 8, 28, 8, 23, 47, 17, 29, 37, 18, 40, 49]))		// 4
+console.log(riders([17, 18, 12, 48, 16, 5, 22, 41, 26, 25, 11, 6, 48]))			// 4
