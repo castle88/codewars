@@ -14,7 +14,9 @@
 
 
 function squaresNeeded(grains){
-  //your code here
+	if(grains % 2 !== 0) return Math.ceil(grains / 2)
+	if(grains === 0) return 0
+	return grains / 2 + 1
 }
 
 
