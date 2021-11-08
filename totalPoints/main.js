@@ -15,7 +15,18 @@
 //     0 <= y <= 4
 
 function points(games) {
-
+	let answer = games.map(x => {
+		return x.split(':')
+	})
+	return answer.reduce((acc, cur) => {
+		if(Number(cur[0]) > Number(cur[1])){
+			return acc += 3
+		}else if(Number(cur[0] < Number(cur[1]))){
+			return acc += 0
+		}else{
+			return acc += 1
+		}
+	},0)
 }
 
 
