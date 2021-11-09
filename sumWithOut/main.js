@@ -18,7 +18,7 @@
 
 
 function sumArray(array) {
-	if(!array || array.length < 1) return 0
+	if(!array || array.length < 3) return 0
 	array.sort((a, b) => a - b)
 	array.pop()
 	array.shift()
