@@ -21,18 +21,15 @@
 
 
 function firstNonConsecutive (arr) {
-	let answer
+	let answer = []
 	for(let i = 0; i <= arr.length; i++){
-		if(arr[i] + 1 !== arr[i+1]){
-			answer = arr[i+1]
+		if(arr[i] + 1 !== arr[i + 1]){
+			answer.push(arr[i + 1])
 		}
 	}
-	if(answer === /\d/gm){
-		return answer
-	}else{
-		return null
+	if(answer[0] === undefined) return null
+	return answer[0]
 	}
-}
 			
 
 
