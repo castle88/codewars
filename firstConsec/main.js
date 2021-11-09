@@ -21,10 +21,22 @@
 
 
 function firstNonConsecutive (arr) {
+	let answer
 	for(let i = 0; i <= arr.length; i++){
-		if(arr[i] + 1 !== arr[i+1]) return arr[i]
+		if(arr[i] + 1 !== arr[i+1]){
+			answer = arr[i+1]
+		}
+	}
+	if(answer === /\d/gm){
+		return answer
+	}else{
+		return null
 	}
 }
+			
 
 
-console.log(firstNonConsecutive([1,2,3,4,6,7,8]))	// 6
+console.log(firstNonConsecutive([1,2,3,4,6,7,8]))		// 6
+console.log(firstNonConsecutive([4,5,7,8,9,10,12,13]))		// 7
+console.log(firstNonConsecutive([0]))				// null
+console.log(firstNonConsecutive([-4,-3,-2,-1,0,1,2,3,4]))	// null
