@@ -29,7 +29,7 @@ function firstNonConsecutive (arr) {
 	}
 	if(answer[0] === undefined) return null
 	return answer[0]
-	}
+}
 			
 
 
