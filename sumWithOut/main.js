@@ -18,9 +18,14 @@
 
 
 function sumArray(array) {
-
+	if(array.length < 1) return 0
+	array.sort((a, b) => a - b)
+	array.pop()
+	array.shift()
+	return array.reduce((acc, cur) => acc += cur)
 }
 
 
 
 console.log(sumArray([ 6, 2, 1, 8, 10 ]))		// 16
+console.log(sumArray([]))
