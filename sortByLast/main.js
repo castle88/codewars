@@ -7,7 +7,7 @@
 
 function last(x){
 	let arr = x.split(' ')
-	return arr.sort((a, b) => a.charAt(a.length - 1) - b.charAt(b.length - 1)) // this does not work
+	return arr.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1)) 
 }
 
 console.log(last('man i need a taxi up to ubud'))			// ['a', 'need', 'ubud', 'i', 'taxi', 'man', 'to', 'up']);
