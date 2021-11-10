@@ -18,11 +18,16 @@
 // All Hail King Partridge
 
 function part(x){
-
+	let alan = ['Partridge', 'PearTree', 'Chat', 'Dan', 'Toblerone', 'Lynn', 'AlphaPapa', 'Nomad']
+	let arr = x.filter(y => alan.includes(y))
+	let answer = `Mine's a Pint`
+	if(arr.length < 1) return `Lynn, I've pierced my foot on a spike!!`
+	arr.forEach(x => answer += '!')
+	return answer
 }
 
-console.log(part(['Grouse', 'Partridge', 'Pheasant']))	// 'Mine\'s a Pint!');
-console.log(part(['Pheasant', 'Goose', 'Starling', 'Robin']))	// 'Lynn, I\'ve pierced my foot on a spike!!');
+console.log(part(['Grouse', 'Partridge', 'Pheasant']))	// 'Mine\'s a Pint!'
+console.log(part(['Pheasant', 'Goose', 'Starling', 'Robin']))	// 'Lynn, I\'ve pierced my foot on a spike!!'
 
 console.log(part(['Grouse', 'Partridge', 'Pheasant', 'Goose', 'Starling', 'Robin', 'Thrush', 'Emu', 'PearTree', 'Chat', 'Dan', 'Square', 'Toblerone', 'Lynn', 'AlphaPapa', 'BMW', 'Graham', 'Tool', 'Nomad', 'Finger', 'Hamster']))	
-// 'Mine\'s a Pint!!!!!!!!');
+// 'Mine\'s a Pint!!!!!!!!'
