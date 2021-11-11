@@ -9,9 +9,22 @@
 //     "abcabcd" is NOT a valid word because "a" appears twice, "b" appears twice, "c" appears twice, but "d" only appears once!
 //     "123abc!" is a valid word because all of the characters only appear once in the word.
 
-function validateWord(s)
-{
-  //Code goes here!
+function validateWord(s){
+	let arr = []
+	let counts = s.toLowerCase().split('').reduce((acc, cur) => {
+		if(!acc[cur]){
+			acc[cur] = 1
+		}else{
+			acc[cur]++
+		}
+		return acc
+	}, {})
+	for(key in counts){
+		arr.push(counts[key])
+	}
+	let answer = [...new Set(arr)]
+	if(answer.length > 1) return false
+	return true	
 }
 
 
