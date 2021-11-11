@@ -14,7 +14,13 @@
 
 
 function solve(arr){  
-//code
+	let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+	let answer = arr.map(x => {
+		return x.split('').filter((y, i) => {
+			return y.toLowerCase() === alphabet[i]
+		}).length
+	})
+	return answer
 };
 
 
