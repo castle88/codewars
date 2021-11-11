@@ -5,9 +5,8 @@
 
 
 function sevenAte9(str){
-
+	return str.replace(/797/gm, '77')
 }
-
 
 console.log(sevenAte9('165561786121789797'))		// '16556178612178977'
 console.log(sevenAte9('797'))				// '77'
