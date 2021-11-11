@@ -16,7 +16,11 @@ function howMuchILoveYou(nbPetals) {
 	let phrases = ['I love you', 'a little', 'a lot', 'passionately', 'madly', 'not at all']
 	let phrase
 	if(nbPetals > phrases.length){
-		phrase = phrases[(nbPetals - phrases.length) -1]
+		if(Math.floor(nbPetals % phrases.length) === 0){
+			phrase = phrases[5]
+		}else{
+			phrase = phrases[Math.floor(nbPetals % phrases.length) -1]
+		}
 	}else{
 		phrase = phrases[nbPetals - 1]
 	}
@@ -27,3 +31,5 @@ function howMuchILoveYou(nbPetals) {
 console.log(howMuchILoveYou(7))		// "I love you"
 console.log(howMuchILoveYou(3))		// "a lot"
 console.log(howMuchILoveYou(6))		// "not at all"
+console.log(howMuchILoveYou(352))	// 'passionately'
+console.log(howMuchILoveYou(318))	// 'not at all
