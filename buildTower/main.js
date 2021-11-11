@@ -54,3 +54,37 @@ function towerBuilder(nFloors) {
 console.log(towerBuilder(1))		// ["*"]
 console.log(towerBuilder(2))		// [" * ","***"]
 console.log(towerBuilder(3))		// ["  *  "," *** ","*****"]
+console.log(towerBuilder(6))
+
+// Playing with this one
+
+
+// function towerBuilder(nFloors) {
+// 	let bottomFloor = []
+// 	for(let i = 0; i < nFloors * 2 -1; i++){
+// 		bottomFloor.push('*')
+// 	}
+// 	const top = () => {
+// 		let floorChanger = bottomFloor.join('')
+// 		let tower = [bottomFloor.join('')]
+// 		 for(let j = 1; j < nFloors; j++){
+// 			floorChanger = floorChanger.replace(floorChanger.charAt(j-1), ' ')
+// 			floorChanger = floorChanger.replace(floorChanger.charAt(j), '')
+// 			tower.unshift(floorChanger += ' ')
+// 		}
+// 		return tower
+// 	}
+// 	const bottom = () => {
+// 		let floorChanger = bottomFloor.join('')
+// 		let tower = [bottomFloor.join('')]
+// 		 for(let j = 1; j < nFloors; j++){
+// 			floorChanger = floorChanger.replace(floorChanger.charAt(j-1), ' ')
+// 			floorChanger = floorChanger.replace(floorChanger.charAt(j), '')
+// 			tower.push(floorChanger += ' ')
+// 		}
+// 		return tower
+// 	}
+// 	return top().concat(bottom())
+// }
+
+// console.log(towerBuilder(4))
