@@ -13,7 +13,14 @@
 
 
 function mergeArrays(a, b) {
-  // your code here
+	let lengths = [a.length, b.length]
+	let longest = Math.max(...lengths)
+	let answer = []
+	for(let i = 0; i < longest; i++){
+		answer.push(a[i])
+		answer.push(b[i])
+	}
+	return answer.filter(x => x !== undefined)
 }
 
 
