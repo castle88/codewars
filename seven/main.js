@@ -5,12 +5,12 @@
 
 
 function sevenAte9(str){
-	for(let i = 0; i < str.length; i++){
-		if(str[i] == '9' && str[i-1] == '7' && str[i+1] == '7'){
-			return str[i]
+	location.forEach(x => {
+		if(x-1 === '7' && x+1 === '7'){
+			str.replace(str[x], '')
 		}
-	}
-
+	})
+	return string
 }
 
 console.log(sevenAte9('165561786121789797'))		// '16556178612178977'
