@@ -13,7 +13,14 @@
 
 
 function howMuchILoveYou(nbPetals) {
-    // your code
+	let phrases = ['I love you', 'a little', 'a lot', 'passionately', 'madly', 'not at all']
+	let phrase
+	if(nbPetals > phrases.length){
+		phrase = phrases[(nbPetals - phrases.length) -1]
+	}else{
+		phrase = phrases[nbPetals - 1]
+	}
+	return phrase
 }
 
 
