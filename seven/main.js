@@ -5,7 +5,12 @@
 
 
 function sevenAte9(str){
-	return str.replace(/797/gm, '77')
+	for(let i = 0; i < str.length; i++){
+		if(str[i] == '9' && str[i-1] == '7' && str[i+1] == '7'){
+			return str[i]
+		}
+	}
+
 }
 
 console.log(sevenAte9('165561786121789797'))		// '16556178612178977'
