@@ -11,13 +11,17 @@
 
 
 function nthEven(n){
-  // your code here
+	let arr = []
+	for(let i = 0; i < n * 2; i+=2){
+		arr.push(i)
+	}
+	return arr[arr.length - 1]
 }
 
 
 
-console.log(nthEven(1))				// 0, "Wrong Value!"
-console.log(nthEven(2))				// 2, "Wrong Value!"
-console.log(nthEven(3))				// 4, "Wrong Value!"
-console.log(nthEven(100))			// 198, "Wrong Value!"
-console.log(nthEven(1298734))			// 2597466, "Wrong Value!"
+console.log(nthEven(1))				// 0
+console.log(nthEven(2))				// 2
+console.log(nthEven(3))				// 4
+console.log(nthEven(100))			// 198
+console.log(nthEven(1298734))			// 2597466
