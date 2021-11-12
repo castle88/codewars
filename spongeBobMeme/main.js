@@ -9,8 +9,19 @@
 
 
 function spongeMeme(sentence) {
-  
+	let arr = sentence.split(' ')
+	return arr.map(x => {
+		if(x.length === 6){
+			return x.split('').map((y, i) => i % 2 === 0 ? y.toLowerCase() : y.toUpperCase()).join('')
+		}
+		else if(x.length > 3){
+			return x.split('').map((y, i) => i % 2 === 0 ? y.toUpperCase() : y.toLowerCase()).join('')
+		}else{
+			return x.split('').map((y, i) => i % 2 === 0 ? y.toLowerCase() : y.toUpperCase()).join('')
+		}
+	}).join(' ')
 }
-
+											//  StOp mAkInG SpOnGeBoB mEmEs!
 console.log(spongeMeme("stop Making spongebob Memes!"))					// 'StOp mAkInG SpOnGeBoB MeMeS!'
 console.log(spongeMeme("colored teens cant Be successful in tech"))			// 'CoLoReD TeEnS CaNt bE SuCcEsSfUl iN TeCh'
+											//  CoLoReD TeEnS CaNt bE SuCcEsSfUl iN TeCh
