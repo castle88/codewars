@@ -21,7 +21,11 @@
 
 
 function sumOrProduct(array, n) {
-  // your code here
+	let arr = array.sort((a, b) => a - b)
+	let prodArr = arr.slice(0, n).reduce((acc, cur) => acc *= cur)
+	let sumArr = arr.reverse().slice(0, n).reduce((acc, cur) => acc += cur)
+	return prodArr > sumArr ? 'product' 
+	:prodArr < sumArr ? 'sum' : 'same'
 }
 
 console.log(sumOrProduct([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 4))			// "sum"
