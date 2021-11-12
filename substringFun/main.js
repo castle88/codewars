@@ -12,7 +12,9 @@
 
 
 function nthChar(words){
-
+	return words.map((x, i) => {
+		return x.slice(i,i+1)
+	}).join('')
 }
 
 console.log(nthChar([]))					// ''
