@@ -49,7 +49,14 @@
 
 
 function minimumSteps(numbers, value){
-  //your code here
+	let i = 0
+	let tot = 0
+	let arr = numbers.sort((a, b) => a - b)
+	while(tot < value){
+		tot += arr[i]
+		i++
+	}
+	return i - 1
 }
 
 console.log(minimumSteps([4,6,3], 7))					// 1);
