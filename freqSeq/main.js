@@ -6,10 +6,20 @@
 
 
 function freqSeq(str, sep) {
-	
+	let arr = str.split('')
+	let count = arr.reduce((obj, char)=>{
+		if(!obj[char]){
+			obj[char] = 1
+		}else{
+			obj[char]++
+		}
+		return obj
+	},{})
+	return arr.map(x => count[x]).join(sep)
 }
 
+console.log(freqSeq('hello world', '-'))	// '1-1-3-3-2-1-1-2-1-3-1'
+console.log(freqSeq('19999999',    ':'))	// '1:7:7:7:7:7:7:7'
+console.log(freqSeq('^^^**$',      'x'))	// '3x3x3x2x2x1'
 
-Test.assertEquals(freqSeq('hello world', '-'), '1-1-3-3-2-1-1-2-1-3-1');
-Test.assertEquals(freqSeq('19999999',    ':'), '1:7:7:7:7:7:7:7');
-Test.assertEquals(freqSeq('^^^**$',      'x'), '3x3x3x2x2x1');
+
