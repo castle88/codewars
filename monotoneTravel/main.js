@@ -23,12 +23,14 @@
 
 
 var isMonotone = function(arr){
-	return arr
+	if(arr.length < 1) return true
+	let sortThis = arr.map(x => x).sort((a, b) => a - b)
+	return arr.every((x, i) => x === sortThis[i])
 }
 
 
-console.log(isMonotone([1,2,3,4,5,6,7,8,9,10]));     			// true
-console.log(isMonotone([4,5,6,7,8,9,10,11,12]));     			// true
+console.log(isMonotone([1,2,3,4,5,6,7,8,9,10]));     		// true
+console.log(isMonotone([4,5,6,7,8,9,10,11,12]));     		// true
 console.log(isMonotone([5,5,5,5,5]));				// true
 console.log(isMonotone([]));					// true
 console.log(isMonotone([5,4,3,2,1]));				// false
