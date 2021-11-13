@@ -14,7 +14,13 @@
 // More examples in test cases. Good luck!
 
 function solve(s){
-
+	const alpha = 'abcdefghijklmnopqrstuvwxyz'.split('')
+	let str = (s.split('').sort())
+	let first = str[0]
+	let last = str[str.length -1]
+	let answer = alpha.slice(alpha.indexOf(first), alpha.indexOf(last) + 1)
+	console.log(str, answer)
+	return str.every((x, i) => x === answer[i])
 }
 
 
