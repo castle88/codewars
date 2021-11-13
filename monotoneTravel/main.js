@@ -23,13 +23,13 @@
 
 
 var isMonotone = function(arr){
-  return true; // << change this
+	return arr
 }
 
 
-console.log(isMonotone(range(1,10)));     			// true
-console.log(isMonotone(range(4,12)));     			// true
+console.log(isMonotone([1,2,3,4,5,6,7,8,9,10]));     			// true
+console.log(isMonotone([4,5,6,7,8,9,10,11,12]));     			// true
 console.log(isMonotone([5,5,5,5,5]));				// true
 console.log(isMonotone([]));					// true
-console.log(isMonotone(range(5,1)));				// false
+console.log(isMonotone([5,4,3,2,1]));				// false
 console.log(isMonotone([1,2,3,3,4,5]))				// true
