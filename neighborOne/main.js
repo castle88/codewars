@@ -8,7 +8,7 @@
 // [0, 0, 0, 0, 0] -> []
 
 function onesCounter(input) {
-  
+	
 }
 
 console.log(onesCounter([0, 0, 0, 0, 0, 0, 0, 0]))			//[]
