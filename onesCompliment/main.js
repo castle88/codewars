@@ -7,7 +7,11 @@
 
 
 function onesComplement(n) {
-
+	let arr = n.split('')
+	return arr.map(x => {
+		if(x === '0') return '1'
+		return '0'
+	}).join('')
 };
 
 console.log(onesComplement("0"))		// "1"
