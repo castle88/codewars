@@ -22,7 +22,15 @@
 // Are you up to the challenge?
 
 function oddOnesOut(nums) {
-  // your code here
+	let counts = nums.reduce((acc, cur) => {
+		if(acc[cur]){
+			acc[cur]++
+		}else{
+			acc[cur] = 1
+		}
+		return acc
+	},{})
+	
 }
 
 
