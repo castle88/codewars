@@ -11,9 +11,9 @@
 function sumCubes(n){
 	let answer = []
 	for(let i = 1; i <= n; i++){
-		answer.push(Math.pow(n,3))
+		answer.push(Math.pow(i,3))
 	}
-	return answer
+	return answer.reduce((acc, cur) => acc +=cur,0)
 }
 
 console.log(sumCubes(1))		// 1
