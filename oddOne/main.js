@@ -30,7 +30,13 @@ function oddOnesOut(nums) {
 		}
 		return acc
 	},{})
-	
+	let notOdd = []
+	for(key in counts){
+		if(counts[key] % 2 === 0){
+			notOdd.push(Number(key))
+		}
+	}
+	return nums.filter(x => notOdd.includes(x))
 }
 
 
