@@ -14,7 +14,8 @@
 
 
 function toAlternatingCase(str) {
-
+	let arr = str.split('')
+	return arr.map(x => x === x.toLowerCase() ? x.toUpperCase() : x.toLowerCase()).join('')
 }
 
 
