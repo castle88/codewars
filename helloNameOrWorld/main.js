@@ -10,7 +10,7 @@
 // hello ""       => "Hello, World!" # name is an empty String
 
 function hello(name) {
-  return '';
+	return name ? `Hello ${name.toLowerCase().replace(name.charAt(0), name.charAt(0).toUpperCase())}!` : 'Hello World!'
 }
 
 
