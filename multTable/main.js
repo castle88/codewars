@@ -19,7 +19,17 @@
 
 
 function multiTable(number) {
-  // good luck
+	const arr = []
+	for(let i = 1; i <= 10; i++){
+		let answer = number * i
+		if(i === 10){
+			arr.push(`${number} * ${i} = ${answer}`)
+		}else{
+			arr.push(`${number} * ${i} = ${answer}\n`)
+		}
+	}
+
+	return arr.join('')
 }
 
 console.log(multiTable(5))	// '1 * 5 = 5\n2 * 5 = 10\n3 * 5 = 15\n4 * 5 = 20\n5 * 5 = 25\n6 * 5 = 30\n7 * 5 = 35\n8 * 5 = 40\n9 * 5 = 45\n10 * 5 = 50'
