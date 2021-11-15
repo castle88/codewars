@@ -5,33 +5,6 @@
 //     Write a 'welcome' function that takes a parameter 'language' (always a string), and returns a greeting - if you have it in your database. It should default to English if the language is not in the database, or in the event of an invalid input.
 
 
-
-function greet(language) {
-	
-}
-
-
-
-
-console.log(greet('english'))					// 'Welcome'
-console.log(greet('dutch'))					// 'Welkom'
-console.log(greet('IP_ADDRESS_INVALID'))			// 'Welcome'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const database = {
 english: 'Welcome',
 czech: 'Vitejte',
@@ -51,3 +24,16 @@ spanish: 'Bienvenido',
 swedish: 'Valkommen',
 welsh: 'Croeso'
 }
+
+function greet(language) {
+	return database.hasOwnProperty(language) ? database[language] : database.english
+}
+
+
+
+
+console.log(greet('english'))					// 'Welcome'
+console.log(greet('dutch'))					// 'Welkom'
+console.log(greet('IP_ADDRESS_INVALID'))			// 'Welcome'
+
+
