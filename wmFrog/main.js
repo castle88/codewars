@@ -8,7 +8,7 @@
 
 
 function mouthSize(animal) {
-  // code here
+	return animal === 'alligator' ? 'small' : 'wide'
 }
 
 
