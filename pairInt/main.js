@@ -11,9 +11,14 @@
 
 function generatePairs(n) {
 	let answer = []
-	for(let i = 0; i <= n; i++){
-		let inc = 0
-		answer.push([inc, i])
+	let inc = 0
+	while(inc <= n){
+		for(let i = 0; i <= n; i++){
+			if(i >= inc){
+				answer.push([inc, i])
+			}
+		}
+		inc++
 	}
 	return answer
 }
