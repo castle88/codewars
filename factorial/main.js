@@ -1,7 +1,11 @@
 // Make a function factorial
 
 function factorial(n){
-  //your code here
+	let answer = 1
+	for(let i = 1; i <= n; i++){
+		answer *= i
+	}
+	return answer
 }
 
 console.log(factorial(0))		//  1
