@@ -10,7 +10,12 @@
 // [ [0, 0], [0, 1], [0, 2], [1, 1], [1, 2], [2, 2] ]
 
 function generatePairs(n) {
-  
+	let answer = []
+	for(let i = 0; i <= n; i++){
+		let inc = 0
+		answer.push([inc, i])
+	}
+	return answer
 }
 
 
