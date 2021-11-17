@@ -17,7 +17,8 @@
 
 
 function encode(str) {
- //code me
+	let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+	return str.toLowerCase().split('').map(x => alphabet.includes(x) ? alphabet.indexOf(x) + 1 : x ).join('')
 }
 
 console.log(encode('abc'))			// '123'
