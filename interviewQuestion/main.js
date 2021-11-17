@@ -18,7 +18,7 @@
 
 
 function getStrings(city){
-	let arr = city.toLowerCase().trim().split('')
+	let arr = city.toLowerCase().split('').filter(x => x !== ' ')
 	let count = arr.reduce((acc, cur) => {
 		if(!acc[cur]){
 			acc[cur] = '*'
