@@ -18,7 +18,7 @@
 
 
 function getStrings(city){
-	let arr = city.toLowerCase().split('')
+	let arr = city.toLowerCase().trim().split('')
 	let count = arr.reduce((acc, cur) => {
 		if(!acc[cur]){
 			acc[cur] = '*'
@@ -31,7 +31,7 @@ function getStrings(city){
 	for(key in count){
 		answer.push(`${key}:${count[key]}`)
 	}
-	return answer
+	return answer.join(',')
 }
 
 
