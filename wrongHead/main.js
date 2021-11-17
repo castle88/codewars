@@ -8,7 +8,11 @@
 
 
 function fixTheMeerkat(arr) {
- //your code here 
+	let head = arr.pop()
+	let tail = arr.shift()
+	arr.unshift(head)
+	arr.push(tail)
+	return arr
 }
 
 
