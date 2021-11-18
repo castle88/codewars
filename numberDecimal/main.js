@@ -4,7 +4,8 @@
 
 
 function digits(n) {
-  // code goes here
+	let answer = String(n).split('')
+	return answer.length
 }
 
 console.log(digits(5))			// 1
