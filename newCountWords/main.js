@@ -20,7 +20,11 @@
 
 
 function countWords(str) {
-	return str.split(' ').filter(x => x.match(/[a-z]+/gi)).length
+	let newStr = str.replace(/\s/g, ' ')
+	let answer = newStr.split(' ').filter(x => {
+		return x.match(/[a-z]+/gi)
+	})
+	return answer.length
 }
 
 
@@ -28,20 +32,20 @@ function countWords(str) {
 
 // "should work in basic form of problem"
    
-// console.log(countWords("Hello"))																		// 1
-// console.log(countWords("Hello, World!"))																	// 2
-// console.log(countWords("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."))				// 19
-// console.log(countWords(""))																			// 0
-// console.log(countWords("With! Symbol@ #Around! (Every) %Word$"))														// 5
-// console.log(countWords("Dear   Victoria, I love  to press   space button."))													// 8
+console.log(countWords("Hello"))																		// 1
+console.log(countWords("Hello, World!"))																	// 2
+console.log(countWords("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."))				// 19
+console.log(countWords(""))																			// 0
+console.log(countWords("With! Symbol@ #Around! (Every) %Word$"))														// 5
+console.log(countWords("Dear   Victoria, I love  to press   space button."))													// 8
   
-// // "should work with spaces around string'
+// "should work with spaces around string'
 
-// console.log(countWords(" Arthur "))																		// 1
-// console.log(countWords(" David"))																		// 1
-// console.log(countWords("Nelson "))																		// 1
-// console.log(countWords("  Hello Gomer  "))																	// 2
-// console.log(countWords("  Hello     Bart  "))																	// 2
+console.log(countWords(" Arthur "))																		// 1
+console.log(countWords(" David"))																		// 1
+console.log(countWords("Nelson "))																		// 1
+console.log(countWords("  Hello Gomer  "))																	// 2
+console.log(countWords("  Hello     Bart  "))																	// 2
   
 // "should work with non-whitespace (ex. breakspace) chars"
 
