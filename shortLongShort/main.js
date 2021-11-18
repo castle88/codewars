@@ -10,7 +10,11 @@
 // ("22", "1") --> "1221"
 
 function solution(a, b){
-  // your code here
+	let short 
+	let long
+	a.length > b.length ? short = b : short = a
+	b.length > a.length ? long = b : long = a
+	return long
 }
 
 
