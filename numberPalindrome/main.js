@@ -10,7 +10,9 @@
 
 
 function palindrome(num) { 
-  //Code goes here
+	if(typeof num !== 'number' || num < 0) return 'Not valid'
+	let reversed = Number(String(num).split('').reverse().join(''))
+	return num === reversed
 } 
 
 
