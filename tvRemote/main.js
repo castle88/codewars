@@ -54,12 +54,16 @@ var tvRemote = function(word) {
 			if(keyboard[i].includes(x)) return i
 		}
 	})
+
 	let across = wordArr.map(x => {
 		for(let i = 0; i < keyboard.length; i++){
 			if(keyboard[i].includes(x)) return keyboard[i].indexOf(x)
 		}
 	})
-	return across
+
+	let answer = down.map((x, i) => x + across[i])
+
+	return answer.reduce((acc, cur) => acc += cur)
 }
 
 
