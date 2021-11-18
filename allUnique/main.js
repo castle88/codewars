@@ -4,7 +4,9 @@
 
 
 function hasUniqueChars(str){
-
+	let arr = str.split('')
+	let compArr = [...new Set(arr)]
+	return arr.join('') === compArr.join('') ? true : false
 }
 
 
