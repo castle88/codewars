@@ -20,7 +20,7 @@
 
 
 function countWords(str) {
-  // ...
+	return str.split(' ').length
 }
 
 
@@ -28,7 +28,7 @@ function countWords(str) {
 
 // "should work in basic form of problem"
    
-Test.assertEquals(countWords("Hello"), 1);
+console.log(countWords("Hello"))																		// 1
 console.log(countWords("Hello, World!"))																	// 2
 console.log(countWords("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."))				// 19
 console.log(countWords(""))																			// 0
