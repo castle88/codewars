@@ -39,8 +39,27 @@
 // DM.* 
 
 var tvRemote = function(word) {
-  // Your code here
-  return 1;
+	let keyboard = [
+		['a', 'b', 'c', 'd', 'e', '1', '2', '3'],
+		['f', 'g', 'h', 'i', 'j', '4', '5', '6'],
+		['k', 'l', 'm', 'n', 'o', '7', '8', '9'],
+		['p', 'q', 'r', 's', 't', '.', '@', '0'],
+		['u', 'v', 'w', 'x', 'y', 'z', '_', '/']
+	]
+	
+	let wordArr = word.split('')
+	
+	let down = wordArr.map(x => {
+		for(let i = 0; i < keyboard.length; i++){
+			if(keyboard[i].includes(x)) return i
+		}
+	})
+	let across = wordArr.map(x => {
+		for(let i = 0; i < keyboard.length; i++){
+			if(keyboard[i].includes(x)) return keyboard[i].indexOf(x)
+		}
+	})
+	return across
 }
 
 
