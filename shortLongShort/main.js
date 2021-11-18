@@ -14,7 +14,7 @@ function solution(a, b){
 	let long
 	a.length > b.length ? short = b : short = a
 	b.length > a.length ? long = b : long = a
-	return long
+	return `${short}${long}${short}`
 }
 
 
