@@ -19,12 +19,12 @@
 
 
 function remove(integer_list, values_list){
-	return integer_list
+	return integer_list.filter(x => !values_list.includes(x))
 }
 
 
-remove([1, 1, 2 ,3 ,1 ,2 ,3 ,4], [1, 3])				// [2, 2, 4]
-remove([1, 1, 2 ,3 ,1 ,2 ,3 ,4, 4, 3 ,5, 6, 7, 2, 8], [1, 3, 4, 2]) 	// [5, 6 ,7 ,8]
-remove([8, 2, 7, 2, 3, 4, 6, 5, 4, 4, 1, 2 , 3], [2, 4, 3])		// [8, 7, 6, 5, 1]
-remove([4, 4, 2 , 3], [2, 2, 4, 3])					// []
-remove([], [2, 2, 4, 3])       						// []
+console.log(remove([1, 1, 2 ,3 ,1 ,2 ,3 ,4], [1, 3]))					// [2, 2, 4]
+console.log(remove([1, 1, 2 ,3 ,1 ,2 ,3 ,4, 4, 3 ,5, 6, 7, 2, 8], [1, 3, 4, 2])) 	// [5, 6 ,7 ,8]
+console.log(remove([8, 2, 7, 2, 3, 4, 6, 5, 4, 4, 1, 2 , 3], [2, 4, 3]))		// [8, 7, 6, 5, 1]
+console.log(remove([4, 4, 2 , 3], [2, 2, 4, 3]))					// []
+console.log(remove([], [2, 2, 4, 3]))       						// []
