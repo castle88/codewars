@@ -10,10 +10,11 @@
 
 function powerOf4(n) {
 	if(typeof n !== 'number') return false
+	if(n === 1 || n === 0) return false
 	return n % 4 === 0 ? true : false
 }
 
-
+console.log(powerOf4(0))			 // false
 console.log(powerOf4(4))			 // true
 console.log(powerOf4(16))			 // true
 console.log(powerOf4(1))		 	 // false
