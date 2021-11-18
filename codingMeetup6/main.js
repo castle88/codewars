@@ -27,7 +27,7 @@
 
 
 function isSameLanguage(list) {
-	return list.map(x => x.language)
+	return [...new Set(list.map(x => x.language))].length > 1 ? false : true
 }
 
 var list1 = [
