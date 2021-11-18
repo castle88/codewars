@@ -27,7 +27,7 @@
 
 
 function isSameLanguage(list) {
-	
+	return list.map(x => x.language)
 }
 
 var list1 = [
@@ -42,5 +42,5 @@ var list2 = [
   { firstName: 'Maria', lastName: 'I.', country: 'Greece', continent: 'Europe', age: 32, language: 'C' },
 ];
 
-Test.assertEquals(isSameLanguage(list1), true);
-Test.assertEquals(isSameLanguage(list2), false);
+console.log(isSameLanguage(list1))	// true
+console.log(isSameLanguage(list2))	// false
