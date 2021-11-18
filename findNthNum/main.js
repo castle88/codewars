@@ -17,7 +17,10 @@
 
 
 var findDigit = function(num, nth){
-    
+	let numberArr = String(num).split('').reverse()
+	if(nth > numberArr.length || numberArr[nth - 1] === '-') return 0
+	if(nth <= 0) return -1
+	return Number(numberArr[nth - 1])
 }
 
 console.log(findDigit(5673, 4))			// 5
