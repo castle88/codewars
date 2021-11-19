@@ -8,7 +8,13 @@
 
 
 function keysAndValues(data){
-  // TODO: complete
+	let keys = []
+	let values = []
+	for(key in data){
+		keys.push(key)
+		values.push(data[key])
+	}
+	return [keys, values]
 }
 
 
