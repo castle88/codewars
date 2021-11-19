@@ -28,12 +28,8 @@
 
  function waterbombs(fire, w) {
 	let answer = []
-	for(let i = 0; i < fire.length; i++){
-		let pusher = []
-		while(pusher.length <= w){
-			pusher.push(fire[i])
-		}
-		answer.push(pusher)
+	for(let i = 0; i < fire.length; i+=w){
+		answer.push(fire.slice(i,i+w))
 	}
 	return answer
 }
