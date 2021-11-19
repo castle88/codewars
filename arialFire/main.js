@@ -27,7 +27,9 @@
 
 
  function waterbombs(fire, w) {
-
+	let totFire = fire.split('Y').filter(x => x !== '')
+	if(totFire.every(x => x.length < w)) return totFire.length
+	
  }
 
 
