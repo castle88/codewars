@@ -27,10 +27,16 @@
 
 
  function waterbombs(fire, w) {
-	let totFire = fire.split('Y').filter(x => x !== '')
-	if(totFire.every(x => x.length < w)) return totFire.length
-	
- }
+	let answer = []
+	for(let i = 0; i < fire.length; i++){
+		let pusher = []
+		while(pusher.length <= w){
+			pusher.push(fire[i])
+		}
+		answer.push(pusher)
+	}
+	return answer
+}
 
 
 console.log(waterbombs("xxxxYxYx", 4))		// 3
