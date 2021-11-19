@@ -9,7 +9,13 @@
 
 
 function between(a, b) {
-  // your code here
+	if(a < b){
+		let answer = []
+		for(let i = a; i <= b; i++){
+			answer.push(i)
+		}
+		return answer
+	}
 }
 
 
