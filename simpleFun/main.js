@@ -1,4 +1,4 @@
-Task
+// Task
 
 // Given a string str, reverse it omitting all non-alphabetic characters.
 // Example
@@ -16,9 +16,9 @@ Task
 
 
 function reverseLetter(str) {
-  //coding and coding..
-  
-  
+	let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+	let arr = str.split('').filter(x => alphabet.includes(x))
+	return arr.reverse().join('')
 }
 
 
