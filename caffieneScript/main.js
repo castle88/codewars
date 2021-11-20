@@ -8,12 +8,27 @@
 
 // If none of the condition is true, return the string "mocha_missing!"
 
-// caffeineBuzz(1)   => "mocha_missing!"
-// caffeineBuzz(3)   => "Java"
-// caffeineBuzz(6)   => "JavaScript"
-// caffeineBuzz(12)  => "CoffeeScript"
 
 
 function caffeineBuzz(n){
+	let answer = 'mocha_missing'
+	if(n % 3 === 0 && n % 4 === 0){
+		answer = 'Coffee'
+		if(n % 2 === 0){
+		answer += 'Script'
+	}
+	}else if(n % 3 === 0){
+		answer = 'Java'
+		if(n % 2 === 0){
+		answer += 'Script'
+	}
+	}
 	
+	return answer
 }
+
+
+console.log(caffeineBuzz(1))		//   "mocha_missing!"
+console.log(caffeineBuzz(3))		//   "Java"
+console.log(caffeineBuzz(6))		//   "JavaScript"
+console.log(caffeineBuzz(12))		//  "CoffeeScript"
