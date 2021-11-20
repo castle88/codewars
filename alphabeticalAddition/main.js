@@ -18,6 +18,7 @@
 
 
 function addLetters(...letters) {
+	if(letters.length < 1) return 'z'
 	let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
 	let answer = letters.map(x => alphabet.indexOf(x) + 1).reduce((acc, cur) => acc += cur)
 	while(answer > 26){
