@@ -5,7 +5,8 @@
 
 
 function bump(x){
-
+	let arr = x.split('')
+	return arr.filter(x => x === 'n').length <= 15 ? 'Woohoo!' : 'Car Dead'
 }
 
 console.log(bump("n"))						// "Woohoo!"
