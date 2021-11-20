@@ -9,7 +9,10 @@
 
 
 function reverseNumber(n) {
-  // ...
+	let arr = String(n).split('')
+	let answer = Number(arr.filter(x => Number(x) > 0).reverse().join(''))
+	if(n < 0) return answer * -1
+	return answer
 }
 
 
