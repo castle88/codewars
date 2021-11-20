@@ -20,7 +20,10 @@
 function addLetters(...letters) {
 	let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
 	let answer = letters.map(x => alphabet.indexOf(x) + 1).reduce((acc, cur) => acc += cur)
-	return answer > 26 ? alphabet[(answer - 26) - 1] : alphabet[answer - 1]
+	while(answer > 26){
+		answer -= 26
+	}
+	return alphabet[answer - 1]
 }
 
 
