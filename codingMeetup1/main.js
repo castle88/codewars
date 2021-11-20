@@ -31,7 +31,8 @@
 
 
 function countDevelopers(list) {
-	
+	let cont = list.map(x => `${x.continent}, ${x.language}`)
+	return cont.filter(x => x === 'Europe, JavaScript').length
 }
 
 
