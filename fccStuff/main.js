@@ -88,7 +88,7 @@
 function convertToRoman(num) {
 	const key = [
 		{
-			'1':'I',
+			'1':'I',		// 1's
 			'2':'II',
 			'3':'III',
 			'4':'IV',
@@ -99,34 +99,38 @@ function convertToRoman(num) {
 			'9':'IX'
 		},
 		{
-			'10':'X',
-			'20':'XX',
-			'30':'XXX',
-			'40':'XL',
-			'50':'L',
-			'60':'LX',
-			'70':'LXX',
-			'80':'LXXX',
-			'90':'XC',
+			'1':'X',		// 10's
+			'2':'XX',
+			'3':'XXX',
+			'4':'XL',
+			'5':'L',
+			'6':'LX',
+			'7':'LXX',
+			'8':'LXXX',
+			'9':'XC',
 		},
 		{
-			'100':'C',
-			'200':'CC',
-			'300':'CCC',
-			'400':'CD',
-			'500':'D',
-			'600':'DC',
-			'700':'DCC',
-			'800':'DCCC',
-			'900':'CM',
+			'1':'C',		// 100's
+			'2':'CC',
+			'3':'CCC',
+			'4':'CD',
+			'5':'D',
+			'6':'DC',
+			'7':'DCC',
+			'8':'DCCC',
+			'9':'CM',
 		},
 		{
-			'1000':'M',
-			'2000':'MM',
-			'3000':'MMM'
+			'1':'M',		// 1000's
+			'2':'MM',
+			'3':'MMM'
 		},
 	]
- return num;
+	
+	let numArrAsString = String(num).split('').reverse()
+	
+	return numArrAsString.map((x, i) => key[i][x]).filter(x => x !== undefined).join('')
+
 }
 
 convertToRoman(36);
@@ -135,6 +139,7 @@ console.log(convertToRoman(3))			// should return the string III.
 console.log(convertToRoman(4))			// should return the string IV.
 console.log(convertToRoman(5))			// should return the string V.
 console.log(convertToRoman(9))			// should return the string IX.
+
 console.log(convertToRoman(12))			//  should return the string XII.
 console.log(convertToRoman(16))			//  should return the string XVI.
 console.log(convertToRoman(29))			//  should return the string XXIX.
@@ -144,12 +149,14 @@ console.log(convertToRoman(68))			//  should return the string LXVIII
 console.log(convertToRoman(83))			//  should return the string LXXXIII
 console.log(convertToRoman(97))			//  should return the string XCVII
 console.log(convertToRoman(99))			//  should return the string XCIX
+
 console.log(convertToRoman(400))		//  should return the string CD
 console.log(convertToRoman(500))		//  should return the string D
 console.log(convertToRoman(501))		//  should return the string DI
 console.log(convertToRoman(649))		//  should return the string DCXLIX
 console.log(convertToRoman(798))		//  should return the string DCCXCVIII
 console.log(convertToRoman(891))		//  should return the string DCCCXCI
+
 console.log(convertToRoman(1000))		//  should return the string M
 console.log(convertToRoman(1004))		//  should return the string MIV
 console.log(convertToRoman(1006))		//  should return the string MVI
