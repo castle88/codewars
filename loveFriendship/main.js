@@ -11,11 +11,14 @@
 
 function wordsToMarks(string){
 	let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
-	let arr = string.split('').map(x => alphabet.indexOf(x))
+	let arr = string.split('').map(x => alphabet.indexOf(x) + 1)
 	return arr.reduce((acc, cur) => acc += cur, 0)
 }
 
 
+
+console.log(wordsToMarks('love'))		// 54
+console.log(wordsToMarks('friendship'))		// 108
 console.log(wordsToMarks("attitude"))		// 100
 console.log(wordsToMarks("friends"))		// 75
 console.log(wordsToMarks("family"))		// 66
