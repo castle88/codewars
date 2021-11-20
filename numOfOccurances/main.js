@@ -13,7 +13,7 @@ function numberOfOccurrences(arr, char){
 		acc[cur] = (acc[cur] || 0) + 1
 		return acc
 	},{})
-	return count[char]
+	return count[char] ? count[char] : 0
 }
 
 
