@@ -16,7 +16,8 @@
 
 
 function vowelIndices(word){
-  //your code here
+	let arr = word.split('')
+	return arr.map((x, i) => x.match(/[aeiou]/gi) ? i + 1 : x).filter(x => x > 0)
 }
 
 
