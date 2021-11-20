@@ -27,21 +27,65 @@
 // console.log(palindrome("race car"))					//  true.
 
 // console.log(palindrome("not a palindrome"))				//  false.
-// console.log(palindrome("A man, a plan, a canal. Panama"))		//  true.
-// console.log(palindrome("never odd or even"))				//  true.
+// // console.log(palindrome("A man, a plan, a canal. Panama"))		//  true.
+// // console.log(palindrome("never odd or even"))				//  true.
 
-// console.log(palindrome("nope"))						//  false.
-// console.log(palindrome("almostomla"))					//  false.
-// console.log(palindrome("My age is 0, 0 si ega ym."))			//  true.
+// // console.log(palindrome("nope"))						//  false.
+// // console.log(palindrome("almostomla"))					//  false.
+// // console.log(palindrome("My age is 0, 0 si ega ym."))			//  true.
 
-// console.log(palindrome("1 eye for of 1 eye."))				//  false.
-// console.log(palindrome("0_0 (: /-\ :) 0-0"))				//  true.
-// console.log(palindrome("five|\_/|four"))				//  false.
+// // console.log(palindrome("1 eye for of 1 eye."))				//  false.
+// // console.log(palindrome("0_0 (: /-\ :) 0-0"))				//  true.
+// // console.log(palindrome("five|\_/|four"))				//  false.
 
 
-//************************************************************************************** */
+// //************************************************************************************** */
 
-// roman numeral converter
+// // roman numeral converter
+
+// *************** KEY **************************
+
+// const zero = {
+// 	1:I,
+// 	2:II,
+// 	3:III,
+// 	4:IV,
+// 	5:V,
+// 	6:VI,
+// 	7:VII,
+// 	8:VIII,
+// 	9:IX
+// }
+
+// const tens = {
+// 10:X,
+// 20:XX,
+// 30:XXX,
+// 40:XL,
+// 50:L,
+// 60:LX,
+// 70:LXX,
+// 80:LXXX,
+// 90:XC,
+// }
+
+// const hundres = {
+// 100:C,
+// 200:CC,
+// 300:CCC,
+// 400:CD,
+// 500:D,
+// 600:DC,
+// 700:DCC,
+// 800:DCCC,
+// 900:CM,
+// }
+
+// const thousandths = {
+// 1000:M,
+// 2000:MM,
+// 3000:MMM
+// }
 
 function convertToRoman(num) {
  return num;
