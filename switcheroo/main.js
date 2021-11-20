@@ -7,7 +7,12 @@
 
 
 function switcheroo(x){
-
+	let answer = x.split('').map(x => {
+		if(x === 'a') return 'b'
+		if(x === 'b') return 'a'
+		return x
+	})
+	return answer.join('')
 }
 
 
