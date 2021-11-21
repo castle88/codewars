@@ -15,9 +15,9 @@
 
 
 function computerToPhone(numbers){
-	const cell = '0123456789'.split('') 
+	const keypad = '0789456123'.split('') 
 	let arr = numbers.split('')
-	return arr
+	return arr.map((x, i) => keypad.indexOf(x)).join('')
 }
 
 
