@@ -169,7 +169,8 @@
 // ***************** CAESARS CIPHER ***********************
 
 function rot13(str) {
-  return str;
+	const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+	const strArr = str.split('')
 }
 
 
