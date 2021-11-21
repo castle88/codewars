@@ -82,86 +82,89 @@
 	// 1000:M,
 	// 2000:MM,
 	// 3000:MMM
-// },
-//]
+// // },
+// //]
 
-function convertToRoman(num) {
-	const key = [
-		{
-			'1':'I',		// 1's
-			'2':'II',
-			'3':'III',
-			'4':'IV',
-			'5':'V',
-			'6':'VI',
-			'7':'VII',
-			'8':'VIII',
-			'9':'IX'
-		},
-		{
-			'1':'X',		// 10's
-			'2':'XX',
-			'3':'XXX',
-			'4':'XL',
-			'5':'L',
-			'6':'LX',
-			'7':'LXX',
-			'8':'LXXX',
-			'9':'XC',
-		},
-		{
-			'1':'C',		// 100's
-			'2':'CC',
-			'3':'CCC',
-			'4':'CD',
-			'5':'D',
-			'6':'DC',
-			'7':'DCC',
-			'8':'DCCC',
-			'9':'CM',
-		},
-		{
-			'1':'M',		// 1000's
-			'2':'MM',
-			'3':'MMM'
-		},
-	]
+// function convertToRoman(num) {
+// 	const key = [
+// 		{
+// 			'1':'I',		// 1's
+// 			'2':'II',
+// 			'3':'III',
+// 			'4':'IV',
+// 			'5':'V',
+// 			'6':'VI',
+// 			'7':'VII',
+// 			'8':'VIII',
+// 			'9':'IX'
+// 		},
+// 		{
+// 			'1':'X',		// 10's
+// 			'2':'XX',
+// 			'3':'XXX',
+// 			'4':'XL',
+// 			'5':'L',
+// 			'6':'LX',
+// 			'7':'LXX',
+// 			'8':'LXXX',
+// 			'9':'XC',
+// 		},
+// 		{
+// 			'1':'C',		// 100's
+// 			'2':'CC',
+// 			'3':'CCC',
+// 			'4':'CD',
+// 			'5':'D',
+// 			'6':'DC',
+// 			'7':'DCC',
+// 			'8':'DCCC',
+// 			'9':'CM',
+// 		},
+// 		{
+// 			'1':'M',		// 1000's
+// 			'2':'MM',
+// 			'3':'MMM'
+// 		},
+// 	]
 	
-	let numArrAsString = String(num).split('').reverse()
+// 	let numArrAsString = String(num).split('').reverse()
 	
-	return numArrAsString.map((x, i) => key[i][x]).filter(x => x !== undefined).reverse().join('')
+// 	return numArrAsString.map((x, i) => key[i][x]).filter(x => x !== undefined).reverse().join('')
+// }
 
-}
-
-// console.log(convertToRoman(2))			// II.
-// console.log(convertToRoman(3))			// III.
-// console.log(convertToRoman(4))			// IV.
-// console.log(convertToRoman(5))			// V.
-// console.log(convertToRoman(9))			// IX.
-
-
-// console.log(convertToRoman(12))				// XII. - XII
-// console.log(convertToRoman(16))				// XVI. - XVI
-// console.log(convertToRoman(29))				// XXIX. - XXIX
-// console.log(convertToRoman(44))				// XLIV. - XLIV
-// console.log(convertToRoman(45))				// XLV.	 - XLV
-// console.log(convertToRoman(68))				// LXVIII - LXVIII
-// console.log(convertToRoman(83))				// LXXXIII - LXXXIII
-// console.log(convertToRoman(97))				// XCVII - XCVII
-// console.log(convertToRoman(99))				// XCIX -> XCIX
+// // console.log(convertToRoman(2))			// II.
+// // console.log(convertToRoman(3))			// III.
+// // console.log(convertToRoman(4))			// IV.
+// // console.log(convertToRoman(5))			// V.
+// // console.log(convertToRoman(9))			// IX.
 
 
-// console.log(convertToRoman(400))			// CD - CD
-// console.log(convertToRoman(500))			// D - D
-// console.log(convertToRoman(501))			// DI - DI
-// console.log(convertToRoman(649))			// DCXLIX - DCXLIX
-// console.log(convertToRoman(798))			// DCCXCVIII - DCCXCVIII
-// console.log(convertToRoman(891))			// DCCCXCI - DCCCXCI
+// // console.log(convertToRoman(12))				// XII. - XII
+// // console.log(convertToRoman(16))				// XVI. - XVI
+// // console.log(convertToRoman(29))				// XXIX. - XXIX
+// // console.log(convertToRoman(44))				// XLIV. - XLIV
+// // console.log(convertToRoman(45))				// XLV.	 - XLV
+// // console.log(convertToRoman(68))				// LXVIII - LXVIII
+// // console.log(convertToRoman(83))				// LXXXIII - LXXXIII
+// // console.log(convertToRoman(97))				// XCVII - XCVII
+// // console.log(convertToRoman(99))				// XCIX -> XCIX
 
 
-console.log(convertToRoman(1000))			// M
-console.log(convertToRoman(1004))			// MIV
-console.log(convertToRoman(1006))			// MVI
-console.log(convertToRoman(1023))			// MXXIII
-console.log(convertToRoman(2014))			// MMXIV
-console.log(convertToRoman(3999))			// MMMCMXCIX
+// // console.log(convertToRoman(400))			// CD - CD
+// // console.log(convertToRoman(500))			// D - D
+// // console.log(convertToRoman(501))			// DI - DI
+// // console.log(convertToRoman(649))			// DCXLIX - DCXLIX
+// // console.log(convertToRoman(798))			// DCCXCVIII - DCCXCVIII
+// // console.log(convertToRoman(891))			// DCCCXCI - DCCCXCI
+
+
+// console.log(convertToRoman(1000))			// M
+// console.log(convertToRoman(1004))			// MIV
+// console.log(convertToRoman(1006))			// MVI
+// console.log(convertToRoman(1023))			// MXXIII
+// console.log(convertToRoman(2014))			// MMXIV
+// console.log(convertToRoman(3999))			// MMMCMXCIX
+
+
+// ***************** CAESARS CIPHER ***********************
+
