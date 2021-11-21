@@ -188,5 +188,28 @@
 // console.log(rot13("SERR YBIR?"))						//  FREE LOVE?
 // console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."))		//  THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
 
+// ***** INTERMEDIATE ALGO *****
+
+function sumAll(arr) {
+	arr.sort((a, b) => a - b)
+	let answer = []
+	for(let i = arr[0]; i <= arr[1]; i++){
+		answer.push(i)
+	}
+	return answer.reduce((acc, cur) => acc += cur)
+}
+
+
+
+
+console.log(sumAll([1, 4])) 	// 10
+console.log(sumAll([4, 1])) 	// 10
+console.log(sumAll([5, 10])) 	// 45
+console.log(sumAll([10, 5])) 	// 45
+
+
+
+
+
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
