@@ -209,27 +209,27 @@
 
 
 function diffArray(arr1, arr2) {
-  const newArr = [];
-  return newArr;
+  let count = [...arr1, ...arr2].reduce((acc, cur) => {
+	acc[cur] ? acc[cur] += 1 : acc[cur] = 1
+	return acc
+  },{})
+  let answer = []
+  for(let key in count){
+	if(count[key] === 1) answer.push(key)
+  }
+  return answer
 }
 
 
 
 console.log(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]))	// ["pink wool"].
-console.log(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]))	// an array with one item.
 console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]))	// ["diorite", "pink wool"].
-console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]))	// an array with two items.
 console.log(diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]))	// [].
-console.log(diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]))	// an empty array.
 
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]))					//  [4].
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]))					//  an array with one item.
 console.log(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]))			//  ["piglet", 4].
-console.log(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]))			//  an array with two items.
 console.log(diffArray([], ["snuffleupagus", "cookie monster", "elmo"]))			//  ["snuffleupagus", "cookie monster", "elmo"].
-console.log(diffArray([], ["snuffleupagus", "cookie monster", "elmo"]))			//  an array with three items.
 console.log(diffArray([1, "calf", 3, "piglet"], [7, "filly"]))				//  [1, "calf", 3, "piglet", 7, "filly"].
-console.log(diffArray([1, "calf", 3, "piglet"], [7, "filly"]))				//  an array with six items.
 
 
 
