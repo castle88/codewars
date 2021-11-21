@@ -15,7 +15,9 @@
 
 
 function computerToPhone(numbers){
-  // ...
+	const cell = '0123456789'.split('') 
+	let arr = numbers.split('')
+	return arr
 }
 
 
