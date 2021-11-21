@@ -208,29 +208,48 @@
 // console.log(sumAll([10, 5])) 	// 45
 
 
-function diffArray(arr1, arr2) {
-  let count = [...arr1, ...arr2].reduce((acc, cur) => {
-	acc[cur] ? acc[cur] += 1 : acc[cur] = 1
-	return acc
-  },{})
-  let answer = []
-  for(let key in count){
-	if(count[key] === 1) answer.push(key)
-  }
-  return answer
+// function diffArray(arr1, arr2) {
+//   let count = [...arr1, ...arr2].reduce((acc, cur) => {
+// 	acc[cur] ? acc[cur] += 1 : acc[cur] = 1
+// 	return acc
+//   },{})
+//   let answer = []
+//   for(let key in count){
+// 	if(count[key] === 1){
+// 		if(key.match(/\d/)){
+// 			answer.push(Number(key))
+// 		}else{
+// 			answer.push(key)
+// 		}
+// 	}
+//   }
+//   return answer
+// }
+
+
+
+// console.log(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]))	// ["pink wool"].
+// console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]))	// ["diorite", "pink wool"].
+// console.log(diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]))	// [].
+
+// console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]))					//  [4].
+// console.log(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]))			//  ["piglet", 4].
+// console.log(diffArray([], ["snuffleupagus", "cookie monster", "elmo"]))			//  ["snuffleupagus", "cookie monster", "elmo"].
+// console.log(diffArray([1, "calf", 3, "piglet"], [7, "filly"]))				//  [1, "calf", 3, "piglet", 7, "filly"].
+
+
+
+function destroyer(arr) {
+  return arr;
 }
 
 
-
-console.log(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]))	// ["pink wool"].
-console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]))	// ["diorite", "pink wool"].
-console.log(diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]))	// [].
-
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]))					//  [4].
-console.log(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]))			//  ["piglet", 4].
-console.log(diffArray([], ["snuffleupagus", "cookie monster", "elmo"]))			//  ["snuffleupagus", "cookie monster", "elmo"].
-console.log(diffArray([1, "calf", 3, "piglet"], [7, "filly"]))				//  [1, "calf", 3, "piglet", 7, "filly"].
-
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3))			// should return [1, 1].
+console.log(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3))			// should return [1, 5, 1].
+console.log(destroyer([3, 5, 1, 2, 2], 2, 3, 5))			// should return [1].
+console.log(destroyer([2, 3, 2, 3], 2, 3))				// should return [].
+console.log(destroyer(["tree", "hamburger", 53], "tree", 53))		// should return ["hamburger"].
+console.log(destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")) 	// should return [12,92,65].
 
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
