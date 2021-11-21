@@ -276,7 +276,14 @@
 
 
 function spinalCase(str) {
-  return str;
+	let format = str.replace(/\W/g,' ').replace(/_/g, ' ').split('')
+	return format.map(x => {
+		if(x.match(/[A-Z]/)){
+			return ` ${x.toLowerCase()}`
+		}else{
+			return x
+		}
+	}).join('').trim().split(' ').join('-').replace(/--/g, '-')
 }
 
 console.log(spinalCase("This Is Spinal Tap"))			// this-is-spinal-tap
