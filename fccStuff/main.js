@@ -168,22 +168,25 @@
 
 // ***************** CAESARS CIPHER ***********************
 
-function rot13(str) {
-	const alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('')
-	const strArr = str.split(' ').map(x => {
-		return x.split('').map(x => {
-			if(alphabet.indexOf(x) === -1){
-				return x
-			}else{
-				return alphabet.indexOf(x) - 13 < 0 ? alphabet[26 + (alphabet.indexOf(x) - 13)] : alphabet[alphabet.indexOf(x) - 13]	
-			}
-		}).join('')
-	})
-	return strArr.join(' ')
-}
+// function rot13(str) {
+// 	const alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('')
+// 	const strArr = str.split(' ').map(x => {
+// 		return x.split('').map(x => {
+// 			if(alphabet.indexOf(x) === -1){
+// 				return x
+// 			}else{
+// 				return alphabet.indexOf(x) - 13 < 0 ? alphabet[26 + (alphabet.indexOf(x) - 13)] : alphabet[alphabet.indexOf(x) - 13]	
+// 			}
+// 		}).join('')
+// 	})
+// 	return strArr.join(' ')
+// }
 
 
-console.log(rot13("SERR PBQR PNZC"))						//  FREE CODE CAMP
-console.log(rot13("SERR CVMMN!"))						//  FREE PIZZA!
-console.log(rot13("SERR YBIR?"))						//  FREE LOVE?
-console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."))		//  THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+// console.log(rot13("SERR PBQR PNZC"))						//  FREE CODE CAMP
+// console.log(rot13("SERR CVMMN!"))						//  FREE PIZZA!
+// console.log(rot13("SERR YBIR?"))						//  FREE LOVE?
+// console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."))		//  THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+
+
+// *************   TELEPHONE NUMBER VALIDATOR ********************
