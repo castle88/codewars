@@ -253,27 +253,37 @@
 // console.log(destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")) 	// should return [12,92,65].
 
 
-function whatIsInAName(collection, source) {
-  const arr = [];
-  // Only change code below this line
-  collection.forEach(x => {
-	if(Object.getOwnPropertyNames(source).every(y => x[y] === source[y])){
-		arr.push(x)
-	}
-  })
-  // Only change code above this line
-  return arr;
+// function whatIsInAName(collection, source) {
+//   const arr = [];
+//   // Only change code below this line
+//   collection.forEach(x => {
+// 	if(Object.getOwnPropertyNames(source).every(y => x[y] === source[y])){
+// 		arr.push(x)
+// 	}
+//   })
+//   // Only change code above this line
+//   return arr;
+// }
+
+
+// console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })) 	// [{ first: "Tybalt", last: "Capulet" }].
+// console.log(whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 })) 									// [{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }].
+// console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })) 					// [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }].
+// console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 })) 				// [{ "apple": 1, "bat": 2, "cookie": 2 }].
+// console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 }))			// [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }].
+// console.log(whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3})) 											// []
+
+
+
+function spinalCase(str) {
+  return str;
 }
 
-
-console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })) 	// [{ first: "Tybalt", last: "Capulet" }].
-console.log(whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 })) 									// [{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }].
-console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })) 					// [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }].
-console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 })) 				// [{ "apple": 1, "bat": 2, "cookie": 2 }].
-console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 }))			// [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }].
-console.log(whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3})) 											// []
-
-
+console.log(spinalCase("This Is Spinal Tap"))			// this-is-spinal-tap
+console.log(spinalCase("thisIsSpinalTap"))			// this-is-spinal-tap
+console.log(spinalCase("The_Andy_Griffith_Show"))		// the-andy-griffith-show
+console.log(spinalCase("Teletubbies say Eh-oh"))		// teletubbies-say-eh-oh
+console.log(spinalCase("AllThe-small Things"))			// all-the-small-things
 
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
