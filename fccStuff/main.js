@@ -256,8 +256,11 @@
 function whatIsInAName(collection, source) {
   const arr = [];
   // Only change code below this line
-
-
+  collection.forEach(x => {
+	if(Object.getOwnPropertyNames(source).every(y => x[y] === source[y])){
+		arr.push(x)
+	}
+  })
   // Only change code above this line
   return arr;
 }
