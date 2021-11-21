@@ -275,22 +275,38 @@
 
 
 
-function spinalCase(str) {
-	let format = str.replace(/\W/g,' ').replace(/_/g, ' ').split('')
-	return format.map(x => {
-		if(x.match(/[A-Z]/)){
-			return ` ${x.toLowerCase()}`
-		}else{
-			return x
-		}
-	}).join('').trim().split(' ').join('-').replace(/--/g, '-')
+// function spinalCase(str) {
+// 	let format = str.replace(/\W/g,' ').replace(/_/g, ' ').split('')
+// 	return format.map(x => {
+// 		if(x.match(/[A-Z]/)){
+// 			return ` ${x.toLowerCase()}`
+// 		}else{
+// 			return x
+// 		}
+// 	}).join('').trim().split(' ').join('-').replace(/--/g, '-')
+// }
+
+// console.log(spinalCase("This Is Spinal Tap"))			// this-is-spinal-tap
+// console.log(spinalCase("thisIsSpinalTap"))			// this-is-spinal-tap
+// console.log(spinalCase("The_Andy_Griffith_Show"))		// the-andy-griffith-show
+// console.log(spinalCase("Teletubbies say Eh-oh"))		// teletubbies-say-eh-oh
+// console.log(spinalCase("AllThe-small Things"))			// all-the-small-things
+
+
+function translatePigLatin(str) {
+  return str;
 }
 
-console.log(spinalCase("This Is Spinal Tap"))			// this-is-spinal-tap
-console.log(spinalCase("thisIsSpinalTap"))			// this-is-spinal-tap
-console.log(spinalCase("The_Andy_Griffith_Show"))		// the-andy-griffith-show
-console.log(spinalCase("Teletubbies say Eh-oh"))		// teletubbies-say-eh-oh
-console.log(spinalCase("AllThe-small Things"))			// all-the-small-things
+console.log(translatePigLatin("california"))					//  aliforniacay.
+console.log(translatePigLatin("paragraphs"))					//  aragraphspay.
+console.log(translatePigLatin("glove"))						//  oveglay.
+console.log(translatePigLatin("algorithm"))					//  algorithmway.
+console.log(translatePigLatin("eight"))						//  eightway.
 
+// Should handle words where the first vowel comes in the middle of the word. 
+console.log(translatePigLatin("schwartz")) 					// artzschway.
+
+// Should handle words without vowels. 
+console.log(translatePigLatin("rhythm"))		 			//  rhythmay.
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
