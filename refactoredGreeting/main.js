@@ -10,11 +10,19 @@
 
 
 
-
-function greet(myName, yourName){
-  return "Hello " + yourName + ", my name is " + myName;
+class Person{
+	constructor(name){
+		this.name = name
+	}
+	greet = (greeted) => `Hello ${greeted}, my name is ${this.name}`
 }
 
+const joe = new Person('Joe')
 
 
 // tests are funky?
+
+console.log(joe.name)
+console.log(joe.greet('Kate'))
+
+// this does what the kata is asking but these tests are screwy and i dont have the knowledge to sort this out as theres no description beyond do what i did
