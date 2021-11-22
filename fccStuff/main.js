@@ -310,22 +310,31 @@
 // // Should handle words without vowels. 
 // console.log(translatePigLatin("rhythm"))		 			//  rhythmay.
 
-function myReplace(str, before, after) {
-	let replacer 
-	if(before.charAt(0).match(/[A-Z]/)){
-		replacer = after.replace(after.charAt(0), after.charAt(0).toUpperCase())
-	}else{
-		replacer = after.replace(after.charAt(0), after.charAt(0).toLowerCase())
-	}
-	return str.replace(before, replacer)
+// function myReplace(str, before, after) {
+// 	let replacer 
+// 	if(before.charAt(0).match(/[A-Z]/)){
+// 		replacer = after.replace(after.charAt(0), after.charAt(0).toUpperCase())
+// 	}else{
+// 		replacer = after.replace(after.charAt(0), after.charAt(0).toLowerCase())
+// 	}
+// 	return str.replace(before, replacer)
+// }
+
+// console.log(myReplace("Let us go to the store", "store", "mall"))				// Let us go to the mall.
+// console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"))			// He is Sitting on the couch.
+// console.log(myReplace("I think we should look up there", "up", "Down"))				// I think we should look down there.
+// console.log(myReplace("This has a spellngi error", "spellngi", "spelling"))			// This has a spelling error.
+// console.log(myReplace("His name is Tom", "Tom", "john"))					// His name is John.
+// console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms"))		// Let us get back to more Algorithms.
+
+
+function pairElement(str) {
+  return str;
 }
 
-console.log(myReplace("Let us go to the store", "store", "mall"))				// Let us go to the mall.
-console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"))			// He is Sitting on the couch.
-console.log(myReplace("I think we should look up there", "up", "Down"))				// I think we should look down there.
-console.log(myReplace("This has a spellngi error", "spellngi", "spelling"))			// This has a spelling error.
-console.log(myReplace("His name is Tom", "Tom", "john"))					// His name is John.
-console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms"))		// Let us get back to more Algorithms.
 
+console.log(pairElement("ATCGA")) // [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
+console.log(pairElement("TTGAG")) // [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]
+console.log(pairElement("CTCTA")) // [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
