@@ -13,7 +13,7 @@
 
 
 
-function onePunch(items){return items.replace(/[ae]/gi, '').split(' ').sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : a.toLowerCase() > b.toLowerCase() ? 1 : 0).join(' ')} //Don't leave this line!!
+function onePunch(items){return items.split(' ').sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : a.toLowerCase() > b.toLowerCase() ? 1 : 0).join(' ').replace(/[ae]/gi, '')} //Don't leave this line!!
 
 
 
