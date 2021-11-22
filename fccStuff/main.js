@@ -294,7 +294,8 @@
 
 
 function translatePigLatin(str) {
-  return str;
+	let consonants = str.match(/^([^aeiou]+)/)
+	return consonants ? str.replace(/^[^aeiou]+/, '').concat(`${consonants[0]}ay`) : str.concat('way')
 }
 
 console.log(translatePigLatin("california"))					//  aliforniacay.
