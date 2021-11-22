@@ -13,10 +13,10 @@
 
 
 
-function onePunch(items){} //Don't leave this line!!
+function onePunch(items){return items.replace(/[ae]/gi, '').split(' ').sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : a.toLowerCase() > b.toLowerCase() ? 1 : 0).join(' ')} //Don't leave this line!!
 
 
 
 console.log(onePunch('Beard Knife Grenade Motorbike Hat'))		// 'Brd Grnd Ht Knif Motorbik'
-console.log(onePunch('Horse Rope Cups Car Beard'))		// 'Brd Cr Cups Hors Rop'
+console.log(onePunch('Horse Rope Cups Car Beard'))			// 'Brd Cr Cups Hors Rop'
 console.log(onePunch('Friend Beer Beard Monkey Laptop'))		// 'Brd Br Frind Lptop Monky'
