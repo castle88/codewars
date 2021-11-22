@@ -293,21 +293,33 @@
 // console.log(spinalCase("AllThe-small Things"))			// all-the-small-things
 
 
-function translatePigLatin(str) {
-	let consonants = str.match(/^([^aeiou]+)/)
-	return consonants ? str.replace(/^[^aeiou]+/, '').concat(`${consonants[0]}ay`) : str.concat('way')
+// function translatePigLatin(str) {
+// 	let consonants = str.match(/^([^aeiou]+)/)
+// 	return consonants ? str.replace(/^[^aeiou]+/, '').concat(`${consonants[0]}ay`) : str.concat('way')
+// }
+
+// console.log(translatePigLatin("california"))					//  aliforniacay.
+// console.log(translatePigLatin("paragraphs"))					//  aragraphspay.
+// console.log(translatePigLatin("glove"))						//  oveglay.
+// console.log(translatePigLatin("algorithm"))					//  algorithmway.
+// console.log(translatePigLatin("eight"))						//  eightway.
+
+// // Should handle words where the first vowel comes in the middle of the word. 
+// console.log(translatePigLatin("schwartz")) 					// artzschway.
+
+// // Should handle words without vowels. 
+// console.log(translatePigLatin("rhythm"))		 			//  rhythmay.
+
+function myReplace(str, before, after) {
+  return str;
 }
 
-console.log(translatePigLatin("california"))					//  aliforniacay.
-console.log(translatePigLatin("paragraphs"))					//  aragraphspay.
-console.log(translatePigLatin("glove"))						//  oveglay.
-console.log(translatePigLatin("algorithm"))					//  algorithmway.
-console.log(translatePigLatin("eight"))						//  eightway.
+console.log(myReplace("Let us go to the store", "store", "mall"))				// Let us go to the mall.
+console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"))			// He is Sitting on the couch.
+console.log(myReplace("I think we should look up there", "up", "Down"))				// I think we should look down there.
+console.log(myReplace("This has a spellngi error", "spellngi", "spelling"))			// This has a spelling error.
+console.log(myReplace("His name is Tom", "Tom", "john"))					// His name is John.
+console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms"))		// Let us get back to more Algorithms.
 
-// Should handle words where the first vowel comes in the middle of the word. 
-console.log(translatePigLatin("schwartz")) 					// artzschway.
-
-// Should handle words without vowels. 
-console.log(translatePigLatin("rhythm"))		 			//  rhythmay.
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
