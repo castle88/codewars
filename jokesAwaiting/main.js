@@ -27,7 +27,19 @@
 
 
 async function sayJoke(apiUrl, jokeId){
-  // use mocked `fetch(url)`
+	try{
+		const res = await fetch(apiUrl)
+		const data = await res.json()
+		const jokes = data.jokes.map(x => x)
+		const funshuns = {
+			getJoke: (joke) => jokes.filter(x => x.id === x.joke),
+			saySetup: () => this.getJoke(jokeId).setUp,
+			sayPunchLine: () => this.getJoke(jokeId).punchLine
+		}
+		return jokes.id === jokeId ? `Setup: ${funshuns.saySetup()}\n Punchline: ${funshuns.sayPunchLine()}` : `new Error('No jokes at url: ${apiUrl})`
+	}catch(err){
+		console.error(`new Error('No jokes at url: ${apiUrl})`)
+	}
 }
 
 
