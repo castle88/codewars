@@ -311,7 +311,13 @@
 // console.log(translatePigLatin("rhythm"))		 			//  rhythmay.
 
 function myReplace(str, before, after) {
-  return str;
+	let replacer 
+	if(before.charAt(0).match(/[A-Z]/)){
+		replacer = after.replace(after.charAt(0), after.charAt(0).toUpperCase())
+	}else{
+		replacer = after.replace(after.charAt(0), after.charAt(0).toLowerCase())
+	}
+	return str.replace(before, replacer)
 }
 
 console.log(myReplace("Let us go to the store", "store", "mall"))				// Let us go to the mall.
