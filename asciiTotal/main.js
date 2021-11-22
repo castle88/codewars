@@ -6,7 +6,7 @@
 
 
 function uniTotal(){
-// total up dem unicodes!
+	return arguments[0].split('').map(x => x.charCodeAt()).reduce((acc, cur) => acc += cur,0)
 }
 
 
