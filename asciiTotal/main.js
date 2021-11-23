@@ -6,8 +6,10 @@
 
 
 function uniTotal(){
-	return arguments[0].split('').map(x => x.charCodeAt()).reduce((acc, cur) => acc += cur,0)
+	 return arguments[0].split('').reduce((i,s)=>s.charCodeAt(0)+i,0) 
+	//return arguments[0].split('').map(x => x.charCodeAt()).reduce((acc, cur) => acc += cur,0)
 }
+
 
 
 

@@ -31,7 +31,7 @@
 	for(let i = 0; i < fire.length; i+=w){
 		answer.push(fire.slice(i,i+w))
 	}
-	return answer
+	
 }
 
 
