@@ -390,7 +390,17 @@
 
 
 function convertHTML(str) {
-  return str;
+	const sym = {
+		'&': 'amp',
+		'<': 'lt',
+		'>': 'gt',
+		'"': 'quot',
+		"'": 'apos'
+	}
+	let charArr = str.split('').map(x => {
+		return sym[x] ? `&${sym[x]};` : x
+	})
+	return charArr.join('')
 }
 
 console.log(convertHTML("Dolce & Gabbana"))			// should return the string Dolce &amp; Gabbana.
