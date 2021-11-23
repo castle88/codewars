@@ -413,19 +413,29 @@
 
 // Fib sequence -> 1,1,2,3,5,8
 
-function sumFibs(num) {
-	let fibArr = [1,1]
-	for(let i = 1; i < num; i++){
-		fibArr.push(fibArr[i] + fibArr[i - 1])
-	}
-	return fibArr.filter(x => x <= num && x % 2 !== 0).reduce((acc, cur) => acc += cur)
+// function sumFibs(num) {
+// 	let fibArr = [1,1]
+// 	for(let i = 1; i < num; i++){
+// 		fibArr.push(fibArr[i] + fibArr[i - 1])
+// 	}
+// 	return fibArr.filter(x => x <= num && x % 2 !== 0).reduce((acc, cur) => acc += cur)
+// }
+
+// console.log(sumFibs(10))			// 10 
+// console.log(sumFibs(1000))			// 1785
+// console.log(sumFibs(4000000))			// 4613732
+// console.log(sumFibs(4))				// 5
+// console.log(sumFibs(75024))			// 60696
+// console.log(sumFibs(75025))			// 135721
+
+
+
+function sumPrimes(num) {
+  return num;
 }
 
-console.log(sumFibs(10))			// 10 
-console.log(sumFibs(1000))			// 1785
-console.log(sumFibs(4000000))			// 4613732
-console.log(sumFibs(4))				// 5
-console.log(sumFibs(75024))			// 60696
-console.log(sumFibs(75025))			// 135721
+
+console.log(sumPrimes(10))		// 17
+console.log(sumPrimes(977))		// 73156
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
