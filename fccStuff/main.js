@@ -498,15 +498,32 @@
 
 // break apart binary string, convert binary numbers to decimal, then convert to characters
 
-function binaryAgent(str) {
-	return str.split(' ').map(x => String.fromCharCode(parseInt(x, 2))).join('')
+// function binaryAgent(str) {
+// 	return str.split(' ').map(x => String.fromCharCode(parseInt(x, 2))).join('')
+// }
+
+// console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"))
+// // should return the string Aren't bonfires fun!?
+
+// console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"))
+// // should return the string I love FreeCodeCamp!
+
+
+function truthCheck(collection, pre) {
+	const tOrF = collection.map(x => x[pre] ? true : false)
+	return tOrF.every(x => x === true)
 }
 
-console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"))
-// should return the string Aren't bonfires fun!?
 
-console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"))
-// should return the string I love FreeCodeCamp!
+console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"))						// true
+console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"))								// false
+console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age"))	// false
+console.log(truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true}, {"name": "FastForward", "onBoat": null}], "onBoat"))										// false
+console.log(truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastForward", "onBoat": true}], "onBoat"))								// true
+console.log(truthCheck([{"single": "yes"}], "single"))																						// true
+console.log(truthCheck([{"single": ""}, {"single": "double"}], "single"))																			// false
+console.log(truthCheck([{"single": "double"}, {"single": undefined}], "single"))																		// false
+console.log(truthCheck([{"single": "double"}, {"single": NaN}], "single"))																			// false
 
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
