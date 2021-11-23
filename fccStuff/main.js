@@ -389,26 +389,39 @@
 // console.log(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]))	// should return [1, 2, 3, 5, 4, 6, 7, 8].
 
 
-function convertHTML(str) {
-	const sym = {
-		'&': 'amp',
-		'<': 'lt',
-		'>': 'gt',
-		'"': 'quot',
-		"'": 'apos'
-	}
-	let charArr = str.split('').map(x => {
-		return sym[x] ? `&${sym[x]};` : x
-	})
-	return charArr.join('')
+// function convertHTML(str) {
+// 	const sym = {
+// 		'&': 'amp',
+// 		'<': 'lt',
+// 		'>': 'gt',
+// 		'"': 'quot',
+// 		"'": 'apos'
+// 	}
+// 	let charArr = str.split('').map(x => {
+// 		return sym[x] ? `&${sym[x]};` : x
+// 	})
+// 	return charArr.join('')
+// }
+
+// console.log(convertHTML("Dolce & Gabbana"))			// should return the string Dolce &amp; Gabbana.
+// console.log(convertHTML("Hamburgers < Pizza < Tacos"))		// should return the string Hamburgers &lt; Pizza &lt; Tacos.
+// console.log(convertHTML("Sixty > twelve"))			// should return the string Sixty &gt; twelve.
+// console.log(convertHTML('Stuff in "quotation marks"'))		// should return the string Stuff in &quot;quotation marks&quot;.
+// console.log(convertHTML("Schindler's List"))			// should return the string Schindler&apos;s List.
+// console.log(convertHTML("<>"))					// should return the string &lt;&gt;.
+// console.log(convertHTML("abc"))					// should return the string abc.
+
+
+
+function sumFibs(num) {
+	return num;
 }
 
-console.log(convertHTML("Dolce & Gabbana"))			// should return the string Dolce &amp; Gabbana.
-console.log(convertHTML("Hamburgers < Pizza < Tacos"))		// should return the string Hamburgers &lt; Pizza &lt; Tacos.
-console.log(convertHTML("Sixty > twelve"))			// should return the string Sixty &gt; twelve.
-console.log(convertHTML('Stuff in "quotation marks"'))		// should return the string Stuff in &quot;quotation marks&quot;.
-console.log(convertHTML("Schindler's List"))			// should return the string Schindler&apos;s List.
-console.log(convertHTML("<>"))					// should return the string &lt;&gt;.
-console.log(convertHTML("abc"))					// should return the string abc.
+
+console.log(sumFibs(1000))			// 1785
+console.log(sumFibs(4000000))			// 4613732
+console.log(sumFibs(4))				// 5
+console.log(sumFibs(75024))			// 60696
+console.log(sumFibs(75025))			// 135721
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
