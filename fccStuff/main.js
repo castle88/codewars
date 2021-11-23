@@ -354,21 +354,51 @@
 // console.log(pairElement("CTCTA")) // [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]
 
 
-function fearNotLetter(str) {
-	let arr = str.split('').map(x => x.charCodeAt())
-	let pushArr = []
-	for(let i = arr[0]; i <= arr[arr.length - 1]; i++){
-		pushArr.push(i)
-	}
-	let answer = pushArr.filter(x => !arr.includes(x))
-	return	answer[0] === undefined ? answer[0] : String.fromCharCode(answer[0])
+// function fearNotLetter(str) {
+// 	let arr = str.split('').map(x => x.charCodeAt())
+// 	let pushArr = []
+// 	for(let i = arr[0]; i <= arr[arr.length - 1]; i++){
+// 		pushArr.push(i)
+// 	}
+// 	let answer = pushArr.filter(x => !arr.includes(x))
+// 	return	answer[0] === undefined ? answer[0] : String.fromCharCode(answer[0])
+// }
+
+
+// console.log(fearNotLetter("abce"))					// should return the string d.
+// console.log(fearNotLetter("abcdefghjklmno"))				// should return the string i.
+// console.log(fearNotLetter("stvwx"))					// should return the string u.
+// console.log(fearNotLetter("bcdf"))					// should return the string e.
+// console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"))		// should return undefined.
+
+
+// function uniteUnique(arr) {
+// 	let bigArr = []
+// 	const args = Array.from(arguments)
+// 	args.forEach(x => {
+// 		x.forEach(y =>{
+// 			bigArr.push(y)
+// 		})
+// 	})
+// 	return [...new Set(bigArr)]
+// }
+
+
+// console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]))		// should return [1, 3, 2, 5, 4].
+// console.log(uniteUnique([1, 2, 3], [5, 2, 1]))				// should return [1, 2, 3, 5].
+// console.log(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]))	// should return [1, 2, 3, 5, 4, 6, 7, 8].
+
+
+function convertHTML(str) {
+  return str;
 }
 
-
-console.log(fearNotLetter("abce"))					// should return the string d.
-console.log(fearNotLetter("abcdefghjklmno"))				// should return the string i.
-console.log(fearNotLetter("stvwx"))					// should return the string u.
-console.log(fearNotLetter("bcdf"))					// should return the string e.
-console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"))		// should return undefined.
+console.log(convertHTML("Dolce & Gabbana"))			// should return the string Dolce &amp; Gabbana.
+console.log(convertHTML("Hamburgers < Pizza < Tacos"))		// should return the string Hamburgers &lt; Pizza &lt; Tacos.
+console.log(convertHTML("Sixty > twelve"))			// should return the string Sixty &gt; twelve.
+console.log(convertHTML('Stuff in "quotation marks"'))		// should return the string Stuff in &quot;quotation marks&quot;.
+console.log(convertHTML("Schindler's List"))			// should return the string Schindler&apos;s List.
+console.log(convertHTML("<>"))					// should return the string &lt;&gt;.
+console.log(convertHTML("abc"))					// should return the string abc.
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
