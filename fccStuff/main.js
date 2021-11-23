@@ -431,11 +431,19 @@
 
 
 function sumPrimes(num) {
-  return num;
+	let answerArr = []
+	for(let i = 1; i <= num; i++){
+		for(let y = 1; y <= num; y++){
+			if(i % y === 0){
+				answerArr.push(i)
+			}
+		}
+	}
+	return answerArr
 }
 
 
 console.log(sumPrimes(10))		// 17
-console.log(sumPrimes(977))		// 73156
+//console.log(sumPrimes(977))		// 73156
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
