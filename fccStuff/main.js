@@ -464,15 +464,32 @@
 // console.log(smallestCommons([23, 18]))		// 6056820
 
 
-function dropElements(arr, func) {
+// function dropElements(arr, func) {
+// 	let condition = arr.map(x => func(x))
+// 	if(condition.includes(true)){
+// 		return arr.splice(condition.indexOf(true),)
+// 	}else{
+// 		return []
+// 	}
+// }
+
+// console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}))		// [3, 4]
+// console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;}))		// [1, 0, 1]
+// console.log(dropElements([1, 2, 3], function(n) {return n > 0;}))		// [1, 2, 3]
+// console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;}))		// []
+// console.log(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}))		// [7, 4]
+// console.log(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}))		// [3, 9, 2]
+
+function steamrollArray(arr) {
   return arr;
 }
 
-console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}))		// [3, 4]
-console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;}))		// [1, 0, 1]
-console.log(dropElements([1, 2, 3], function(n) {return n > 0;}))		// [1, 2, 3]
-console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;}))		// []
-console.log(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}))		// [7, 4]
-console.log(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}))		// [3, 9, 2]
+console.log(steamrollArray([[["a"]], [["b"]]])) 		// ["a", "b"].
+console.log(steamrollArray([1, [2], [3, [[4]]]])) 		// [1, 2, 3, 4].
+console.log(steamrollArray([1, [], [3, [[4]]]])) 		// [1, 3, 4].
+console.log(steamrollArray([1, {}, [3, [[4]]]])) 		// [1, {}, 3, 4].
+
+//Your solution should not use the Array.prototype.flat() or Array.prototype.flatMap() methods.
+
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
