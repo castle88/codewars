@@ -328,13 +328,41 @@
 // console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms"))		// Let us get back to more Algorithms.
 
 
-function pairElement(str) {
+// function pairElement(str) {
+// 	const arr = str.split('')
+// 	return arr.map(x => {
+// 		switch(x){
+// 			case 'A':
+// 				return ['A', 'T']
+// 				break;
+// 			case 'G':
+// 				return ['G', 'C']
+// 				break;
+// 			case 'T':
+// 				return ['T', 'A']
+// 				break;
+// 			case 'C':
+// 				return ['C', 'G']
+// 				break;
+// 		}
+// 	})
+// }
+
+
+// console.log(pairElement("ATCGA")) // [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
+// console.log(pairElement("TTGAG")) // [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]
+// console.log(pairElement("CTCTA")) // [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]
+
+
+function fearNotLetter(str) {
   return str;
 }
 
 
-console.log(pairElement("ATCGA")) // [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
-console.log(pairElement("TTGAG")) // [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]
-console.log(pairElement("CTCTA")) // [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]
+console.log(fearNotLetter("abce"))					// should return the string d.
+console.log(fearNotLetter("abcdefghjklmno"))				// should return the string i.
+console.log(fearNotLetter("stvwx"))					// should return the string u.
+console.log(fearNotLetter("bcdf"))					// should return the string e.
+console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"))		// should return undefined.
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
