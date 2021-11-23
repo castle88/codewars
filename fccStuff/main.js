@@ -509,21 +509,75 @@
 // // should return the string I love FreeCodeCamp!
 
 
-function truthCheck(collection, pre) {
-	const tOrF = collection.map(x => x[pre] ? true : false)
-	return tOrF.every(x => x === true)
-}
+// function truthCheck(collection, pre) {
+// 	const tOrF = collection.map(x => x[pre] ? true : false)
+// 	return tOrF.every(x => x === true)
+// }
 
 
-console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"))						// true
-console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"))								// false
-console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age"))	// false
-console.log(truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true}, {"name": "FastForward", "onBoat": null}], "onBoat"))										// false
-console.log(truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastForward", "onBoat": true}], "onBoat"))								// true
-console.log(truthCheck([{"single": "yes"}], "single"))																						// true
-console.log(truthCheck([{"single": ""}, {"single": "double"}], "single"))																			// false
-console.log(truthCheck([{"single": "double"}, {"single": undefined}], "single"))																		// false
-console.log(truthCheck([{"single": "double"}, {"single": NaN}], "single"))																			// false
+// console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"))						// true
+// console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"))								// false
+// console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age"))	// false
+// console.log(truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true}, {"name": "FastForward", "onBoat": null}], "onBoat"))										// false
+// console.log(truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastForward", "onBoat": true}], "onBoat"))								// true
+// console.log(truthCheck([{"single": "yes"}], "single"))																						// true
+// console.log(truthCheck([{"single": ""}, {"single": "double"}], "single"))																			// false
+// console.log(truthCheck([{"single": "double"}, {"single": undefined}], "single"))																		// false
+// console.log(truthCheck([{"single": "double"}, {"single": NaN}], "single"))																			// false
+
+
+// function addTogether() {
+// 	const [first, second] = arguments
+// 	if(typeof first !== 'number') return undefined
+// 	if(second === undefined){
+// 		const addSecond = (second) => {
+// 			if(typeof second !== 'number') return undefined
+// 			return first + second
+// 		}
+// 		return addSecond
+// 	}
+// 	if(typeof second !== 'number') return undefined
+// 	return first + second
+// }
+
+
+// console.log(addTogether(2, 3))								// should return 5
+// console.log(addTogether(23, 30))							// should return 53
+// console.log(addTogether(5)(7))								// should return 12
+// console.log(addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ"))			// should return undefined
+// console.log(addTogether(2, "3"))							// should return undefined
+// console.log(addTogether(2)([3]))							// should return undefined
+
+
+const Person = function(firstAndLast) {
+  // Only change code below this line
+  // Complete the method below and implement the others similarly
+  this.getFullName = function() {
+    return "";
+  };
+  return firstAndLast;
+};
+
+const bob = new Person('Bob Ross');
+bob.getFullName();
+
+
+
+
+// No properties should be added. Object.keys(bob).length should always return 6.
+
+console.log(bob instanceof Person)	// should return true.
+console.log(bob.firstName())  		// should return undefined.
+console.log(bob.lastName()) 		// should return undefined.
+
+console.log(bob.getFirstName())		// Bob
+console.log(bob.getLastName())		// Ross
+console.log(bob.getFullName())		// Bob Ross
+console.log(bob.getFullName())		// Haskell Ross after bob.setFirstName("Haskell")
+console.log(bob.getFullName())		// Haskell Curry after bob.setLastName("Curry")
+console.log(bob.getFullName())		// Haskell Curry after bob.setFullName("Haskell Curry")
+console.log(bob.getFirstName())		// Haskell after bob.setFullName("Haskell Curry")
+console.log(bob.getLastName())		// Curry after bob.setFullName("Haskell Curry")
 
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
