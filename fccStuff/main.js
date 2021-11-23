@@ -433,17 +433,19 @@
 function sumPrimes(num) {
 	let answerArr = []
 	for(let i = 1; i <= num; i++){
-		for(let y = 1; y <= num; y++){
+		let primes = []
+		for(let y = 1; y <= i; y++){
 			if(i % y === 0){
-				answerArr.push(i)
+				primes.push(y)
 			}
 		}
+		answerArr.push(primes)
 	}
-	return answerArr
+	return answerArr.filter(x => x.length === 2).reduce((acc, cur) => acc += cur[1],0)
 }
 
 
 console.log(sumPrimes(10))		// 17
-//console.log(sumPrimes(977))		// 73156
+console.log(sumPrimes(977))		// 73156
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
