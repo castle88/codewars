@@ -448,14 +448,31 @@
 // console.log(sumPrimes(10))		// 17
 // console.log(sumPrimes(977))		// 73156
 
-function smallestCommons(arr) {
+// function smallestCommons(arr) {
+// 	arr.sort((a, b) => a -b)						// WRONG! REVISIT
+// 	let multiples = []
+// 	for(let i = arr[0]; i <= arr[1]; i++){
+// 		multiples.push([arr[0] * i, arr[1] * i])
+// 	}
+// 	return multiples
+// }
+
+// console.log(smallestCommons([1, 5]))		// 60
+// console.log(smallestCommons([5, 1]))		// 60
+// console.log(smallestCommons([2, 10]))		// 2520
+// console.log(smallestCommons([1, 13]))		// 360360
+// console.log(smallestCommons([23, 18]))		// 6056820
+
+
+function dropElements(arr, func) {
   return arr;
 }
 
-console.log(smallestCommons([1, 5]))		// 60
-console.log(smallestCommons([5, 1]))		// 60
-console.log(smallestCommons([2, 10]))		// 2520
-console.log(smallestCommons([1, 13]))		// 360360
-console.log(smallestCommons([23, 18]))		// 6056820
+console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}))		// [3, 4]
+console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;}))		// [1, 0, 1]
+console.log(dropElements([1, 2, 3], function(n) {return n > 0;}))		// [1, 2, 3]
+console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;}))		// []
+console.log(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}))		// [7, 4]
+console.log(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}))		// [3, 9, 2]
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
