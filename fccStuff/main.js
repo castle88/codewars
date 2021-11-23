@@ -355,7 +355,13 @@
 
 
 function fearNotLetter(str) {
-  return str;
+	let arr = str.split('').map(x => x.charCodeAt())
+	let pushArr = []
+	for(let i = arr[0]; i <= arr[arr.length - 1]; i++){
+		pushArr.push(i)
+	}
+	let answer = pushArr.filter(x => !arr.includes(x))
+	return	answer[0] === undefined ? answer[0] : String.fromCharCode(answer[0])
 }
 
 
