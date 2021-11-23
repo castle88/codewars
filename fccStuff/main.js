@@ -480,14 +480,19 @@
 // console.log(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}))		// [7, 4]
 // console.log(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}))		// [3, 9, 2]
 
-function steamrollArray(arr) {
-  return arr;
-}
 
-console.log(steamrollArray([[["a"]], [["b"]]])) 		// ["a", "b"].
-console.log(steamrollArray([1, [2], [3, [[4]]]])) 		// [1, 2, 3, 4].
-console.log(steamrollArray([1, [], [3, [[4]]]])) 		// [1, 3, 4].
-console.log(steamrollArray([1, {}, [3, [[4]]]])) 		// [1, {}, 3, 4].
+
+// function steamrollArray(arr) {
+// 	let answer = []
+// 	let flat = (arra) => Array.isArray(arra) ? arra.forEach(x => flat(x)) : answer.push(arra)
+// 	arr.forEach(x => flat(x))
+// 	return answer
+// }
+
+// console.log(steamrollArray([[["a"]], [["b"]]])) 		// ["a", "b"].
+// console.log(steamrollArray([1, [2], [3, [[4]]]])) 		// [1, 2, 3, 4].
+// console.log(steamrollArray([1, [], [3, [[4]]]])) 		// [1, 3, 4].
+// console.log(steamrollArray([1, {}, [3, [[4]]]])) 		// [1, {}, 3, 4].
 
 //Your solution should not use the Array.prototype.flat() or Array.prototype.flatMap() methods.
 
