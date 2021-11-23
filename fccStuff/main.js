@@ -411,13 +411,17 @@
 // console.log(convertHTML("<>"))					// should return the string &lt;&gt;.
 // console.log(convertHTML("abc"))					// should return the string abc.
 
-
+// Fib sequence -> 1,1,2,3,5,8
 
 function sumFibs(num) {
-	return num;
+	let fibArr = [1,1]
+	for(let i = 1; i < num; i++){
+		fibArr.push(fibArr[i] + fibArr[i - 1])
+	}
+	return fibArr.filter(x => x <= num && x % 2 !== 0).reduce((acc, cur) => acc += cur)
 }
 
-
+console.log(sumFibs(10))			// 10 
 console.log(sumFibs(1000))			// 1785
 console.log(sumFibs(4000000))			// 4613732
 console.log(sumFibs(4))				// 5
