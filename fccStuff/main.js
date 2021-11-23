@@ -430,22 +430,32 @@
 
 
 
-function sumPrimes(num) {
-	let answerArr = []
-	for(let i = 1; i <= num; i++){
-		let primes = []
-		for(let y = 1; y <= i; y++){
-			if(i % y === 0){
-				primes.push(y)
-			}
-		}
-		answerArr.push(primes)
-	}
-	return answerArr.filter(x => x.length === 2).reduce((acc, cur) => acc += cur[1],0)
+// function sumPrimes(num) {
+// 	let answerArr = []
+// 	for(let i = 1; i <= num; i++){
+// 		let primes = []
+// 		for(let y = 1; y <= i; y++){
+// 			if(i % y === 0){
+// 				primes.push(y)
+// 			}
+// 		}
+// 		answerArr.push(primes)
+// 	}
+// 	return answerArr.filter(x => x.length === 2).reduce((acc, cur) => acc += cur[1],0)
+// }
+
+
+// console.log(sumPrimes(10))		// 17
+// console.log(sumPrimes(977))		// 73156
+
+function smallestCommons(arr) {
+  return arr;
 }
 
-
-console.log(sumPrimes(10))		// 17
-console.log(sumPrimes(977))		// 73156
+console.log(smallestCommons([1, 5]))		// 60
+console.log(smallestCommons([5, 1]))		// 60
+console.log(smallestCommons([2, 10]))		// 2520
+console.log(smallestCommons([1, 13]))		// 360360
+console.log(smallestCommons([23, 18]))		// 6056820
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
