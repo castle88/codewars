@@ -705,35 +705,63 @@
 
 
 
-function checkCashRegister(price, cash, cid) {
-	const denom = {
-		'ONE HUNDRED': 100,
-		'TWENTY': 20,
-		'TEN': 10,
-		'FIVE': 5,
-		'ONE': 1,
-		'QUARTER': .25,
-		'DIME': .1,
-		'NICKEL': .05,
-		'PENNY': .01,
-	}
-	const drawer = cid.map(x => x).reverse()
-	let change = cash - price
-	const canChange = drawer.filter(x => denom[x[0]] < change)
-	
-	const amount = (tot) => {
-		const arr = []
-		for(let key in denom){
-			if(denom[key] < tot){
-				arr.push([key, Math.floor(change / denom[key])])
-			}
-		}
-		return arr
-	}
-	for(let i = 0; i < amount(change).length; i++){
+// function checkCashRegister(price, cash, cid) {
+// 	const denom = {
+// 		'ONE HUNDRED': 100,
+// 		'TWENTY': 20,
+// 		'TEN': 10,
+// 		'FIVE': 5,
+// 		'ONE': 1,
+// 		'QUARTER': .25,
+// 		'DIME': .1,
+// 		'NICKEL': .05,
+// 		'PENNY': .01,
+// 	}
+// 	const drawer = cid.map(x => x).reverse().reduce((acc, cur) => {
+// 		acc[cur[0]] = cur[1]
+// 		return acc
+// 	},{})
 
+// 	let change = cash - price
+		
+// 	const amount = (tot) => {
+// 		const arr = []
+// 		for(let key in denom){
+// 			if(denom[key] < tot){
+// 				arr.push([key, Math.floor(change / denom[key])])
+// 			}
+// 		}
+// 		return arr
+// 	}
+	
+// 	for(let i = 0; i < amount(change).length; i++){
+// 		if(denom[amount(change)[i][0]] * amount(change)[i][1] < drawer[amount(change)[i][0]] && change - (denom[amount(change)[i][0]] * amount(change)[i][1]) >= 0){
+			
+// 		}
+// 	}
+// 	return amount(change)
+
+function checkCashRegister(price, cash, cid) {
+	let changeNeeded = parseFloat(cash - price).toFixed(2)
+	let cashRegister = { status: '', change: cid }
+	
+	const changeAvailable = getTotalCashRegisterChange(cid)
+	console.log(changeAvailable)
+}
+
+
+
+function getTotalCashRegisterChange(changeInDrawer){
+	let total = 0
+
+	for(let change of changeInDrawer){
+		let coinValue = change[1]
+		total += changeValue
 	}
-	//amount(change)
+
+	return total
+}
+
 
 
 	// while(change !== 0 && change > 0){
@@ -761,7 +789,7 @@ function checkCashRegister(price, cash, cid) {
 	// let amt = x[1]
 	// let i = Math.floor(x[1] / denom[x[0]])
 	// answer.push([x[0], i * denom[x[0]]])	
-}
+
 
 
 console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]))		
