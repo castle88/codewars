@@ -754,7 +754,7 @@ function checkCashRegister(price, cash, cid) {
 	cashRegister.status = getTotalCashRegisterStatus(changeNeeded, currencyAvailable)
 
 	if (cashRegister.status === REGISTER_STATUS.insufficientFunds) {
-		cashRegister.currency = []
+		cashRegister.change = []
 
 		return cashRegister
 	}
