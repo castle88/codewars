@@ -741,25 +741,41 @@
 // 	}
 // 	return amount(change)
 
+
+
+
+const REGISTER_STATUS = { closed: 'CLOSED', insufficientFunds: 'INSUFFICIENT_FUNDS', open: 'OPEN', }
+
 function checkCashRegister(price, cash, cid) {
 	let changeNeeded = parseFloat(cash - price).toFixed(2)
 	let cashRegister = { status: '', change: cid }
 	
-	const changeAvailable = getTotalCashRegisterChange(cid)
-	console.log(changeAvailable)
+	const currencyAvailable = getTotalCashRegisterChange(cid)
+	cashRegister.status = getTotalCashRegisterStatus(changeNeeded, currencyAvailable)
+	console.log(cashRegister.status)
 }
 
-
-
-function getTotalCashRegisterChange(changeInDrawer){
-	let total = 0
-
-	for(let change of changeInDrawer){
-		let coinValue = change[1]
-		total += changeValue
+function getTotalCashRegisterStatus(changeNeeded, currencyAvailable) {
+	if (Number(changeNeeded) > Number(currencyAvailable)) {
+		return REGISTER_STATUS.insufficientFunds
 	}
 
-	return total
+	if (Number(changeNeeded) < Number(currencyAvailable)) {
+		return REGISTER_STATUS.open
+	}
+
+	return REGISTER_STATUS.closed
+}
+
+function getTotalCashRegisterChange(currencyInDrawer) {
+	let total = 0
+
+	for (let currency of currencyInDrawer) {
+		let currencyValue = currency[1]
+		total += currencyValue
+	}
+
+	return total.toFixed(2)
 }
 
 
