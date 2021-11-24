@@ -648,8 +648,9 @@
 // *************   TELEPHONE NUMBER VALIDATOR ********************
 
 function telephoneCheck(str) {
-	if(str.length > 14) return false
-	if(str.length < 10) return false
+	const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/
+	//const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
+	return str.match(regex) ? true : false
 }
 
 
