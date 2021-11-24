@@ -13,7 +13,16 @@
 
 
 
+
+
+
+
 // ****************************************************************
+
+
+
+
+
 
 // palindrome checker
 
@@ -39,11 +48,24 @@
 // // console.log(palindrome("five|\_/|four"))				//  false.
 
 
+
+
+
+
 // //************************************************************************************** */
+
+
+
+
 
 // // roman numeral converter
 
 // *************** KEY **************************
+
+
+
+
+
 // const key = [
 // {
 	// 1:I,
@@ -166,7 +188,13 @@
 // console.log(convertToRoman(3999))			// MMMCMXCIX
 
 
+
+
+
 // ***************** CAESARS CIPHER ***********************
+
+
+
 
 // function rot13(str) {
 // 	const alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('')
@@ -188,7 +216,13 @@
 // console.log(rot13("SERR YBIR?"))						//  FREE LOVE?
 // console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."))		//  THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
 
-// ***** INTERMEDIATE ALGO *****
+
+
+
+// *********************************** INTERMEDIATE ALGO ********************************************
+
+
+
 
 // function sumAll(arr) {
 // 	arr.sort((a, b) => a - b)
@@ -457,6 +491,17 @@
 // 	return multiples
 // }
 
+// function smallestCommons(arr) {
+//   const [min, max] = arr.sort((a, b) => a - b);
+//   const range = Array(max - min + 1)
+//     .fill(0)
+//     .map((_, i) => i + min);
+//   const gcd = (a, b) => (b === 0) ? a : gcd(b, a % b);
+//   const lcm = (a, b) => a * b / gcd(a, b);
+  
+//   return range.reduce((multiple, curr) => lcm(multiple, curr));
+// }
+
 // console.log(smallestCommons([1, 5]))		// 60
 // console.log(smallestCommons([5, 1]))		// 60
 // console.log(smallestCommons([2, 10]))		// 2520
@@ -583,20 +628,58 @@
 
 
 
-function orbitalPeriod(arr) {
-  const GM = 398600.4418;
-  const earthRadius = 6367.4447;
-  return arr.map(({ name, avgAlt}) => {
-	const earth = earthRadius + avgAlt
-	const orbitalPeriod = Math.round(2 * Math.PI * Math.sqrt(Math.pow(earth, 3)/GM))
-	return { name, orbitalPeriod }
-  })
-}
+// function orbitalPeriod(arr) {
+//   const GM = 398600.4418;
+//   const earthRadius = 6367.4447;
+//   return arr.map(({ name, avgAlt}) => {
+// 	const earth = earthRadius + avgAlt
+// 	const orbitalPeriod = Math.round(2 * Math.PI * Math.sqrt(Math.pow(earth, 3)/GM))
+// 	return { name, orbitalPeriod }
+//   })
+// }
 
-orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+// orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 
 
-console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]))								// [{name: "sputnik", orbitalPeriod: 86400}].
-console.log(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]))	// [{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}].
+// console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]))								// [{name: "sputnik", orbitalPeriod: 86400}].
+// console.log(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]))	// [{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}].
+
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
+
+function telephoneCheck(str) {
+	if(str.length > 14) return false
+	if(str.length < 10) return false
+}
+
+
+console.log(telephoneCheck("1 555-555-5555"))		//  true
+console.log(telephoneCheck("1 (555) 555-5555"))		//  true
+console.log(telephoneCheck("5555555555"))		//  true
+console.log(telephoneCheck("555-555-5555"))		//  true
+console.log(telephoneCheck("(555)555-5555"))		//  true
+console.log(telephoneCheck("1(555)555-5555"))		//  true
+
+console.log(telephoneCheck("555-5555"))			//  false
+console.log(telephoneCheck("5555555"))			//  false
+console.log(telephoneCheck("1 555)555-5555"))		//  false
+
+console.log(telephoneCheck("1 555 555 5555"))		//  true
+console.log(telephoneCheck("1 456 789 4444"))		//  true
+
+console.log(telephoneCheck("123**&!!asdf#"))		//  false
+console.log(telephoneCheck("55555555"))			//  false
+console.log(telephoneCheck("(6054756961)"))		//  false
+console.log(telephoneCheck("2 (757) 622-7382"))		//  false
+console.log(telephoneCheck("0 (757) 622-7382"))		//  false
+console.log(telephoneCheck("-1 (757) 622-7382"))	//  false
+console.log(telephoneCheck("2 757 622-7382"))		//  false
+console.log(telephoneCheck("10 (757) 622-7382"))	//  false
+console.log(telephoneCheck("27576227382"))		//  false
+console.log(telephoneCheck("(275)76227382"))		//  false
+console.log(telephoneCheck("2(757)6227382"))		//  false
+console.log(telephoneCheck("2(757)622-7382"))		//  false
+console.log(telephoneCheck("555)-555-5555"))		//  false
+console.log(telephoneCheck("(555-555-5555"))		//  false
+console.log(telephoneCheck("(555)5(55?)-5555"))		//  false
+console.log(telephoneCheck("55 55-55-555-5"))		//  false
