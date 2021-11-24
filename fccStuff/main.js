@@ -645,42 +645,74 @@
 // console.log(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]))	// [{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}].
 
 
+
+
+
 // *************   TELEPHONE NUMBER VALIDATOR ********************
 
-function telephoneCheck(str) {
-	const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/
-	//const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
-	return str.match(regex) ? true : false
+
+
+
+
+// function telephoneCheck(str) {
+// 	const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/
+// 	// ^ beginning of string
+// 	// (1\s?)? capture group for '1 ' or nothing
+// 	// (\(\d{3}\))|\d{3}) capture group '(xxx)' or 'xxx'
+// 	// [\s\-]? characters ' ' or '-' or nothing
+// 	// \d{3} capture any 3 digits
+// 	// [\s\-]? characters ' ' or '-' or nothing
+// 	// \d{4}$  any 4 digits at the end of string
+// 	return str.match(regex) ? true : false
+// }
+
+
+// console.log(telephoneCheck("1 555-555-5555"))		//  true
+// console.log(telephoneCheck("1 (555) 555-5555"))		//  true
+// console.log(telephoneCheck("5555555555"))		//  true
+// console.log(telephoneCheck("555-555-5555"))		//  true
+// console.log(telephoneCheck("(555)555-5555"))		//  true
+// console.log(telephoneCheck("1(555)555-5555"))		//  true
+
+// console.log(telephoneCheck("555-5555"))			//  false
+// console.log(telephoneCheck("5555555"))			//  false
+// console.log(telephoneCheck("1 555)555-5555"))		//  false
+
+// console.log(telephoneCheck("1 555 555 5555"))		//  true
+// console.log(telephoneCheck("1 456 789 4444"))		//  true
+
+// console.log(telephoneCheck("123**&!!asdf#"))		//  false
+// console.log(telephoneCheck("55555555"))			//  false
+// console.log(telephoneCheck("(6054756961)"))		//  false
+// console.log(telephoneCheck("2 (757) 622-7382"))		//  false
+// console.log(telephoneCheck("0 (757) 622-7382"))		//  false
+// console.log(telephoneCheck("-1 (757) 622-7382"))	//  false
+// console.log(telephoneCheck("2 757 622-7382"))		//  false
+// console.log(telephoneCheck("10 (757) 622-7382"))	//  false
+// console.log(telephoneCheck("27576227382"))		//  false
+// console.log(telephoneCheck("(275)76227382"))		//  false
+// console.log(telephoneCheck("2(757)6227382"))		//  false
+// console.log(telephoneCheck("2(757)622-7382"))		//  false
+// console.log(telephoneCheck("555)-555-5555"))		//  false
+// console.log(telephoneCheck("(555-555-5555"))		//  false
+// console.log(telephoneCheck("(555)5(55?)-5555"))		//  false
+// console.log(telephoneCheck("55 55-55-555-5"))		//  false
+
+
+
+
+// ************************* CASH REGISTER ************************************
+
+
+
+function checkCashRegister(price, cash, cid) {
+  let change;
+  return change;
 }
 
 
-console.log(telephoneCheck("1 555-555-5555"))		//  true
-console.log(telephoneCheck("1 (555) 555-5555"))		//  true
-console.log(telephoneCheck("5555555555"))		//  true
-console.log(telephoneCheck("555-555-5555"))		//  true
-console.log(telephoneCheck("(555)555-5555"))		//  true
-console.log(telephoneCheck("1(555)555-5555"))		//  true
-
-console.log(telephoneCheck("555-5555"))			//  false
-console.log(telephoneCheck("5555555"))			//  false
-console.log(telephoneCheck("1 555)555-5555"))		//  false
-
-console.log(telephoneCheck("1 555 555 5555"))		//  true
-console.log(telephoneCheck("1 456 789 4444"))		//  true
-
-console.log(telephoneCheck("123**&!!asdf#"))		//  false
-console.log(telephoneCheck("55555555"))			//  false
-console.log(telephoneCheck("(6054756961)"))		//  false
-console.log(telephoneCheck("2 (757) 622-7382"))		//  false
-console.log(telephoneCheck("0 (757) 622-7382"))		//  false
-console.log(telephoneCheck("-1 (757) 622-7382"))	//  false
-console.log(telephoneCheck("2 757 622-7382"))		//  false
-console.log(telephoneCheck("10 (757) 622-7382"))	//  false
-console.log(telephoneCheck("27576227382"))		//  false
-console.log(telephoneCheck("(275)76227382"))		//  false
-console.log(telephoneCheck("2(757)6227382"))		//  false
-console.log(telephoneCheck("2(757)622-7382"))		//  false
-console.log(telephoneCheck("555)-555-5555"))		//  false
-console.log(telephoneCheck("(555-555-5555"))		//  false
-console.log(telephoneCheck("(555)5(55?)-5555"))		//  false
-console.log(telephoneCheck("55 55-55-555-5"))		//  false
+console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]))		// {status: "OPEN", change: [["QUARTER", 0.5]]}.
+console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]))		// {status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}.
+console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]))				// {status: "INSUFFICIENT_FUNDS", change: []}.
+console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]))				// {status: "INSUFFICIENT_FUNDS", change: []}.
+console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]))				// {status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}.
