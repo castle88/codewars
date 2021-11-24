@@ -752,7 +752,53 @@ function checkCashRegister(price, cash, cid) {
 	
 	const currencyAvailable = getTotalCashRegisterChange(cid)
 	cashRegister.status = getTotalCashRegisterStatus(changeNeeded, currencyAvailable)
-	console.log(cashRegister.status)
+
+	if (cashRegister.status === REGISTER_STATUS.insufficientFunds) {
+		cashRegister.currency = []
+
+		return cashRegister
+	}
+
+	cashRegister.change = getCustomersChange(changeNeeded, cid)
+
+	console.log(cashRegister)
+
+}
+
+function getCustomersChange(changeNeeded, currencyInDrawer) {
+	const change = []
+	const currencyDictionary = {
+		'PENNY': 0.01,
+		'NICKEL': 0.05,
+		'DIME': 0.1,
+		'QUARTER': 0.25,
+		'ONE': 1.00,
+		'FIVE': 5.00,
+		'TEN': 10.00,
+		'TWENTY': 20.00,
+		'ONE HUNDRED': 100.00,
+	}
+
+	for (let i = currencyInDrawer.length - 1; i >= 0; i--) {
+		const currencyName = currencyInDrawer[i][0]
+		const currencyTotal = currencyInDrawer[i][1]
+		const currencyValue = currencyDictionary[currencyName]
+		let currencyAmount = (currencyTotal / currencyValue).toFixed(2)
+		let currencyToReturn = 0
+
+		while (changeNeeded >= currencyValue && currencyAmount > 0) {
+			changeNeeded -= currencyValue
+			changeNeeded = changeNeeded.toFixed(2)
+			currencyAmount--
+			currencyToReturn++
+		}
+
+		if (currencyToReturn > 0) {
+			change.push([currencyName, currencyToReturn * currencyValue])
+		}
+	}
+
+	return change
 }
 
 function getTotalCashRegisterStatus(changeNeeded, currencyAvailable) {
