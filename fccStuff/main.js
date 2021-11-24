@@ -549,35 +549,54 @@
 // console.log(addTogether(2)([3]))							// should return undefined
 
 
-const Person = function(firstAndLast) {
-  // Only change code below this line
-  // Complete the method below and implement the others similarly
-  this.getFullName = function() {
-    return "";
-  };
-  return firstAndLast;
-};
+// const Person = function(firstAndLast) {
+//   // Only change code below this line
+//   let fullName = firstAndLast
+//   this.setFirstName = (fName) => fullName = `${fName} ${fullName.split(' ')[1]}`
+//   this.setLastName = (lName) => fullName = `${fullName.split(' ')[0]} ${lName}`
+//   this.setFullName = (name) => fullName = name
+//   this.getFirstName = () => fullName.split(' ')[0]
+//   this.getLastName = () => fullName.split(' ')[1]
+//   // Complete the method below and implement the others similarly
+//   this.getFullName = () => fullName 
+// };
 
-const bob = new Person('Bob Ross');
-bob.getFullName();
+// const bob = new Person('Bob Ross');
+// // bob.getFullName();
 
 
 
+// // No properties should be added. Object.keys(bob).length should always return 6.
 
-// No properties should be added. Object.keys(bob).length should always return 6.
+// console.log(bob instanceof Person)	// should return true.
+// //console.log(bob.firstName())  		// should return undefined.
+// //console.log(bob.lastName()) 		// should return undefined.
 
-console.log(bob instanceof Person)	// should return true.
-console.log(bob.firstName())  		// should return undefined.
-console.log(bob.lastName()) 		// should return undefined.
+// console.log(bob.getFirstName())		// Bob
+// console.log(bob.getLastName())		// Ross
+// console.log(bob.getFullName())		// Bob Ross
+// console.log(bob.getFullName())		// Haskell Ross after bob.setFirstName("Haskell")
+// console.log(bob.getFullName())		// Haskell Curry after bob.setLastName("Curry")
+// console.log(bob.getFullName())		// Haskell Curry after bob.setFullName("Haskell Curry")
+// console.log(bob.getFirstName())		// Haskell after bob.setFullName("Haskell Curry")
+// console.log(bob.getLastName())		// Curry after bob.setFullName("Haskell Curry")
 
-console.log(bob.getFirstName())		// Bob
-console.log(bob.getLastName())		// Ross
-console.log(bob.getFullName())		// Bob Ross
-console.log(bob.getFullName())		// Haskell Ross after bob.setFirstName("Haskell")
-console.log(bob.getFullName())		// Haskell Curry after bob.setLastName("Curry")
-console.log(bob.getFullName())		// Haskell Curry after bob.setFullName("Haskell Curry")
-console.log(bob.getFirstName())		// Haskell after bob.setFullName("Haskell Curry")
-console.log(bob.getLastName())		// Curry after bob.setFullName("Haskell Curry")
 
+
+function orbitalPeriod(arr) {
+  const GM = 398600.4418;
+  const earthRadius = 6367.4447;
+  return arr.map(({ name, avgAlt}) => {
+	const earth = earthRadius + avgAlt
+	const orbitalPeriod = Math.round(2 * Math.PI * Math.sqrt(Math.pow(earth, 3)/GM))
+	return { name, orbitalPeriod }
+  })
+}
+
+orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+
+
+console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]))								// [{name: "sputnik", orbitalPeriod: 86400}].
+console.log(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]))	// [{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}].
 
 // *************   TELEPHONE NUMBER VALIDATOR ********************
