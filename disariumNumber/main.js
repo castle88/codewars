@@ -27,7 +27,9 @@
 
 
 function disariumNumber(n){
-
+	return String(n).split('').reduce((acc, cur, index) => {
+		acc += Math.pow(Number(cur), index + 1)
+	},0)
 }
 
 console.log(disariumNumber(89))			// "Disarium !!"
