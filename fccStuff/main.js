@@ -706,8 +706,18 @@
 
 
 function checkCashRegister(price, cash, cid) {
-  let change;
-  return change;
+	let denom = {
+		'PENNY': .01,
+		'NICKEL': .05,
+		'DIME': .1,
+		'QUARTER': .25,
+		'ONE': 1,
+		'FIVE': 5,
+		'TEN': 10,
+		'TWENTY': 20,
+		'ONE HUNDRED': 100
+	}
+
 }
 
 
