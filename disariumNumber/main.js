@@ -27,9 +27,10 @@
 
 
 function disariumNumber(n){
-	return String(n).split('').reduce((acc, cur, index) => {
-		acc += Math.pow(Number(cur), index + 1)
-	},0)
+	const disarium = (num) => {
+		return String(n).split('').reduce((acc, cur, index) => acc += Math.pow(Number(cur), index + 1),0)
+	}
+	return disarium(n) === n ? "Disarium !!" : 'Not !!'
 }
 
 console.log(disariumNumber(89))			// "Disarium !!"
