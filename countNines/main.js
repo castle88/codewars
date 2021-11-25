@@ -32,8 +32,9 @@ function number9(n){
 
 
 
-console.log(number9(8))			//should return 0
-console.log(number9(9))			//should return 1
-console.log(number9(10))		//should return 1
-console.log(number9(98)) 		//should return 18
-console.log(number9(100)) 		//should return 20
+console.log(number9(8))			// 0
+console.log(number9(9))			// 1
+console.log(number9(10))		// 1
+console.log(number9(98)) 		// 18
+console.log(number9(100)) 		// 20
+console.log(number9(565754))		// 275645
