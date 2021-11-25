@@ -6,7 +6,12 @@
 // Write a method is_narcissistic(i) (in Haskell: isNarcissistic :: Integer -> Bool) which returns whether or not i is a Narcissistic Number.
 
 function isNarcissistic(n){
- 
+	const strArr = String(n).split('')
+	const numArr = strArr.map(x => Number(x))
+
+
+	console.log(answer)
+	return n === answer
 }
 
 
