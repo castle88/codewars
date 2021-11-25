@@ -32,7 +32,7 @@
 
 function killKthBit(n, k) {
 	const binary = n.toString(2).split('')
-	const switcher = (target)=> target === '1' ? '0' : '1'
+	const switcher = (target)=> target === '1' ? '0' : '0'
 	const answer = binary.reduce((acc, cur, index) => {
 		if (index === k) {
 			cur = switcher(cur)
@@ -40,16 +40,18 @@ function killKthBit(n, k) {
 		return acc += cur
 	},'')
 	console.log(binary.join(''))
-	console.log(answer)
+		console.log(answer)
 
+	console.log(parseInt('1111111111111111011111111111111'),2)
+	
 	return parseInt(answer, 2)
 }
 
 
 
-console.log(killKthBit(37,3))				// 33
-console.log(killKthBit(37,4))				// 37
-console.log(killKthBit(0,4))				// 0
-//console.log(killKthBit(2147483647,16))			// 2147450879
-//console.log(killKthBit(374823748,13))			// 374819652
-//console.log(killKthBit(1084197039,15))			// 1084197039
+// console.log(killKthBit(37,3))				// 33
+// console.log(killKthBit(37,4))				// 37
+// console.log(killKthBit(0,4))				// 0
+console.log(killKthBit(2147483647,16))			// 2147450879
+console.log(killKthBit(374823748,13))			// 374819652
+console.log(killKthBit(1084197039,15))			// 1084197039
