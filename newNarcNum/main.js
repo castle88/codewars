@@ -8,9 +8,11 @@
 function isNarcissistic(n){
 	const strArr = String(n).split('')
 	const numArr = strArr.map(x => Number(x))
-
+	const len = strArr.length
+	const answer = numArr.reduce((acc, cur) => acc += Math.pow(cur, len),0)
 
 	console.log(answer)
+
 	return n === answer
 }
 
