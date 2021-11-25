@@ -49,8 +49,8 @@ function killKthBit(n, k) {
 
 
 
-// console.log(killKthBit(37,3))				// 33
-// console.log(killKthBit(37,4))				// 37
+// console.log(killKthBit(37,3))			// 33
+// console.log(killKthBit(37,4))			// 37
 // console.log(killKthBit(0,4))				// 0
 console.log(killKthBit(2147483647,16))			// 2147450879
 console.log(killKthBit(374823748,13))			// 374819652
