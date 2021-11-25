@@ -10,7 +10,10 @@
 
 
 function usdcny(usd) {
-  
+	const conversionRate = 6.75
+	const answer = usd * conversionRate
+	
+	return `${answer.toFixed(2)} Chinese Yuan`
 }
 
 
