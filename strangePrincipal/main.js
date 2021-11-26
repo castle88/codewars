@@ -8,9 +8,44 @@
 
 
 function numOfOpenLockers(n){
-//Your code
+	const firstStudent = first(n)
+	const secondStudent = second(firstStudent)
+	let studentLoop = secondStudent
+	
+	for (let i = 3; i <= n; i++) {
+		studentLoop = everyoneElse(i, studentLoop)
+	}
+	const answer = studentLoop.filter(x => x === 'open')
+	
+	return answer.length
+}
+
+function first(n) {
+	const lockers = []
+	for (let i = 1; i <= n; i++) {
+		lockers.push('open')
+	}
+
+	return lockers
+}
+
+function second(array) {
+	return array.map((x, i) => i % 2 !== 0 ? 'closed' : x)
+}
+
+function everyoneElse(studentPosition, array) {
+	return array.map((x, i) => {
+		if ((i + 1) % studentPosition === 0) {
+			return x === 'open' ? 'closed' : 'open'
+		}
+		return x
+	})
 }
 
 
+//console.log(everyoneElse(3, ['open', 'closed', 'open','closed','open','closed']))
+
+//console.log(numOfOpenLockers(20))
 console.log(numOfOpenLockers(4521))	 // 67
 console.log(numOfOpenLockers(203))	 // 14
+console.log(numOfOpenLockers(99))
