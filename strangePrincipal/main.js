@@ -6,6 +6,7 @@
 
 // The given input is always an integer greater than or equal to zero that is why there is no need for validation.
 
+// this runs too slow to pass but nice clean functions lol
 
 function numOfOpenLockers(n){
 	const firstStudent = first(n)
