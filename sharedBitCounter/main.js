@@ -12,15 +12,32 @@
 // Hint: you can do this with just string manipulation, but binary operators will make your life much easier.
 
 function sharedBits(a, b) {
-//   Your code here
+	const binaryA = a.toString(2)//.split('')
+	const binaryB = b.toString(2)//.split('')
+	console.log(binaryA)
+	console.log(binaryB)
+	console.log(makeLengthSix(binaryA))
+	console.log(makeLengthSix(binaryB))
+	console
+	const answer = makeLengthSix(binaryA).split('').map((x, i) => x === binaryB[i] && x === '1' ? true : false)//.filter(x => x === true)
+	
+	return answer
+}
+
+function makeLengthSix(str) {
+	const binaryArr = str.split('')
+	while (binaryArr.length <= 6) {
+		binaryArr.unshift('0')
+	}
+	return binaryArr.join('')
 }
 
 
 
 
 
-console.log(sharedBits(2, 3))		// false
-console.log(sharedBits(7, 10))		// false
-console.log(sharedBits(43, 77))		// true
+//console.log(sharedBits(2, 3))		// false
+//console.log(sharedBits(7, 10))		// false
+//console.log(sharedBits(43, 77))		// true
 console.log(sharedBits(7, 15))		// true
 console.log(sharedBits(23, 7))		// true
