@@ -37,8 +37,13 @@ function makeLengthSix(str) {
 
 
 
-console.log(sharedBits(2, 3))		// false
-console.log(sharedBits(7, 10))		// false
-console.log(sharedBits(43, 77))		// true
-console.log(sharedBits(7, 15))		// true
-console.log(sharedBits(23, 7))		// true
+//console.log(sharedBits(2, 3))		// false
+//console.log(sharedBits(7, 10))		// false
+//console.log(sharedBits(43, 77))		// true
+//console.log(sharedBits(7, 15))		// true
+//console.log(sharedBits(23, 7))		// true
+
+// failed tests
+
+console.log(sharedBits(28936, 36885))	//should be false: expected true to equal false
+console.log(sharedBits(3072, 1536))	// should be false: expected true to equal false
