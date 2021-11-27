@@ -18,10 +18,11 @@ function sharedBits(a, b) {
 	console.log(binaryB)
 	console.log(makeLengthSix(binaryA))
 	console.log(makeLengthSix(binaryB))
-	console
-	const answer = makeLengthSix(binaryA).split('').map((x, i) => x === binaryB[i] && x === '1' ? true : false)//.filter(x => x === true)
+	const compareArr = makeLengthSix(binaryB)
+	console.log(binaryB)
+	const answer = makeLengthSix(binaryA).split('').map((x, i) => x === compareArr[i] && x === '1' ? true : false).filter(x => x === true)
 	
-	return answer
+	return answer.length >= 2
 }
 
 function makeLengthSix(str) {
@@ -36,8 +37,8 @@ function makeLengthSix(str) {
 
 
 
-//console.log(sharedBits(2, 3))		// false
-//console.log(sharedBits(7, 10))		// false
-//console.log(sharedBits(43, 77))		// true
+console.log(sharedBits(2, 3))		// false
+console.log(sharedBits(7, 10))		// false
+console.log(sharedBits(43, 77))		// true
 console.log(sharedBits(7, 15))		// true
 console.log(sharedBits(23, 7))		// true
