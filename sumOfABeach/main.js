@@ -10,7 +10,7 @@
 
 function sumOfABeach(beach) {
 	const regex = /(Water)|(Sand)|(Sun)|(Fish)/gmi
-	return beach.match(regex).length
+	return beach.match(regex) === null ? 0 : beach.match(regex).length
 }
 
 
