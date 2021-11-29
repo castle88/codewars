@@ -12,11 +12,20 @@
 // For a given lesson time in minutes (min) , write a function price to calculate how much the lesson costs.
 
 
-function cost (mins) { 
-	return (mins - 60) / 30
+function cost (mins) { 	
+	const cost = [30, 10]
+	const gracePeriod = 5
+	const time = (mins, gracePeriod) => (mins - gracePeriod) - 60 > 0 ? (mins - gracePeriod) - 60 : 0
+	
+	
+	console.log(time(mins, gracePeriod))
+	return 
 } 
-  
 
+function roundToHalfHour (mins) {
+	return Math.ceil((60 - mins) / 30)
+}
+console.log(roundToHalfHour(84))
 
 console.log(cost(45))		// 30
 console.log(cost(63))		// 30
