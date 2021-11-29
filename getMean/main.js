@@ -6,7 +6,11 @@
 
 
 function getAverage(marks){
-  //TODO : calculate the downward rounded average of the marks array
+	const totalStudents = marks.length
+	const averageMark = marks.reduce((acc, cur) => {
+		return acc += cur
+	}) / totalStudents
+	return averageMark
 }
 
 
