@@ -5,7 +5,14 @@
 // Examples:
 
 function cubeSum(n, m){
-	
+	let total = 0
+	const arr = [n, m]
+	const min = Math.min(...arr)
+	const max = Math.max(...arr)
+	for (let i = min + 1; i <= max; i++) {
+		total += Math.pow(i,3)
+	}
+	return total
 }
 
 
