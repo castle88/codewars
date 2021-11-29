@@ -14,8 +14,8 @@
 
 function cost (mins) { 	
 	const price = [30, 10]
-	const formula = (mins) => {
-		const timeAfterFirstHour = mins - 5 - 60
+	const formula = (minutes) => {
+		const timeAfterFirstHour = minutes - 5 - 60
 
 		return timeAfterFirstHour < 0 ? 0 : Math.ceil((timeAfterFirstHour) / 30)
 	}
