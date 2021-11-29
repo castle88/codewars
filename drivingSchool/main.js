@@ -13,7 +13,7 @@
 
 
 function cost (mins) { 
-  return;
+	return (mins - 60) / 30
 } 
   
 
