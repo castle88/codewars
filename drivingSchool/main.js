@@ -23,7 +23,7 @@ function cost (mins) {
 	return formula(mins) === 0 ? price[0] : formula(mins) * price[1] + price[0]
 } 
 
-console.log(268 / 60)
+
 console.log(cost(45))		// 30
 console.log(cost(63))		// 30
 console.log(cost(84))		// 40
