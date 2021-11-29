@@ -10,7 +10,7 @@ function getAverage(marks){
 	const averageMark = marks.reduce((acc, cur) => {
 		return acc += cur
 	}) / totalStudents
-	return averageMark
+	return Math.floor(averageMark)
 }
 
 
