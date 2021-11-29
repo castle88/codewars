@@ -19,6 +19,8 @@
 //     function should be case insensitive to pass the tests
 
 function validateHello(greetings) {
+	const regex = /(hello)|(ciao)|(salut)|(hallo)|(hola)|(ahoj)|(czesc)/gi
+	return greetings.match(regex) ? true : false
 }
 
 
