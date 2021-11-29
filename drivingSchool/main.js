@@ -13,20 +13,17 @@
 
 
 function cost (mins) { 	
-	const cost = [30, 10]
-	const gracePeriod = 5
-	const time = (mins, gracePeriod) => (mins - gracePeriod) - 60 > 0 ? (mins - gracePeriod) - 60 : 0
-	
-	
-	console.log(time(mins, gracePeriod))
-	return 
+	const price = [30, 10]
+	const formula = (mins) => {
+		const timeAfterFirstHour = mins - 5 - 60
+
+		return timeAfterFirstHour < 0 ? 0 : Math.ceil((timeAfterFirstHour) / 30)
+	}
+
+	return formula(mins) === 0 ? price[0] : formula(mins) * price[1] + price[0]
 } 
 
-function roundToHalfHour (mins) {
-	return Math.ceil((60 - mins) / 30)
-}
-console.log(roundToHalfHour(84))
-
+console.log(268 / 60)
 console.log(cost(45))		// 30
 console.log(cost(63))		// 30
 console.log(cost(84))		// 40
