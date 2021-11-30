@@ -9,7 +9,8 @@
 
 var maxRedigit = function(num) {
 	const digitArr = String(num).split('').map(x => Number(x))
-	return num <= 0 ? null : digitArr.sort((a, b) => b - a).join('')
+	const maxNum = Number(digitArr.sort((a, b) => b - a).join(''))
+	return num <= 0 || num >= maxNum ? null : maxNum
 };
 
 
