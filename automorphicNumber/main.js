@@ -56,7 +56,11 @@
 
 
 function automorphic(n){
-  //your code here
+	const numSquared = Math.pow(n, 2)
+	const digitArray = String(numSquared).split('')
+
+	// return digitArray[digitArray.length -1] === `${n}` ? 'Automorphic' : 'Not!!'
+	return digitArray
 }
 
 console.log(automorphic(1))	// "Automorphic"
