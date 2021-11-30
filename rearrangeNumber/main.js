@@ -10,7 +10,7 @@
 var maxRedigit = function(num) {
 	const digitArr = String(num).split('').map(x => Number(x))
 	const maxNum = Number(digitArr.sort((a, b) => b - a).join(''))
-	return num <= 0 || num >= maxNum ? null : maxNum
+	return num <= 0 || digitArr.length > 3 || digitArr.length < 3 ? null : maxNum
 };
 
 
