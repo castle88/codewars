@@ -8,7 +8,8 @@
 
 
 var maxRedigit = function(num) {
-  // Do yor magic :)
+	const digitArr = String(num).split('').map(x => Number(x))
+	return num <= 0 ? null : digitArr.sort((a, b) => b - a).join('')
 };
 
 
