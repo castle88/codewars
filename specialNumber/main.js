@@ -49,7 +49,8 @@
 
 
 function specialNumber(n){
-  //your code here
+	const digitArr = String(n).split('')
+	return digitArr.every(x => x.match(/[0-5]/gi)) ? 'Special!!' : 'NOT!!'
 }
 
 
