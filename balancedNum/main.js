@@ -62,18 +62,13 @@ function balancedNum(number){
 	const digitStrArr = String(number).split('')
 	const length = digitStrArr.length
 	const first = digitStrArr.filter((x, i) => i < halved(digitStrArr))
-	console.log(first)
-	
 	const last = digitStrArr.filter((x, i) => i > halved(digitStrArr) + 1)
-	console.log(last)
-	
+		
 	if(digitStrArr.length === 1 || digitStrArr.length === 2) return 'Balanced'
 	
 	const firstSum = first.reduce((acc, cur) => acc += Number(cur))
-	console.log(firstSum)
-
 	const lastSum = last.reduce((acc, cur) => acc += Number(cur))
-	console.log(lastSum)
+	
 	return firstSum === lastSum ? 'Balanced' : 'Not Balanced'
 }
 
