@@ -58,20 +58,34 @@
 
 
 
-function balancedNum(number)
-{
-    return "Do your magic!"
+function balancedNum(number){
+	const digitStrArr = String(number).split('')
+	const length = digitStrArr.length
+	const first = digitStrArr.filter((x, i) => i < halved(digitStrArr))
+	console.log(first)
+}
+
+function halved (arr) {
+	if (arr.length % 2 === 0) {
+		return arr.length / 2 - 1
+	}
+	if(arr.length === 3) {
+		return arr.length / 2 - 1
+	}
+	if(arr.length === 1) {
+		return arr.length / 2
+	}
 }
 
 
-console.log(balancedNum(7))		// "Balanced"
-console.log(balancedNum(959))		// "Balanced"
-console.log(balancedNum(13))		// "Balanced"
-console.log(balancedNum(432))		// "Not Balanced"
-console.log(balancedNum(424))		// "Balanced"
-
+//console.log(balancedNum(7))		// "Balanced"
+//console.log(balancedNum(959))		// "Balanced"
+//console.log(balancedNum(13))		// "Balanced"
+//console.log(balancedNum(432))		// "Not Balanced"
+//console.log(balancedNum(424))		// "Balanced"
+//
 console.log(balancedNum(1024))		// "Not Balanced"
 console.log(balancedNum(66545))		// "Not Balanced"
 console.log(balancedNum(295591))	// "Not Balanced"
-console.log(balancedNum(1230987))	// "Not Balanced"
-console.log(balancedNum(56239814))	// "Balanced"
+//console.log(balancedNum(1230987))	// "Not Balanced"
+//console.log(balancedNum(56239814))	// "Balanced"
