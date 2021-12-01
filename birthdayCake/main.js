@@ -16,11 +16,13 @@ function cake(x, y){
 	const charArr = y.split('')
 	const charCodeArr = charArr.map((x, i) => i % 2 === 0 ? x.charCodeAt() : alphabet.indexOf(x) + 1)
 	const candleTotal = charCodeArr.reduce((acc, cur) => acc += cur)
-
-	return candleTotal > x ? 'Fire!' : 'That was close!'
+	const combustion = .7 * x
+	
+	return candleTotal > combustion ? 'Fire!' : 'That was close!'
 }
 
 
 console.log(cake(900, 'abcdef'))		// 'That was close!'
 console.log(cake(56, 'ifkhchlhfd'))		// 'Fire!'
 console.log(cake(256, 'aaaaaddddr'))		// 'Fire!'
+console.log(cake(159, 'cv'))			// 'Fire!
