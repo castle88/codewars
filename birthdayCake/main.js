@@ -12,7 +12,12 @@
 
 
 function cake(x, y){
-	
+	const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+	const charArr = y.split('')
+	const charCodeArr = charArr.map((x, i) => i % 2 === 0 ? x.charCodeAt() : alphabet.indexOf(x) + 1)
+	const candleTotal = charCodeArr.reduce((acc, cur) => acc += cur)
+
+	return candleTotal > x ? 'Fire!' : 'That was close!'
 }
 
 
