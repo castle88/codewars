@@ -63,29 +63,40 @@ function balancedNum(number){
 	const length = digitStrArr.length
 	const first = digitStrArr.filter((x, i) => i < halved(digitStrArr))
 	console.log(first)
+	
+	const last = digitStrArr.filter((x, i) => {
+		if (digitStrArr.length === 1) {
+			return x
+		}
+			return i > halved(digitStrArr) + 1
+	})
+	console.log(last)
+
+	const firstSum = first.reduce((acc, cur) => acc += Number(cur))
+	console.log(firstSum)
+
+	const lastSum = last.reduce((acc, cur) => acc += Number(cur))
+	console.log(lastSum)
+
+	return firstSum === lastSum ? 'Balanced' : 'Not Balanced'
 }
 
 function halved (arr) {
-	if (arr.length % 2 === 0) {
-		return arr.length / 2 - 1
-	}
-	if(arr.length === 3) {
-		return arr.length / 2 - 1
-	}
-	if(arr.length === 1) {
+	if (arr.length === 1) {
 		return arr.length / 2
 	}
+	return arr.length / 2 - 1
 }
 
 
-//console.log(balancedNum(7))		// "Balanced"
-//console.log(balancedNum(959))		// "Balanced"
+console.log(balancedNum(7))		// "Balanced"
+console.log(balancedNum(959))		// "Balanced"
 //console.log(balancedNum(13))		// "Balanced"
-//console.log(balancedNum(432))		// "Not Balanced"
-//console.log(balancedNum(424))		// "Balanced"
-//
+console.log(balancedNum(432))		// "Not Balanced"
+console.log(balancedNum(424))		// "Balanced"
+
 console.log(balancedNum(1024))		// "Not Balanced"
 console.log(balancedNum(66545))		// "Not Balanced"
 console.log(balancedNum(295591))	// "Not Balanced"
-//console.log(balancedNum(1230987))	// "Not Balanced"
-//console.log(balancedNum(56239814))	// "Balanced"
+console.log(balancedNum(1230987))	// "Not Balanced"
+console.log(balancedNum(56239814))	// "Balanced"
