@@ -432,7 +432,7 @@ function naughtyOrNice(data) {
 		}
 	}
 
-	return [`Nice: ${nice}, Naughty: ${naughty}`]
+	return nice >= naughty ? 'Nice!' : 'Naughty!'
 }
 
 console.log(naughtyOrNice(testObj)) // == "Nice!")
