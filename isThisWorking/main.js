@@ -7,25 +7,22 @@
 
 
 function Counter(){
-  var self = this;
-  self.count = 0;
+  this.count = 0;
 
-  self.updateCount = function(){
-    self.count++
-  };
+  this.updateCount = () => this.count++
 }
 
 
 
 var counter = new Counter();
 
-console.log(counter.count)		// 0, "Counter should be reset"
+console.log(counter.count)		// 0
 
 counter.updateCount();
 
-console.log(counter.count)		// 1, "Counter should have been updated"
+console.log(counter.count)		// 1
 
 var counter2 = new Counter();
 
-console.log(counter2.count)		// 0, "New counter should use different value"
-console.log(counter.count)		// 1, "Old counter should have preserved its value"
+console.log(counter2.count)		// 0 
+console.log(counter.count)		// 1
