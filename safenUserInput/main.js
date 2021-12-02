@@ -17,7 +17,7 @@
 
 
 function htmlspecialchars(formData) {
-  // Insert your code here
+	return formData.split('').map(x => x === '&' ? `&amp;` : x === '<' ? '&gt;' : x === '>' ? '&lt;' : x === `"` ? '&quot;' : x).join('')
 }
 
 
