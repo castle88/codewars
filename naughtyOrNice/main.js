@@ -420,7 +420,19 @@ const testObj = {
 
 
 function naughtyOrNice(data) {
-	
+	let nice = 0
+	let naughty = 0
+	for (let month in data) {
+		for (let day in data[month]) {
+			if (data[month][day] === 'Nice') {
+				nice++
+			}else if (data[month][day] === 'Naughty') {
+				naughty++
+			}
+		}
+	}
+
+	return [`Nice: ${nice}, Naughty: ${naughty}`]
 }
 
 console.log(naughtyOrNice(testObj)) // == "Nice!")
