@@ -3,8 +3,14 @@
 // Example: 'man' should return [ '01101101', '01100001', '01101110' ]
 
 function wordToBin(str) {
-  //code away!!!
-  return array;
+  const wordArr = str
+    .split("")
+    .map((x) =>
+      x.charCodeAt(0).toString(2).length < 8
+        ? "0" + x.charCodeAt().toString(2)
+        : x.charCodeAt().toString(2)
+    );
+  return wordArr;
 }
 
 console.log(wordToBin("man"));
