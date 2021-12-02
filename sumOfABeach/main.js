@@ -3,19 +3,16 @@
 
 // sumOfABeach("WAtErSlIde")                    ==>  1
 // sumOfABeach("GolDeNSanDyWateRyBeaChSuNN")    ==>  3
-// sumOfABeach("gOfIshsunesunFiSh")             ==>  4 
+// sumOfABeach("gOfIshsunesunFiSh")             ==>  4
 // sumOfABeach("cItYTowNcARShoW")               ==>  0
 
-
-
 function sumOfABeach(beach) {
-	const regex = /(Water)|(Sand)|(Sun)|(Fish)/gmi
-	return beach.match(regex) === null ? 0 : beach.match(regex).length
+  const regex = /(Water)|(Sand)|(Sun)|(Fish)/gim;
+  return beach.match(regex) === null ? 0 : beach.match(regex).length;
 }
 
-
-console.log(sumOfABeach("SanD"))			// 1
-console.log(sumOfABeach("sunshine"))			// 1
-console.log(sumOfABeach("sunsunsunsun"))		// 4
-console.log(sumOfABeach("123FISH321"))			// 1
-console.log(sumOfABeach("GolDeNSanDyWateRyBeaChSuNN"))	// 3
+console.log(sumOfABeach("SanD")); // 1
+console.log(sumOfABeach("sunshine")); // 1
+console.log(sumOfABeach("sunsunsunsun")); // 4
+console.log(sumOfABeach("123FISH321")); // 1
+console.log(sumOfABeach("GolDeNSanDyWateRyBeaChSuNN")); // 3
