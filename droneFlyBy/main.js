@@ -9,7 +9,14 @@
 // Return the resulting lamps string. See example tests for more clarity.
 
 function flyBy(lamps, drone){
-
+	let flightLength = drone.length
+	let flyBy = lamps.split('').map((x, i) => {
+		if(i < flightLength) {
+			return x === 'x' ? 'o' : 'x'
+		}
+		return x
+	})
+	return flyBy.join('')
 }
 
 
