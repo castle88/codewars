@@ -70,6 +70,8 @@ const obj = {
   2: ["A", "B", "D", "A"],
 };
 const result = removeDuplicateIds(obj);
+console.log(result);
+// { 1: ["C"], 2: ["A", "B", "D"] });
 
 const obj1 = {
   1: ["C", "F", "G"],
@@ -77,6 +79,8 @@ const obj1 = {
   3: ["A", "B", "D"],
 };
 const result1 = removeDuplicateIds(obj1);
+console.log(result1);
+// { 1: ["F", "G"], 2: ["C"], 3: ["A", "B", "D"] });
 
 const obj2 = {
   1: ["A"],
@@ -84,6 +88,8 @@ const obj2 = {
   3: ["A"],
 };
 const result2 = removeDuplicateIds(obj2);
+console.log(result2);
+// { 1: [], 2: [], 3: ["A"] });
 
 const obj3 = {
   432: ["A", "A", "B", "D"],
@@ -92,13 +98,5 @@ const obj3 = {
   11: ["P", "R", "S", "D"],
 };
 const result3 = removeDuplicateIds(obj3);
-
-console.log(result, { 1: ["C"], 2: ["A", "B", "D"] });
-console.log(result1, { 1: ["F", "G"], 2: ["C"], 3: ["A", "B", "D"] });
-console.log(result2, { 1: [], 2: [], 3: ["A"] });
-console.log(result3, {
-  11: ["P", "R", "S"],
-  53: ["C"],
-  236: ["L", "X", "G", "H"],
-  432: ["A", "B", "D"],
-});
+console.log(result3);
+// { 11: ["P", "R", "S"], 53: ["C"], 236: ["L", "X", "G", "H"], 432: ["A", "B", "D"] });
