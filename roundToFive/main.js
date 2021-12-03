@@ -18,7 +18,11 @@
 // You can assume that all inputs are valid integers.
 
 function roundToNext5(n) {
-  return n;
+  let i = n;
+  while (i % 5 !== 0) {
+    i++;
+  }
+  return i;
 }
 
 console.log(roundToNext5(0)); //  0
