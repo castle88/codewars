@@ -36,16 +36,18 @@ class Song {
     this.artist = artist;
     this.uniqueListeners = [];
   }
+
   howMany = (arr) => {
-    const lowerCaseElements = arr.map((listeners) => listeners.toLowerCase());
-    lowerCaseElements.forEach((listener) => {
-      if (this.uniqueListeners.includes(listener)) {
-        this.uniqueListeners.push(listener);
-      }
-    });
-    const newUsers = lowerCaseElements.filter((listeners) =>
-      this.uniqueListeners.includes(listeners)
+    const lowerCaseElements = [
+      ...new Set(arr.map((listeners) => listeners.toLowerCase())),
+    ];
+
+    const newUsers = lowerCaseElements.filter(
+      (listeners) => !this.uniqueListeners.includes(listeners)
     );
+
+    newUsers.forEach((listener) => this.uniqueListeners.push(listener));
+
     return newUsers.length;
   };
 }
@@ -55,6 +57,9 @@ const mountMoose = new Song("Mount Moose", "The Snazzy Moose");
 console.log(mountMoose);
 
 console.log(mountMoose.howMany(["John", "Fred", "Bob", "Carl", "RyAn"])); // 5
+
+mountMoose.howMany(["John", "Fred", "Bob", "Carl", "RyAn"]);
+console.log(mountMoose.uniqueListeners);
 
 console.log(mountMoose.howMany(["JoHn", "Luke", "AmAndA"])); // 2
 
