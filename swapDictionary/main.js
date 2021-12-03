@@ -11,7 +11,18 @@
 //     The dictionary given will not be empty
 //     You do not have to sort the items in the lists
 
-function switchDict(dic) {}
+function switchDict(dic) {
+  const newDictionary = {};
+  for (let key in dic) {
+    if (newDictionary[dic[key]]) {
+      newDictionary[dic[key]].push(key);
+    } else {
+      newDictionary[dic[key]] = [key];
+    }
+  }
+
+  return newDictionary;
+}
 
 console.log(
   switchDict({ Ice: "Cream", Age: "21", Light: "Cream", Double: "Cream" })
