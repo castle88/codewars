@@ -62,7 +62,24 @@
 // }
 
 const removeDuplicateIds = (obj) => {
-  return obj;
+  const charactersUsed = [];
+  const uniqueObj = {};
+  const stack = [];
+
+  for (let key in obj) {
+    stack.unshift(key);
+  }
+
+  stack.forEach((objKey) => {
+    uniqueObj[objKey] = obj[objKey].filter((letter) => {
+      if (!charactersUsed.includes(letter)) {
+        charactersUsed.push(letter);
+        return letter;
+      }
+    });
+  });
+
+  return uniqueObj;
 };
 
 const obj = {
