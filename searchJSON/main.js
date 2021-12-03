@@ -20,10 +20,13 @@
 function getCharacters(obj, key, val) {
   var foundCharacters = [];
   obj["characters"].forEach((x) => {
-    if (x[key].toLowerCase() === val.toLowerCase()) {
-      foundCharacters.push(x);
+    if (x[key]) {
+      if (x[key].toLowerCase() === val.toLowerCase()) {
+        foundCharacters.push(x);
+      }
     }
   });
+
   return foundCharacters;
 }
 
