@@ -21,8 +21,6 @@ function makeClass(...properties) {
     return obj;
   };
 }
-const props = [];
-console.log(makeClass("name", "species", "age", "health", "weight", "color"));
 
 // function Animal(name,species,age,health,weight,color) {
 //   this.name = name;
