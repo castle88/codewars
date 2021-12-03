@@ -19,34 +19,33 @@
 
 function getCharacters(obj, key, val) {
   var foundCharacters = [];
-  // Insert fun here
+  obj["characters"].forEach((x) => {
+    if (x[key].toLowerCase() === val.toLowerCase()) {
+      foundCharacters.push(x);
+    }
+  });
   return foundCharacters;
 }
 
-console.log(
-  getCharacters(
+const charactersObj = {
+  characters: [
     { name: "Dipper Pines", age: "12", speciality: "adventurer" },
-    "name",
-    "Dipper Pines"
-  )
-); // true
-
-console.log(
-  getCharacters(
-    { name: "Waddles", age: "Unknown", speciality: "pig stuff" },
-    "name",
-    "waddles"
-  )
-); // true
-
-console.log(
-  getCharacters(
+    { name: "Mabel Pines", age: "12", speciality: "energetic optimist" },
+    { name: "Grunkle Stan", age: "Unknown", speciality: "shyster" },
+    { name: "Soos Ramirez", age: "22", speciality: " lovable man-child" },
     {
       name: "Wendy Corduroy",
       age: "15",
       speciality: "sociable and nonchalant",
     },
-    "name",
-    "Wendy"
-  )
-); // false,
+    { name: "Waddles", age: "Unknown", speciality: "pig stuff" },
+    { name: "Tambry", age: "15", speciality: "sociable and nonchalant" },
+  ],
+};
+
+console.log(getCharacters(charactersObj, "name", "Dipper Pines"));
+// [{"name":"Dipper Pines", "age":"12", "speciality":"adventurer"}]
+console.log(getCharacters(charactersObj, "name", "waddles"));
+// [{"name":"Waddles", "age":"Unknown", "speciality":"pig stuff"}]
+console.log(getCharacters(charactersObj, "name", "Wendy"));
+// [{"name":"Wendy Corduroy", "age":"15", "speciality":"sociable and nonchalant"}]),
