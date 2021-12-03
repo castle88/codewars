@@ -34,12 +34,25 @@ class Song {
   constructor(title, artist) {
     this.title = title;
     this.artist = artist;
+    this.uniqueListeners = [];
   }
+  howMany = (arr) => {
+    const lowerCaseElements = arr.map((listeners) => listeners.toLowerCase());
+    lowerCaseElements.forEach((listener) => {
+      if (this.uniqueListeners.includes(listener)) {
+        this.uniqueListeners.push(listener);
+      }
+    });
+    const newUsers = lowerCaseElements.filter((listeners) =>
+      this.uniqueListeners.includes(listeners)
+    );
+    return newUsers.length;
+  };
 }
 
 // 'Test for title and artist'
-console.log(mountMoose.title, "Mount Moose");
-console.log(mountMoose.artist, "The Snazzy Moose");
+const mountMoose = new Song("Mount Moose", "The Snazzy Moose");
+console.log(mountMoose);
 
 console.log(mountMoose.howMany(["John", "Fred", "Bob", "Carl", "RyAn"])); // 5
 
