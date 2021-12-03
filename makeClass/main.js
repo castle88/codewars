@@ -14,11 +14,15 @@
 // const Animal = makeClass("name","species","age","health","weight","color")
 
 function makeClass(...properties) {
-  const obj = {};
-  properties.forEach((x) => (obj.prototype.x = x));
-
-  return obj;
+  return function () {
+    const obj = {};
+    const args = Array.from(arguments);
+    properties.forEach((x, i) => (obj[x] = args[i]));
+    return obj;
+  };
 }
+const props = [];
+console.log(makeClass("name", "species", "age", "health", "weight", "color"));
 
 // function Animal(name,species,age,health,weight,color) {
 //   this.name = name;
@@ -28,7 +32,8 @@ function makeClass(...properties) {
 //   this.weight = weight;
 //   this.color = color;
 // }
-// const Animel = makeClass('name','species','age','health','weight','color')
+const Animel = makeClass("name", "species", "age", "health", "weight", "color");
+console.log(Animel("Bob", "Dog", "5", "good", "50lb", "brown"));
 
 // describe("Basic Tests", function() {
 //   const dog1 = new Animal('Bob','Dog','5','good','50lb','brown')
