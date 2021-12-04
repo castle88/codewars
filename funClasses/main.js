@@ -53,7 +53,8 @@ class Animal {
 }
 class Shark extends Animal {
   constructor(name, age, status) {
-    super(name, age, status);
+    super(name, age);
+    this.status = status;
     this.legs = 0;
     this.species = "shark";
   }
@@ -61,7 +62,8 @@ class Shark extends Animal {
 
 class Cat extends Animal {
   constructor(name, age, status) {
-    super(name, age, status);
+    super(name, age);
+    this.status = status;
     this.legs = 4;
     this.species = "cat";
   }
@@ -71,10 +73,15 @@ class Cat extends Animal {
 }
 
 class Dog extends Animal {
-  constructor(name, age, status) {
-    super(name, age, status);
+  constructor(name, age, status, master) {
+    super(name, age);
+    this.status = status;
+    this.master = master;
     this.legs = 4;
     this.species = "dog";
+  }
+  greetMaster() {
+    return `Hello ${this.master}`;
   }
 }
 
