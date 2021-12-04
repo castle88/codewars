@@ -9,7 +9,7 @@
 // Fundamentals
 
 function sayHello(name) {
-  return "Hello";
+  return `Hello, ${name}`;
 }
 
 console.log(sayHello("Mr. Spock")); // 'Hello, Mr. Spock'
