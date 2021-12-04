@@ -40,7 +40,7 @@
 // Get Coding :)
 
 class Animal {
-  constructor(name, age, legs, species, status) {
+  constructor(name, age, status, legs, species) {
     this.name = name;
     this.age = age;
     this.legs = legs;
@@ -71,7 +71,11 @@ class Cat extends Animal {
 }
 
 class Dog extends Animal {
-  // On your own now - you can do it :D
+  constructor(name, age, status) {
+    super(name, age, status);
+    this.legs = 4;
+    this.species = "dog";
+  }
 }
 
 var billy = new Shark("Billy", 3, "Alive and well");
