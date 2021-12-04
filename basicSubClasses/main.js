@@ -5,6 +5,26 @@
 class God {
   static create() {}
 }
+
+class Human extends God {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+class Man extends Human {
+  constructor(name) {
+    super(name);
+    this.gender = "Man";
+  }
+}
+
+class Woman extends Human {
+  constructor(name) {
+    super(name);
+    this.gender = "Woman";
+  }
+}
 // code
 
 let humans = God.create();
