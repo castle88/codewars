@@ -52,13 +52,22 @@ class Animal {
   }
 }
 class Shark extends Animal {
-  constructor(/* Insert your parameters here */) {
-    super(/* Make a call to the parent class's constructor with the correct arguments */);
+  constructor(name, age, status) {
+    super(name, age, status);
+    this.legs = 0;
+    this.species = "shark";
   }
 }
 
 class Cat extends Animal {
-  // Do the same here as you did for Shark - define your constructor function and any other methods you need
+  constructor(name, age, status) {
+    super(name, age, status);
+    this.legs = 4;
+    this.species = "cat";
+  }
+  introduce() {
+    return `Hello, my name is ${this.name} and I am ${this.age} years old.  Meow meow!`;
+  }
 }
 
 class Dog extends Animal {
