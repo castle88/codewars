@@ -8,7 +8,13 @@
 // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
 class Person {
-  constructor() {}
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  get info() {
+    return `${this.name}s age is ${this.age}`;
+  }
 }
 
 const john = new Person("john", 34);
