@@ -36,7 +36,11 @@ class Router {
       return obj.route === rt && obj.method === meth;
     });
     console.log(actor);
-    return actor.length > 0 ? actor[0].action() : "Error 404: Not Found";
+    return actor.length === 1
+      ? actor[0].action()
+      : actor.length > 1
+      ? actor[actor.length - 1].action()
+      : "Error 404: Not Found";
   }
 }
 
