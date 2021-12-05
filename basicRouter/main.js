@@ -18,26 +18,39 @@
 // The router should also handle modifying existing routes. See the example tests for more details.
 
 class Router {
-  constructor() {}
+  constructor() {
+    this.routes = [];
+  }
+  bind(route, method, action) {
+    const routeContainer = {
+      route: route,
+      method: method,
+      action: action,
+    };
+
+    this.routes.push(routeContainer);
+  }
+  runRequest(rt, meth) {
+    console.log(this.routes);
+    const actor = this.routes.filter((obj) => {
+      return obj.route === rt && obj.method === meth;
+    });
+    console.log(actor);
+    return actor.length > 0 ? actor[0].action() : "Error 404: Not Found";
+  }
 }
 
 const router = new Router();
 
-router.bind("/hello", "GET", function () {
-  return "hello world";
-});
-router.bind("/login", "GET", function () {
-  return "Please log-in.";
-});
+router.bind("/hello", "GET", () => "hello world");
+router.bind("/login", "GET", () => "Please log-in.");
 
 console.log(router.runRequest("/hello", "GET")); // 'hello world'
 console.log(router.runRequest("/login", "GET")); // 'Please log-in.'
 
 const router2 = new Router();
 
-router2.bind("/vote", "POST", function () {
-  return "Voted.";
-});
+router2.bind("/vote", "POST", () => "Voted.");
 router2.bind("/comment", "POST", function () {
   return "Comment sent.";
 });
