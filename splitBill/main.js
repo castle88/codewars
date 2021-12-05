@@ -29,7 +29,12 @@ function splitTheBill(x) {
     bill.push(x[person]);
   }
   const billTotal = bill.reduce((acc, cur) => (acc += cur));
-  return billTotal;
+  const splitCost = billTotal / people.length;
+
+  return people.reduce((obj, person) => {
+    obj[person] = x[person] - splitCost;
+    return obj;
+  }, {});
 }
 
 console.log(splitTheBill({ A: 20, B: 15, C: 10 })); // {A: 5, B: 0, C: -5});
