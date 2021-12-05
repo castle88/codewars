@@ -34,8 +34,25 @@
 
 // Your coding mastery will reveal answers to these and many other important questions in the tests. Let the journey begin!
 
-function Journey(object, crew, balloons) {
-  // let the journey begin
+class Journey {
+  constructor(object, crew, balloons) {
+    this.object = object;
+    this.crew = crew;
+    this.balloons = balloons;
+  }
+  balloonFlightInKilograms() {
+    return this.balloons * 4.8 * 0.001;
+  }
+  totalPassengerWeightInKilograms() {
+    return this.crew * 80;
+  }
+
+  isPossible() {
+    return (
+      this.object.weight + this.totalPassengerWeightInKilograms() <
+      this.balloonFlightInKilograms()
+    );
+  }
 }
 
 const letterToEllie = { weight: 0.004536 };
