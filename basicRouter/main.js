@@ -40,41 +40,41 @@ class Router {
   }
 }
 
-const router = new Router();
+// let router = new Router();
 
-router.bind("/hello", "GET", () => "hello world");
-router.bind("/login", "GET", () => "Please log-in.");
+// router.bind("/hello", "GET", () => "hello world");
+// router.bind("/login", "GET", () => "Please log-in.");
 
-console.log(router.runRequest("/hello", "GET")); // 'hello world'
-console.log(router.runRequest("/login", "GET")); // 'Please log-in.'
+// console.log(router.runRequest("/hello", "GET")); // 'hello world'
+// console.log(router.runRequest("/login", "GET")); // 'Please log-in.'
 
-const router2 = new Router();
+// let router = new Router();
 
-router2.bind("/vote", "POST", () => "Voted.");
-router2.bind("/comment", "POST", function () {
-  return "Comment sent.";
-});
+// router.bind("/vote", "POST", () => "Voted.");
+// router.bind("/comment", "POST", function () {
+//   return "Comment sent.";
+// });
 
-console.log(router2.runRequest("/vote", "POST")); // 'Voted.'
-console.log(router2.runRequest("/comment", "POST")); // 'Comment sent.'
+// console.log(router.runRequest("/vote", "POST")); // 'Voted.'
+// console.log(router.runRequest("/comment", "POST")); // 'Comment sent.'
 
-const router3 = new Router();
+// let router = new Router();
 
-router3.bind("/login", "GET", function () {
-  return "Please log-in.";
-});
-router3.bind("/login", "POST", function () {
-  return "Logging-in.";
-});
+// router.bind("/login", "GET", function () {
+//   return "Please log-in.";
+// });
+// router.bind("/login", "POST", function () {
+//   return "Logging-in.";
+// });
 
-console.log(router3.runRequest("/login", "GET")); // 'Please log-in.'
-console.log(router3.runRequest("/login", "POST")); // 'Logging-in.'
+// console.log(router.runRequest("/login", "GET")); // 'Please log-in.'
+// console.log(router.runRequest("/login", "POST")); // 'Logging-in.'
 
-const router4 = new Router();
+// let router = new Router();
 
-console.log(router4.runRequest("/this-url-does-not-exist", "GET")); // 'Error 404: Not Found'
+// console.log(router.runRequest("/this-url-does-not-exist", "GET")); // 'Error 404: Not Found'
 
-const router5 = new Router();
+let router = new Router();
 
 router.bind("/page", "GET", function () {
   return "First binding.";
@@ -83,4 +83,4 @@ router.bind("/page", "GET", function () {
   return "Modified binding.";
 });
 
-console.log(router5.runRequest("/page", "GET")); // 'Modified binding.'
+console.log(router.runRequest("/page", "GET")); // 'Modified binding.'
