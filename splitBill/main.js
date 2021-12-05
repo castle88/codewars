@@ -32,7 +32,11 @@ function splitTheBill(x) {
   const splitCost = billTotal / people.length;
 
   return people.reduce((obj, person) => {
-    obj[person] = x[person] - splitCost;
+    let amountOwed = x[person] - splitCost;
+    obj[person] =
+      amountOwed - Math.floor(amountOwed) === 0
+        ? amountOwed
+        : Number(amountOwed.toFixed(2).toString());
     return obj;
   }, {});
 }
