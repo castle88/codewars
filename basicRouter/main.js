@@ -52,39 +52,39 @@ router.bind("/login", "GET", () => "Please log-in.");
 console.log(router.runRequest("/hello", "GET")); // 'hello world'
 console.log(router.runRequest("/login", "GET")); // 'Please log-in.'
 
-let router = new Router();
+// let router = new Router();
 
-router.bind("/vote", "POST", () => "Voted.");
-router.bind("/comment", "POST", function () {
-  return "Comment sent.";
-});
+// router.bind("/vote", "POST", () => "Voted.");
+// router.bind("/comment", "POST", function () {
+//   return "Comment sent.";
+// });
 
-console.log(router.runRequest("/vote", "POST")); // 'Voted.'
-console.log(router.runRequest("/comment", "POST")); // 'Comment sent.'
+// console.log(router.runRequest("/vote", "POST")); // 'Voted.'
+// console.log(router.runRequest("/comment", "POST")); // 'Comment sent.'
 
-let router = new Router();
+// let router = new Router();
 
-router.bind("/login", "GET", function () {
-  return "Please log-in.";
-});
-router.bind("/login", "POST", function () {
-  return "Logging-in.";
-});
+// router.bind("/login", "GET", function () {
+//   return "Please log-in.";
+// });
+// router.bind("/login", "POST", function () {
+//   return "Logging-in.";
+// });
 
-console.log(router.runRequest("/login", "GET")); // 'Please log-in.'
-console.log(router.runRequest("/login", "POST")); // 'Logging-in.'
+// console.log(router.runRequest("/login", "GET")); // 'Please log-in.'
+// console.log(router.runRequest("/login", "POST")); // 'Logging-in.'
 
-let router = new Router();
+// let router = new Router();
 
-console.log(router.runRequest("/this-url-does-not-exist", "GET")); // 'Error 404: Not Found'
+// console.log(router.runRequest("/this-url-does-not-exist", "GET")); // 'Error 404: Not Found'
 
-let router = new Router();
+// let router = new Router();
 
-router.bind("/page", "GET", function () {
-  return "First binding.";
-});
-router.bind("/page", "GET", function () {
-  return "Modified binding.";
-});
+// router.bind("/page", "GET", function () {
+//   return "First binding.";
+// });
+// router.bind("/page", "GET", function () {
+//   return "Modified binding.";
+// });
 
-console.log(router.runRequest("/page", "GET")); // 'Modified binding.'
+// console.log(router.runRequest("/page", "GET")); // 'Modified binding.'
