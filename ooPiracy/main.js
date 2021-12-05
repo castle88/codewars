@@ -37,6 +37,11 @@ class Ship {
     this.draft = draft;
     this.crew = crew;
   }
+  isWorthIt() {
+    const crewTotal = this.crew * 1.5;
+    const estWeight = this.draft - crewTotal;
+    return estWeight > 20;
+  }
 }
 
 var emptyShip = new Ship(0, 0);
