@@ -32,9 +32,11 @@
 
 // Good luck!
 
-function Ship(draft, crew) {
-  this.draft = draft;
-  this.crew = crew;
+class Ship {
+  constructor(draft, crew) {
+    this.draft = draft;
+    this.crew = crew;
+  }
 }
 
 var emptyShip = new Ship(0, 0);
