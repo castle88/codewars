@@ -13,14 +13,15 @@ class Guesser {
   }
 
   guess(n) {
-    if (this.lives === 0) {
-      return "error already dead";
-    }
-    if (this.number === n) {
+    const checklives = () => this.lives === 0;
+    const removeLife = () => this.lives--;
+    const checkCorrect = () => n === this.number;
+    if (checklives()) return "error already dead";
+    if (checkCorrect()) return true;
+    if (!checklives && checkCorrect) {
+      removeLife();
       return true;
     }
-    this.lives--;
-    return false;
   }
 }
 
