@@ -29,7 +29,17 @@
 // "red"
 
 class Quark {
-  // Your code here.
+  constructor(color, flavor) {
+    this.color = color;
+    this.flavor = flavor;
+    this.baryon_number = 1 / 3;
+  }
+  interact(quark2) {
+    let color1 = this.color;
+    let color2 = quark2.color;
+    this.color = color2;
+    quark2.color = color1;
+  }
 }
 
 let q1 = new Quark("red", "up");
