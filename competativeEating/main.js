@@ -25,7 +25,20 @@
 // Happy judging!
 
 function scoreboard(whoAteWhat) {
-  return whoAteWhat;
+  const scores = [];
+  whoAteWhat.forEach((person) => {
+    scores.push({
+      name: person.name,
+      score:
+        person.chickenwings * 5 + person.hamburgers * 3 + person.hotdogs * 2,
+    });
+  });
+  const winner = scores.sort((a, b) => {
+    if (a.score === b.score) {
+      return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+    }
+    return b.score - a.score;
+  });
 }
 
 var whoAteWhat = [
