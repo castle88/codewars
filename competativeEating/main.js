@@ -25,7 +25,7 @@
 // Happy judging!
 
 function scoreboard(whoAteWhat) {
-  // your code here..
+  return whoAteWhat;
 }
 
 var whoAteWhat = [
@@ -35,22 +35,15 @@ var whoAteWhat = [
   { name: "Big Bob", chickenwings: 20, hamburgers: 4, hotdogs: 11 },
 ];
 
-result = [
-  { name: "Big Bob", score: 134 },
-  { name: "Billy The Beast", score: 122 },
-  { name: "Habanero Hillary", score: 98 },
-  { name: "Joey Jaws", score: 94 },
-];
-
 console.log(scoreboard(whoAteWhat));
-// result);
+// result
 
 console.log(
   scoreboard([
     { name: "Big Bob", chickenwings: 20, hamburgers: 4, hotdogs: 11 },
   ])
 );
-// [{name: "Big Bob", score: 134}]);
+// [{name: "Big Bob", score: 134}]
 
 console.log(
   scoreboard([
@@ -58,7 +51,7 @@ console.log(
     { name: "Big Bob", chickenwings: 20, hamburgers: 4, hotdogs: 11 },
   ])
 );
-// [{name: "Big Bob", score: 134},{name: "Joey Jaws", score: 94}]);
+// [{name: "Big Bob", score: 134},{name: "Joey Jaws", score: 94}]
 
 console.log(
   scoreboard([
@@ -66,7 +59,14 @@ console.log(
     { name: "Big Bob", chickenwings: 1, hamburgers: 0, hotdogs: 0 },
   ])
 );
-// [{name: "Big Bob", score: 5},{name: "Joey Jaws", score: 5}]);
+// [{name: "Big Bob", score: 5},{name: "Joey Jaws", score: 5}]
 
 console.log(scoreboard([]));
-// []);
+// []
+
+//result = [
+//   { name: "Big Bob", score: 134 },
+//   { name: "Billy The Beast", score: 122 },
+//   { name: "Habanero Hillary", score: 98 },
+//   { name: "Joey Jaws", score: 94 },
+// ];
