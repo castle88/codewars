@@ -13,6 +13,13 @@ class Guesser {
   }
 
   guess(n) {
+    if (this.lives === 0) {
+      return "error already dead";
+    }
+    if (this.number === n) {
+      return true;
+    }
+    this.lives--;
     return false;
   }
 }
@@ -25,14 +32,17 @@ guesser.guess(10);
 guesser.guess(10);
 console.log(guesser.guess(10)); // true
 
-let guesser = new Guesser(10, 2);
+let guesser2 = new Guesser(10, 2);
 
-guesser.guess(1);
-console.log(!guesser.guess(1)); // false
+guesser2.guess(1);
+console.log(guesser2.guess(1)); // false
 
-let guesser = new Guesser(10, 2);
+let guesser3 = new Guesser(10, 2);
 
-guesser.guess(1);
-guesser.guess(2);
+guesser3.guess(1);
+console.log(guesser3.lives);
 
-console.log(guesser.guess(10)); // error already dead
+guesser3.guess(2);
+console.log(guesser3.lives);
+
+console.log(guesser3.guess(10)); // error already dead
