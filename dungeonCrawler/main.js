@@ -61,7 +61,13 @@ class Game {
 }
 
 class Player {
-  constructor() {}
+  constructor(name) {
+    this.name = name || "Player";
+    this.health = 100.0;
+    this.position = { x: 0, y: 0 };
+    this.damage = 10.0;
+    this.luck = 1.0;
+  }
 }
 
 class Monster {
