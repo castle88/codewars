@@ -67,19 +67,23 @@ class Game {
 class Player {
   constructor(name) {
     this.name = name || "Player";
-    this.health = 100.0;
+    this.health = (100).toFixed(2);
     this.position = { x: 0, y: 0 };
-    this.damage = 10.0;
-    this.luck = 1.0;
+    this.damage = (10).toFixed(2);
+    this.luck = (1).toFixed(2);
   }
 }
 
 class Monster {
-  constructor() {}
+  constructor(level) {
+    this.level = level;
+  }
 }
 
 class Map {
-  constructor() {}
+  constructor(level) {
+    this.level = level;
+  }
 }
 
 var game = new Game("Leeroy", 0);
