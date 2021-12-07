@@ -57,7 +57,11 @@
 //     level - This should store the level passed into the constructor.
 
 class Game {
-  constructor() {}
+  constructor(name, level) {
+    this.player = new Player(name);
+    this.level = level;
+    this.floors = [];
+  }
 }
 
 class Player {
