@@ -66,7 +66,7 @@ class Game {
 
 class Player {
   constructor(name) {
-    this.name = name || "Player";
+    this.name = typeof name === "string" ? name : "Player";
     this.health = 100;
     this.position = { x: 0, y: 0 };
     this.damage = 10;
