@@ -59,14 +59,14 @@
 class Game {
   constructor(name, level) {
     this.player = new Player(name);
-    this.level = level;
+    this.level = Number(level) > 0 ? Number(level) : 0;
     this.floors = [];
   }
 }
 
 class Player {
   constructor(name) {
-    this.name = typeof name === "string" ? name : "Player";
+    this.name = typeof name === "string" && name.length > 0 ? name : "Player";
     this.health = 100;
     this.position = { x: 0, y: 0 };
     this.damage = 10;
