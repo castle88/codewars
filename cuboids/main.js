@@ -22,16 +22,30 @@ class Cuboid {
     this.width = width;
     this.height = height;
   }
-  get surfaceArea() {}
-  get volume() {}
+  get surfaceArea() {
+    return (
+      2 *
+      (this.length * this.width +
+        this.width * this.height +
+        this.height * this.length)
+    );
+  }
+
+  get volume() {
+    return this.length * this.width * this.height;
+  }
 }
 class Cube extends Cuboid {
-  super(length, width, height) {
-    this.length = length;
+  constructor(length) {
+    super(length, length, length);
   }
 }
 
-var cuboid = new Cuboid(1, 2, 3);
+const cuboid = new Cuboid(1, 2, 3);
+const cube = new Cube(1);
+
+console.log(cube);
+console.log(cuboid);
 console.log(cuboid.length); // 1
 console.log(cuboid.width); // 2
 console.log(cuboid.height); // 3
@@ -40,16 +54,19 @@ console.log(cuboid.surfaceArea); // 22
 
 cuboid.length = 4;
 
+console.log(cuboid);
 console.log(cuboid.volume); // 24
 console.log(cuboid.surfaceArea); // 52
 
 cuboid.width = 5;
 
+console.log(cuboid);
 console.log(cuboid.volume); // 60
 console.log(cuboid.surfaceArea); // 94
 
 cuboid.height = 6;
 
+console.log(cuboid);
 console.log(cuboid.volume); // 120
 console.log(cuboid.surfaceArea); // 148
 
