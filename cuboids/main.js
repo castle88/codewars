@@ -17,10 +17,18 @@
 // Listed below are a few articles of interest that may help you complete this Kata:
 
 class Cuboid {
-  // TODO: Program Me
+  constructor(length, width, height) {
+    this.length = length;
+    this.width = width;
+    this.height = height;
+  }
+  get surfaceArea() {}
+  get volume() {}
 }
 class Cube extends Cuboid {
-  // Don't forget to make a call to super ;)
+  super(length, width, height) {
+    this.length = length;
+  }
 }
 
 var cuboid = new Cuboid(1, 2, 3);
