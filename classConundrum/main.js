@@ -17,15 +17,26 @@ class List {
 
   add(item) {
     if (typeof item != this.type)
-      return `This item is not of type: ${typeof item}`;
+      return `This item is not of type: ${this.type}`;
 
     this.items.push(item);
-    return item;
+    this.count++;
+    return this;
   }
 }
 
 let myList = new List("string");
 
+console.log(myList);
+
 console.log(myList.add("Hello").count); // 1
+
+console.log(myList);
+
 console.log(myList.add(5)); // 'Wrong type added'
+
+console.log(myList);
+
 console.log(myList.add(" ").add("World!").count); // 3
+
+console.log(myList);
