@@ -45,6 +45,7 @@ const cuboid = new Cuboid(1, 2, 3);
 const cube = new Cube(1);
 
 console.log(cube);
+
 console.log(cuboid);
 console.log(cuboid.length); // 1
 console.log(cuboid.width); // 2
@@ -70,7 +71,7 @@ console.log(cuboid);
 console.log(cuboid.volume); // 120
 console.log(cuboid.surfaceArea); // 148
 
-console.log([(cuboid.length, cuboid.width, cuboid.height)]); // [7, 8, 9];
+console.log([cuboid.length, cuboid.width, cuboid.height]); // [7, 8, 9];
 
 console.log(cuboid.volume); // 504
 console.log(cuboid.surfaceArea); // 382

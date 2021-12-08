@@ -39,6 +39,8 @@ function scoreboard(whoAteWhat) {
     }
     return b.score - a.score;
   });
+
+  return winner;
 }
 
 var whoAteWhat = [
