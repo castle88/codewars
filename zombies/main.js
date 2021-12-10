@@ -13,7 +13,12 @@
 // Good luck! (I think you're going to need it.)
 
 function zombie_shootout(zombies, range, ammo) {
-  //your code goes here
+  const zombiesShot =
+    2 * range - ammo < 0
+      ? `You shot all ${zombies} zombies.`
+      : 2 * range - ammo > 0
+      ? `You shot ${ammo} zombies before being eaten: ran out of ammo`
+      : `You shot ${zombies} before being eaten: overwhelmed.`;
 }
 
 console.log(zombie_shootout(50, 10, 8)); // "You shot 8 zombies before being eaten: ran out of ammo."
