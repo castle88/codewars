@@ -30,15 +30,22 @@
 class DataSet {
   constructor(...data) {
     this.data = data;
+    this.num = this.data.length;
     this.mean = this.setMean();
-    this.stdDeviation = this.setVar();
+    this.variantArr = this.data.map(
+      (x) => Math.pow(x - this.mean, 2) / this.num
+    );
+    this.variance = this.setVar();
+    this.stdDeviation;
   }
   setMean() {
-    return this.data.reduce((acc, cur) => (acc += cur)) / this.data.length;
+    const mean = this.data.reduce((acc, cur) => (acc += cur)) / this.num;
+    return mean;
   }
 
   setVar() {
-    return;
+    const variance = this.variantArr.reduce((acc, cur) => (acc += cur));
+    return variance;
   }
 
   // Define the rest of your class here
@@ -52,6 +59,8 @@ console.log(myData1.variance); // 4
 console.log(myData1.stdDeviation); // 2
 
 myData1.data[6] = 14;
+
+console.log(myData1.data);
 
 console.log(myData1.setMean()); // 5
 console.log(myData1.mean); // 5
