@@ -62,6 +62,9 @@ myData1.data[6] = 14;
 
 console.log(myData1.data);
 
+console.log(myData1.data.reduce((acc, cur) => (acc += cur)));
+console.log(myData1.variantArr.reduce((acc, cur) => (acc += cur)));
+
 console.log(myData1.setMean()); // 5
 console.log(myData1.mean); // 5
 console.log(myData1.setVar()); // 16
