@@ -29,8 +29,18 @@
 
 class DataSet {
   constructor(...data) {
-    // Define your constructor here
+    this.data = data;
+    this.mean = this.setMean();
+    this.stdDeviation = this.setVar();
   }
+  setMean() {
+    return this.data.reduce((acc, cur) => (acc += cur)) / this.data.length;
+  }
+
+  setVar() {
+    return;
+  }
+
   // Define the rest of your class here
 }
 
