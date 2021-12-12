@@ -17,7 +17,7 @@
 // Basic Language Featur
 
 function defineSuit(card) {
-  // good luck
+  return card.match("♣");
 }
 
 console.log(defineSuit("3♣")); // 'clubs'
