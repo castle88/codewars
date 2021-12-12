@@ -17,7 +17,10 @@
 // Basic Language Featur
 
 function defineSuit(card) {
-  return card.match("♣");
+  if (card.match("♣")) return "clubs";
+  if (card.match("♠")) return "spades";
+  if (card.match("♥")) return "hearts";
+  if (card.match("♦")) return "diamonds";
 }
 
 console.log(defineSuit("3♣")); // 'clubs'
