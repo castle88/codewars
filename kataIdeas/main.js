@@ -5,10 +5,10 @@
 function well(x) {
   const goodIdeas = x.filter((y) => y === "good");
   return goodIdeas.length === 0
-    ? "Fail"
+    ? "Fail!"
     : goodIdeas.length > 0 && goodIdeas.length < 3
-    ? "Publish"
-    : "I smell a series";
+    ? "Publish!"
+    : "I smell a series!";
 }
 
 console.log(well(["bad", "bad", "bad"])); // 'Fail!'
