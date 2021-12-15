@@ -24,8 +24,23 @@
 //     +5 dog years for each year after that
 
 var humanYearsCatYearsDogYears = function (humanYears) {
-  // Your code here!
-  return [0, 0, 0];
+  const catYears =
+    humanYears > 2
+      ? 24 + (humanYears - 2) * 4
+      : humanYears === 2
+      ? 24
+      : humanYears === 1
+      ? 15
+      : 0;
+  const dogYears =
+    humanYears > 2
+      ? 24 + (humanYears - 2) * 5
+      : humanYears === 2
+      ? 24
+      : humanYears === 1
+      ? 15
+      : 0;
+  return [humanYears, catYears, dogYears];
 };
 
 console.log(humanYearsCatYearsDogYears(1)); // [1,15,15]
