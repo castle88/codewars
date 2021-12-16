@@ -6,7 +6,13 @@
 
 // Your job is to write an algorithm that gets you from the input to the output.
 
-function preFizz(n) {}
+function preFizz(n) {
+  const incArr = [];
+  for (let i = 1; i <= n; i++) {
+    incArr.push(i);
+  }
+  return incArr;
+}
 
 console.log(preFizz(1)); // [1]
 console.log(preFizz(2)); // [1,2]
