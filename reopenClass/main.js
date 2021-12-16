@@ -17,6 +17,5 @@
 String.prototype.myNewMethod = function () {
   return this.toUpperCase();
 };
-console.log(myNewMethod());
 
 console.log("abc".myNewMethod()); // "ABC"
