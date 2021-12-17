@@ -20,7 +20,20 @@
 
 // {name: 'Abraham'} -> 'Not a string'
 
-var makeAcronym = function (string) {};
+var makeAcronym = function (string) {
+  const regex = /[a-z]/gi;
+  const charArr = string.split("");
+  if (charArr.every((x) => x.match(regex))) {
+    const firstLetters = string.split(" ").map((x) => x.charAt(0));
+    return firstLetters;
+  } else if (charArr === "") {
+    return "";
+  } else if (charArr.every((x) => x.match(/\w/gi))) {
+    return "Not Letters";
+  } else {
+    return "Not a string";
+  }
+};
 
 console.log(makeAcronym("My aunt sally")); // 'MAS'
 console.log(makeAcronym("42")); // 'Not letters'
