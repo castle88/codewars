@@ -9,7 +9,9 @@
 
 // Array will contain at least one item.
 Array.prototype.max = function () {
-  return this.every((x) => typeof x === "number") ? Math.max(...this) : NaN;
+  return this.every((x) => typeof Number(x) === "number")
+    ? Math.max(...this)
+    : NaN;
 };
 
 console.log([2, 5, 1, 3].max()); // 5
