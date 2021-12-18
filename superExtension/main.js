@@ -15,7 +15,14 @@ class Animal {
   }
 }
 
-class Cat extends Animal {}
+class Cat extends Animal {
+  constructor(name) {
+    super(name);
+  }
+  speak() {
+    return `${this.name} makes a noise, ${this.name} goes meow.`;
+  }
+}
 
 var cat = new Cat("Mr Whiskers");
 console.log(cat.speak()); // 'Mr Whiskers makes a noise, Mr Whiskers goes meow.'
