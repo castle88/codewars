@@ -47,7 +47,10 @@ const dict = {
   Z: "zero",
 };
 
-var makeBackronym = function (string) {};
+var makeBackronym = function (string) {
+  const characters = string.toUpperCase().split("");
+  return characters.map((x) => dict[x]).join(" ");
+};
 
 console.log(makeBackronym("dgm")); // "disturbing gregarious mustache"
 console.log(makeBackronym("lkj")); // "literal klingon joke"
