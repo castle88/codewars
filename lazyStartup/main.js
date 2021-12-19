@@ -27,14 +27,20 @@
 // ["Stefan", "Raj", "Marie", "Edward", "Amy", "Alexa", "Liz", "Claire", "Juan", "Katie", "Luke", "Dee"])
 
 function binRota(arr) {
-  const rotation = [];
-  arr.forEach((group, index) => {
-    if (index % 2 !== 0) {
-      group.reverse().forEach((person) => rotation.push(person));
-    } else {
-      group.forEach((person) => rotation.push(person));
-    }
-  });
+  //   const rotation = [];
+  //   arr.forEach((group, index) => {
+  //     if (index % 2 !== 0) {
+  //       group.reverse().forEach((person) => rotation.push(person));
+  //     } else {
+  //       group.forEach((person) => rotation.push(person));
+  //     }
+  //   });
+  //   return rotation;
+  const rotation = arr.reduce((container, current, index) => {
+    return index % 2 === 0
+      ? container.concat(current)
+      : container.concat(current.reverse());
+  }, []);
   return rotation;
 }
 
