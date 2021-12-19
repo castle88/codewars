@@ -26,7 +26,17 @@
 
 // ["Stefan", "Raj", "Marie", "Edward", "Amy", "Alexa", "Liz", "Claire", "Juan", "Katie", "Luke", "Dee"])
 
-function binRota(arr) {}
+function binRota(arr) {
+  const rotation = [];
+  arr.forEach((group, index) => {
+    if (index % 2 !== 0) {
+      group.reverse().forEach((person) => rotation.push(person));
+    } else {
+      group.forEach((person) => rotation.push(person));
+    }
+  });
+  return rotation;
+}
 
 console.log(
   binRota([
