@@ -12,18 +12,31 @@
 
 // x == dog, return 'pass out from excitement y times' (where y is the value given for y).
 
-function present(x, y){
-  switch(x){
-	case 'badpresent':
-		return 'Take this back!'
-		break;
-	case 'goodpresent':
-		return x.split('').map(char => String.fromCharCode(char.charCodeAt() + y)).join('')
-		break;
-	case 'crap'
+function present(x, y) {
+  switch (x) {
+    case "badpresent":
+      return "Take this back!";
+      break;
+    case "goodpresent":
+      return x
+        .split("")
+        .map((char) => String.fromCharCode(char.charCodeAt() + y))
+        .join("");
+      break;
+    case "bang":
+      return x
+        .split("")
+        .map((char) => String.fromCharCode(char.charCodeAt() - y))
+        .join("");
+      break;
+    case "dog":
+      return `pass out from excitement ${y} times`;
+      break;
+    case "crap" || "":
+      return x.split("").sort().join("");
   }
 }
 
-console.log(present('badpresent', 3)) // 'Take this back!'
-console.log(present('goodpresent', 9)) // 'pxxmy{n|nw}'
-console.log(present('crap', 10)) // 'acpr'
+console.log(present("badpresent", 3)); // 'Take this back!'
+console.log(present("goodpresent", 9)); // 'pxxmy{n|nw}'
+console.log(present("crap", 10)); // 'acpr'
