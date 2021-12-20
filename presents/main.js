@@ -24,11 +24,9 @@ function present(x, y) {
         .join("");
       break;
     case "bang":
-      return x
-        .split("")
-        .map((char) => String.fromCharCode(char.charCodeAt() - y))
-        .join("");
-      break;
+      return x.split("").reduce((acc, cur) => {
+        return (acc += cur.charCodeAt() - y);
+      }, 0);
     case "dog":
       return `pass out from excitement ${y} times`;
       break;
@@ -40,3 +38,4 @@ function present(x, y) {
 console.log(present("badpresent", 3)); // 'Take this back!'
 console.log(present("goodpresent", 9)); // 'pxxmy{n|nw}'
 console.log(present("crap", 10)); // 'acpr'
+console.log(present("bang", 10)); // 368
