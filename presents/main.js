@@ -30,8 +30,9 @@ function present(x, y) {
     case "dog":
       return `pass out from excitement ${y} times`;
       break;
-    case "crap" || "":
+    default:
       return x.split("").sort().join("");
+      break;
   }
 }
 
@@ -39,3 +40,4 @@ console.log(present("badpresent", 3)); // 'Take this back!'
 console.log(present("goodpresent", 9)); // 'pxxmy{n|nw}'
 console.log(present("crap", 10)); // 'acpr'
 console.log(present("bang", 10)); // 368
+console.log(present("empty", 10)); // empty
