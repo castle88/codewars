@@ -6,9 +6,9 @@
 // "No?" --> "No?"
 
 function ensureQuestion(s) {
-  // Code here
+  return s.match(/[?]$/) !== null ? s : `${s}?`;
 }
 
 console.log(ensureQuestion("")); // "?"
-console.log(ensureQuestion("Yes")); // "Yes"
-console.log(ensureQuestion("No?")); // "No"
+console.log(ensureQuestion("Yes")); // "Yes?"
+console.log(ensureQuestion("No?")); // "No?"
