@@ -7,14 +7,14 @@
 // IMPORTANT: Returning just "string" is insufficient. We are required to use Object Literal Notation.
 
 function myFunction() {
-  var MyObject = {
-    objProperty: "string"
-    objMethod: function() {
-      return myObject.objProperty;
-		}
-  }
-  
-  return myObject.Objmethod();
-};
+  const myObject = {
+    objProperty: "string",
+    objMethod: function () {
+      return this.objProperty;
+    },
+  };
 
-console.log(myFunction().objMethod()) // 'string'
+  return myObject;
+}
+
+console.log(myFunction().objMethod()); // 'string'
