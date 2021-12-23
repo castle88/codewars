@@ -15,7 +15,9 @@
 // Credits: this kata was inspired by the farzher's kata 'Sum of large ints' . In fact, it can be seen as a sort of prep kata for that one.
 
 function f(n) {
-  //insert your code here.... and go crazy!
+  const sum = (n * (n + 1)) / 2;
+
+  return sum === Math.floor(sum) && n > 0 ? sum : false;
 }
 
 console.log(f(100)); // 5050
