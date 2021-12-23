@@ -11,7 +11,8 @@ function stantonMeasure(arr) {
     return acc;
   }, {});
 
-  return counts[counts[1]];
+  return counts[counts[1]] ? counts[counts[1]] : 0;
 }
 
 console.log(stantonMeasure([1, 4, 3, 2, 1, 2, 3, 2])); // 3
+console.log(stantonMeasure([-7, 1, 6, 1])); // 0
