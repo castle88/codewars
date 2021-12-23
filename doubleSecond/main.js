@@ -5,7 +5,7 @@
 // doubleEveryOther([1,2,3,4]) => [ 1, 4, 3, 8 ]
 
 function doubleEveryOther(a) {
-  return a;
+  return a.map((x, i) => (i % 2 === 0 ? x : x * 2));
 }
 
 console.log(doubleEveryOther([1, 2, 3, 4])); // [1,4,3,8]
