@@ -11,7 +11,7 @@
 // Good luck! :-)
 
 function lostSheep(friday, saturday, total) {
-  return total - [...friday, ...saturday].reduce((acc, cur) => (acc += cur), 0);
+  return [...friday, ...saturday].reduce((acc, cur) => (acc -= cur), total);
 }
 
 console.log(lostSheep([1, 2], [3, 4], 15)); // 5
