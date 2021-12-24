@@ -16,7 +16,22 @@
 // -------------------------
 //                        6
 
-function calc(x) {}
+function calc(x) {
+  const charArr = x.split("");
+  const original = charArr
+    .map((x) => x.charCodeAt())
+    .join("")
+    .split("")
+    .reduce((acc, cur) => (acc += Number(cur)), 0);
+  const replaced = charArr
+    .map((x) => x.charCodeAt())
+    .join("")
+    .replace(/7/gi, 1)
+    .split("")
+    .reduce((acc, cur) => (acc += Number(cur)), 0);
+
+  return original - replaced;
+}
 
 console.log(calc("abcdef")); //  6
 console.log(calc("ifkhchlhfd")); //  6
