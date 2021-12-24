@@ -13,7 +13,9 @@
 
 // Return the resulting array.
 
-function trouble(x, t) {}
+function trouble(x, t) {
+  return;
+}
 
 console.log(trouble([1, 3, 5, 6, 7, 4, 3], 7)); // [1, 3, 5, 6, 7, 4]
 console.log(trouble([4, 1, 1, 1, 4], 2)); // [4, 1, 4]
