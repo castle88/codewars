@@ -24,7 +24,26 @@
 // Given a number, return an array with the number of hands raised by each person at that step.
 
 const getPositions = (s) => {
-  return /* your code here */ null;
+  const players = [0, 0, 0];
+  for (let i = 1; i <= s; i++) {
+    if (players[0] < 2) {
+      players[0]++;
+    } else {
+      players[0] = 0;
+      if (players[1] < 2) {
+        players[1]++;
+      } else {
+        players[1] = 0;
+        if (players[2] < 2) {
+          players[2]++;
+        } else {
+          players[2] = 0;
+        }
+      }
+    }
+    console.log(players[0]);
+  }
+  return players;
 };
 
 console.log(getPositions(54)); // [0, 0, 0]
