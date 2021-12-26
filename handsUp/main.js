@@ -41,7 +41,6 @@ const getPositions = (s) => {
         }
       }
     }
-    console.log(players[0]);
   }
   return players;
 };
