@@ -13,7 +13,15 @@
 // Even-odd disparity
 
 function capitalize(s) {
-  return [];
+  const charArr = s.split("");
+  const first = charArr
+    .map((x, i) => (i % 2 === 0 ? x.toUpperCase() : x))
+    .join("");
+  const second = charArr
+    .map((x, i) => (i % 2 !== 0 ? x.toUpperCase() : x))
+    .join("");
+
+  return [first, second];
 }
 
 console.log(capitalize("abcdef")); // ['AbCdEf', 'aBcDeF']);
