@@ -37,13 +37,8 @@ function grid(N) {
   const container = [];
   for (let i = 0; i < N; i++) {
     const end = alphabet.slice(i, N + i);
-    console.log(end);
-
     const overFlow = alphabet.slice(0, N - end.length);
-    console.log(overFlow);
-
     const joined = end.concat(overFlow);
-    console.log(joined.length);
 
     if (joined.length === N) {
       container.push(joined);
