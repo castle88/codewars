@@ -36,13 +36,20 @@ function grid(N) {
 
   const container = [];
   for (let i = 0; i < N; i++) {
-    let end = alphabet.slice(i, N + i);
+    const end = alphabet.slice(i, N + i);
     console.log(end);
 
-    let overFlow = alphabet.slice(0, N - end.length);
+    const overFlow = alphabet.slice(0, N - end.length);
     console.log(overFlow);
 
-    container.push(end.concat(overFlow));
+    const joined = end.concat(overFlow);
+    console.log(joined.length);
+
+    if (joined.length === N) {
+      container.push(joined);
+    } else {
+      container.push(joined.concat(alphabet.slice(0, N - joined.length)));
+    }
   }
   const answer = container.map((x) => x.join(" "));
 
