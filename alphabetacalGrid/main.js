@@ -31,7 +31,12 @@
 //     null
 
 function grid(N) {
-  //...
+  const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+  if (N < 0) return null;
+  let grid = "";
+
+  for (let i = 0; i < N; i++) {}
+  return;
 }
 
 console.log(grid(0)); // ''
