@@ -36,10 +36,17 @@ function grid(N) {
 
   const container = [];
   for (let i = 0; i < N; i++) {
-    container.push(alphabet.slice(i, N + i));
+    if (alphabet.slice(i, N + i).length !== N) {
+      let end = alphabet.slice(i, N + i);
+      let overFlow = alphabet.slice(0, N - end.length);
+      container.push(end.concat(overFlow));
+    } else {
+      container.push(alphabet.slice(i, N + i));
+    }
   }
+  const answer = container.map((x) => x.join(""));
 
-  return container;
+  return answer.join("\n");
 }
 
 console.log(grid(0)); // ''
