@@ -33,10 +33,13 @@
 function grid(N) {
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
   if (N < 0) return null;
-  let grid = "";
 
-  for (let i = 0; i < N; i++) {}
-  return;
+  const container = [];
+  for (let i = 0; i < N; i++) {
+    container.push(alphabet.slice(i, N + i));
+  }
+
+  return container;
 }
 
 console.log(grid(0)); // ''
