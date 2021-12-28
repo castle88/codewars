@@ -44,7 +44,7 @@ function grid(N) {
       container.push(alphabet.slice(i, N + i));
     }
   }
-  const answer = container.map((x) => x.join(""));
+  const answer = container.map((x) => x.join(" "));
 
   return answer.join("\n");
 }
