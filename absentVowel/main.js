@@ -13,9 +13,11 @@
 // "Bb Smith sent us six neatly arranged range bicycles"  =>  3  ; missing: "o"
 
 function absentVowel(x) {
-  const vowels = ["A", "E", "I", "O", "U"];
+  const vowels = "aeiou".split("");
+  const vowelStatus = vowels.map((vowel) => x.toLowerCase().includes(vowel));
+  const missingVowel = vowelStatus.indexOf(false);
 
-  return vowels.map((vowel) => x.includes(vowel));
+  return missingVowel;
 }
 
 console.log(absentVowel("John Doe hs seven red pples under his bsket")); //  0
