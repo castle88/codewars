@@ -12,7 +12,11 @@
 // "John Doe hs seven red pples under his bsket"          =>  0  ; missing: "a"
 // "Bb Smith sent us six neatly arranged range bicycles"  =>  3  ; missing: "o"
 
-function absentVowel(x) {}
+function absentVowel(x) {
+  const vowels = ["A", "E", "I", "O", "U"];
+
+  return vowels.map((vowel) => x.includes(vowel));
+}
 
 console.log(absentVowel("John Doe hs seven red pples under his bsket")); //  0
 console.log(absentVowel("Bb Smith sent us six neatly arranged range bicycles")); //  3
