@@ -14,15 +14,18 @@ function queue(queuers, pos) {
   let minutes = 0;
   let i = 0;
   while (queuers[pos] > 0) {
-    for (let i = 0; i < queuers.length; i++) {
+    if (i < queuers.length) {
       if (queuers[i] > 0) {
         minutes++;
       }
       queuers[i]--;
+      i++;
+    } else {
+      i = 0;
     }
   }
-  let answer = minutes - queuers.slice(0, pos).length;
-  return answer;
+
+  return minutes;
 }
 
 console.log(queue([2, 5, 3, 6, 4], 0)); // 6
