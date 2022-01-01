@@ -14,20 +14,19 @@ function queue(queuers, pos) {
   let minutes = 0;
   let i = 0;
   while (queuers[pos] > 0) {
-    if (queuers[i] > 0) {
-      i++;
+    for (let i = 0; i < queuers.length; i++) {
+      if (queuers[i] > 0) {
+        minutes++;
+      }
       queuers[i]--;
-      minutes++;
-    } else {
-      i++;
     }
   }
-
-  return minutes;
+  let answer = minutes - queuers.slice(0, pos).length;
+  return answer;
 }
 
 console.log(queue([2, 5, 3, 6, 4], 0)); // 6
-// console.log(queue([2, 5, 3, 6, 4], 1)); // 18
-// console.log(queue([2, 5, 3, 6, 4], 2)); // 12
-// console.log(queue([2, 5, 3, 6, 4], 3)); // 20
-// console.log(queue([2, 5, 3, 6, 4], 4)); // 17
+console.log(queue([2, 5, 3, 6, 4], 1)); // 18
+console.log(queue([2, 5, 3, 6, 4], 2)); // 12
+console.log(queue([2, 5, 3, 6, 4], 3)); // 20
+console.log(queue([2, 5, 3, 6, 4], 4)); // 17
