@@ -11,11 +11,23 @@
 // [hard core version now available if you don't want the "easy" kata!]
 
 function queue(queuers, pos) {
-  //your code here
+  let minutes = 0;
+  let i = 0;
+  while (queuers[pos] > 0) {
+    if (queuers[i] > 0) {
+      i++;
+      queuers[i]--;
+      minutes++;
+    } else {
+      i++;
+    }
+  }
+
+  return minutes;
 }
 
 console.log(queue([2, 5, 3, 6, 4], 0)); // 6
-console.log(queue([2, 5, 3, 6, 4], 1)); // 18
-console.log(queue([2, 5, 3, 6, 4], 2)); // 12
-console.log(queue([2, 5, 3, 6, 4], 3)); // 20
-console.log(queue([2, 5, 3, 6, 4], 4)); // 17
+// console.log(queue([2, 5, 3, 6, 4], 1)); // 18
+// console.log(queue([2, 5, 3, 6, 4], 2)); // 12
+// console.log(queue([2, 5, 3, 6, 4], 3)); // 20
+// console.log(queue([2, 5, 3, 6, 4], 4)); // 17
