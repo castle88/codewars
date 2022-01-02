@@ -9,10 +9,17 @@
 // When the inputs are valid, they will always be integers, no floats will be passed. However, you must take into account that the numbers will be of varying magnitude, between and within test cases.
 
 function noonerize(numbers) {
-  // ...mathoonerize, maybe?
+  if (!numbers.every((x) => typeof x === "number")) return "invalid array";
+  const first = String(numbers[0]).slice(0, 1);
+  const second = String(numbers[1]).slice(0, 1);
+  const n1 = Number(String(numbers[0]).replace(first, second));
+  const n2 = Number(String(numbers[1]).replace(second, first));
+
+  return n1 - n2;
 }
 
 console.log(noonerize([12, 34])); // 18
 console.log(noonerize([55, 63])); // 12
 console.log(noonerize([357, 579])); // 178
 console.log(noonerize([1000000, 9999999])); // 7000001
+console.log(noonerize(["a", "b"])); // 'invalid array'
