@@ -15,7 +15,7 @@ function noonerize(numbers) {
   const n1 = Number(String(numbers[0]).replace(first, second));
   const n2 = Number(String(numbers[1]).replace(second, first));
 
-  return n1 - n2;
+  return Math.abs(n1 - n2);
 }
 
 console.log(noonerize([12, 34])); // 18
