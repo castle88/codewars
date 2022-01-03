@@ -10,9 +10,10 @@
 function determineTime(durations) {
   const convertHours = durations.map((x) => {
     let arr = x.split(":");
-    return arr[0];
+    return Number(arr[0]) + Number(arr[1] / 60) + Number(arr[2] / 3600);
   });
-  return convertHours;
+
+  return convertHours.reduce((acc, cur) => (acc += cur), 0);
 }
 
 console.log(determineTime(["00:30:00", "02:30:00", "00:15:00"])); // true
