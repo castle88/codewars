@@ -14,7 +14,14 @@
 
 // If the sum of the three parameters (as described above) is > 22, return 'Sabbatical! Boom!', else return 'Back to your desk, boy.'.
 
-function sabb(s, val, happiness) {}
+function sabb(s, val, happiness) {
+  const strVal = s
+    .split("")
+    .filter((x) => "sabbatical".includes(x.toLowerCase())).length;
+  const formula = val + happiness + strVal;
+
+  return formula > 22 ? "Sabbatical! Boom!" : "Back to your desk, boy.";
+}
 
 console.log(sabb("Can I have a sabbatical?", 5, 5)); // 'Sabbatical! Boom!'
 console.log(sabb("Why are you shouting?", 7, 2)); // 'Back to your desk, boy.'
