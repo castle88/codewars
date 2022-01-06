@@ -9,11 +9,23 @@
 // Good luck!
 
 function solve(arr) {
-  //..
+  arr.forEach((x, i) => {
+    let regex = new RegExp(String(x), "g");
+    let matchArr = arr.join("").match(regex);
+
+    console.log(matchArr);
+
+    if (matchArr.length > 1) {
+      arr.splice(i, 1);
+    }
+
+    console.log(arr);
+  });
+  return arr;
 }
 
 console.log(solve([3, 4, 4, 3, 6, 3])); // [4,6,3]
-console.log(solve([1, 2, 1, 2, 1, 2, 3])); // [1,2,3]
-console.log(solve([1, 2, 3, 4])); // [1,2,3,4]
-console.log(solve([1, 1, 4, 5, 1, 2, 1])); // [4,5,2,1]
-console.log(solve([1, 2, 1, 2, 1, 1, 3])); // [2,1,3]
+//console.log(solve([1, 2, 1, 2, 1, 2, 3])); // [1,2,3]
+//console.log(solve([1, 2, 3, 4])); // [1,2,3,4]
+//console.log(solve([1, 1, 4, 5, 1, 2, 1])); // [4,5,2,1]
+//console.log(solve([1, 2, 1, 2, 1, 1, 3])); // [2,1,3]
