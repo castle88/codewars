@@ -7,6 +7,14 @@
 
 // Also, if somebody is giving you a negative distance, it's clearly bogus and you should yell at them by returning null (or whatever equivalent in your language). In Shell please return None. In C and COBOL please return -1.
 
-function foldTo(distance) {}
+function foldTo(distance) {
+  let thickness = 0.0001;
+  let folds = 0;
+  while (thickness < distance) {
+    thickness *= 2;
+    folds++;
+  }
+  return folds;
+}
 
 console.log(foldTo(384000000)); // 42
