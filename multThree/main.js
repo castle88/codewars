@@ -14,14 +14,10 @@ const prevMultOfThree = (n) => {
     return n;
   } else {
     const charArr = String(n).split("");
-    console.log(charArr);
+
     if (charArr.length > 1) {
       const last = charArr.pop();
       const removeLast = Number(charArr.join(""));
-
-      console.log(last);
-      console.log(charArr);
-      console.log(removeLast);
 
       return prevMultOfThree(removeLast);
     } else {
