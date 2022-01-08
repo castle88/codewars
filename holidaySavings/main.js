@@ -6,8 +6,19 @@
 
 // All inputs will be integers. Please return an integer. Round down.
 
-function dutyFree(normPrice, discount, hol) {}
+function dutyFree(normPrice, discount, hol) {
+  let savings = normPrice * (discount * 0.01);
+  let totalSavings = 0;
+  console.log(savings, totalSavings);
+  let bottles = 0;
+  while (totalSavings < hol) {
+    totalSavings += savings;
+    bottles++;
+    console.log(totalSavings);
+  }
+  return bottles - 1;
+}
 
 console.log(dutyFree(12, 50, 1000)); // 166
-console.log(dutyFree(17, 10, 500)); // 294
-console.log(dutyFree(24, 35, 3000)); // 357
+// console.log(dutyFree(17, 10, 500)); // 294
+//  console.log(dutyFree(24, 35, 3000)); // 357
