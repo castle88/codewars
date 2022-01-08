@@ -21,7 +21,7 @@ const prevMultOfThree = (n) => {
 
       return prevMultOfThree(removeLast);
     } else {
-      return -1;
+      return null;
     }
   }
 };
