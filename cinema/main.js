@@ -29,10 +29,10 @@ function movie(card, ticket, perc) {
   const regTotal = ticket * times;
   const cardPrice = ticket * perc;
   const cardTotal = Math.ceil(cardPrice * times) + card;
-  //   while () {
-  //     times++;
-  //     console.log(times);
-  //   }
+  //     while () {
+  //       times++;
+  //       console.log(times);
+  //     }
   return times;
 }
 
