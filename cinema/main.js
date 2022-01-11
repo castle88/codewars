@@ -25,7 +25,15 @@
 //     (with card the total price is 235, with tickets 240)
 
 function movie(card, ticket, perc) {
-  // your code
+  let times = 1;
+  const regTotal = ticket * times;
+  const cardPrice = ticket * perc;
+  const cardTotal = Math.ceil(cardPrice * times) + card;
+  //   while () {
+  //     times++;
+  //     console.log(times);
+  //   }
+  return times;
 }
 
 console.log(movie(500, 15, 0.9)); // 43
