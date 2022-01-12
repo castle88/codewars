@@ -16,18 +16,22 @@
 // null, ""    -> equal
 
 function compare(s1, s2) {
-  const charArr1 = s1 ? s1.split("") : false;
-  const charArr2 = s2 ? s2.split("") : false;
+  const charArr1 = s1 ? s1.toUpperCase().split("") : [""];
+  const charArr2 = s2 ? s2.toUpperCase().split("") : [""];
 
-  const check1 = charArr1 ? charArr1.every((x) => x.match(/\w/i)) : charArr1;
-  console.log(check1);
+  const check1 = charArr1.every((x) => x.match(/[A-Z]/))
+    ? charArr1.map((x) => x.charCodeAt()).reduce((acc, cur) => (acc += cur), 0)
+    : 0;
 
-  const check2 = charArr2 ? charArr2.every((x) => x.match(/\w/i)) : charArr2;
-  console.log(check2);
-  if (check1 && check2) {
-  } else {
-    return false;
-  }
+  const check2 = charArr2.every((x) => x.match(/[A-Z]/))
+    ? charArr2.map((x) => x.charCodeAt()).reduce((acc, cur) => (acc += cur), 0)
+    : 0;
+
+  console.log(charArr1.map((x) => x.charCodeAt()));
+  console.log(charArr2.map((x) => x.charCodeAt()));
+
+  console.log(check1, check2);
+  return check1 === check2;
 }
 
 console.log(compare("AD", "BC")); // true
