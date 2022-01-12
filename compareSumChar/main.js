@@ -27,10 +27,6 @@ function compare(s1, s2) {
     ? charArr2.map((x) => x.charCodeAt()).reduce((acc, cur) => (acc += cur), 0)
     : 0;
 
-  console.log(charArr1.map((x) => x.charCodeAt()));
-  console.log(charArr2.map((x) => x.charCodeAt()));
-
-  console.log(check1, check2);
   return check1 === check2;
 }
 
