@@ -22,13 +22,17 @@
 
 // " May the Code be with you ! "
 
-function union(s1, s2) {}
+function union(s1, s2) {
+  const join = [...s1].concat([...s2]);
+
+  return new Set(join);
+}
 
 let A = new Set([1, 2]),
   B = new Set([2, 3]),
   C = new Set([1, 2, 3]);
 
-console.log(union(A, A), A); // "A ∪ A == A");
-console.log([...union(A, B)].sort()); // [...C].sort() );
-console.log([...union(A, B)].sort(), [...union(B, A)].sort()); // "A ∪ B == B ∪ A" );
-console.log(union(A, B) instanceof Set, true); // "A ∪ B should be a Set too" )
+console.log(union(A, A)); // "A ∪ A == A");
+//console.log([...union(A, B)].sort()); // [...C].sort() );
+//console.log([...union(A, B)].sort(), [...union(B, A)].sort()); // "A ∪ B == B ∪ A" );
+//console.log(union(A, B) instanceof Set, true); // "A ∪ B should be a Set too" )
