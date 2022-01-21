@@ -13,8 +13,12 @@
 
 function remove(string) {
   const wordArr = string.split(" ");
-  const lettersArr = wordArr.map((x) => x.split(""));
-  return lettersArr;
+  const checker = wordArr
+    .map((word) => {
+      return word.match(/!/g) && word.match(/!/g).length === 1 ? "" : word;
+    })
+    .join("");
+  return checker;
 }
 
 console.log(remove("Hi!")); // ""
