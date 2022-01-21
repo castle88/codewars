@@ -14,17 +14,20 @@
 function remove(string) {
   const wordArr = string.split(" ");
   const checker = wordArr
-    .map((word) => {
-      return word.match(/!/g) && word.match(/!/g).length === 1 ? "" : word;
-    })
-    .join("");
-  return checker;
+    .map((word) =>
+      word.match(/!/g) && word.match(/!/g).length === 1 ? "" : word
+    )
+    .filter((x) => x !== "")
+    .join(" ");
+
+  return checker.trim();
 }
 
-console.log(remove("Hi!")); // ""
-console.log(remove("Hi! Hi!")); // ""
-console.log(remove("Hi! Hi! Hi!")); // ""
-console.log(remove("Hi Hi! Hi!")); // "Hi"
-console.log(remove("Hi! !Hi Hi!")); // ""
-console.log(remove("Hi! Hi!! Hi!")); // "Hi!!"
-console.log(remove("Hi! !Hi! Hi!")); // "!Hi!"
+// console.log(remove("Hi!")); // ""
+// console.log(remove("Hi! Hi!")); // ""
+// console.log(remove("Hi! Hi! Hi!")); // ""
+// console.log(remove("Hi Hi! Hi!")); // "Hi"
+// console.log(remove("Hi! !Hi Hi!")); // ""
+// console.log(remove("Hi! Hi!! Hi!")); // "Hi!!"
+// console.log(remove("Hi! !Hi! Hi!")); // "!Hi!"
+console.log(remove("crtboh !plpu tee bjolw rnfgvon! epxrx !bfc zlkx ccof!")); // 'crtboh tee bjolw epxrx zlkx'
