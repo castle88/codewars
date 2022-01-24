@@ -22,30 +22,30 @@
 
 // For more general information about React check out the docs!
 
-var React = require("react");
+// var React = require("react");
 
 function createElement(content, tag, props) {
-  return (
-    <div props={props} tag={tag}>
-      {content}
-    </div>
-  );
+  let tagged = tag.length > 0 && typeof tag === "string" ? tag : "div";
+
+  return `<${tagged} props={${props}}>${content}</${tagged}`;
 }
 
-function createUnorderedList(list) {
-  // create a react unordered list with children list items created form the list argument
-  const listElement = list.map((el, index) => <li key={index}>{el}</li>);
+console.log(createElement("hello world", "h2", ["hello", "world"]));
 
-  return <ul>{listElement}</ul>;
-}
+// function createUnorderedList(list) {
+//   // create a react unordered list with children list items created form the list argument
+//   const listElement = list.map((el, index) => <li key={index}>{el}</li>);
 
-function App() {
-  return (
-    <div className="App">
-      {createUnorderedList(["hello", "goodbye", "world"])}
-      {createElement("hello world", "div", ["hello", "goodbye"])}
-    </div>
-  );
-}
+//   return <ul>{listElement}</ul>;
+// }
 
-export default App;
+// function App() {
+//   return (
+//     <div className="App">
+//       {createUnorderedList(["hello", "goodbye", "world"])}
+//       {createElement("hello world", "div", ["hello", "goodbye"])}
+//     </div>
+//   );
+// }
+
+// export default App;
