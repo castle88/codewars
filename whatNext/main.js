@@ -13,7 +13,10 @@
 // Adapted from: Ruby Kickstart
 
 function comes_after(str, l) {
-  const regex = new RegExp(str);
+  const arr = str.split(" ");
+  const map = arr.map((x) => x.match(l));
+
+  return map;
 }
 
 console.log(comes_after("Pirates say arrrrrrrrr.", "r")); //'arrrrrrrr'
