@@ -11,10 +11,10 @@
 // Numbers
 
 function pillars(num_pill, dist, width) {
-  const total_pill_width = (num_pill - 2) * width;
-  const total_distance = total_pill_width + dist;
-
-  return total_distance * 100;
+  const total_distance = dist * (num_pill - 1);
+  const total_pill_width = (num_pill <= 2 ? 0 : num_pill - 2) * width;
+  return num_pill === 2 ? dist * 100 : total_distance + total_pill_width;
+  // return total_pill_width
 }
 
 console.log(pillars(1, 10, 10)); // 0
