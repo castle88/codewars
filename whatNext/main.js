@@ -13,10 +13,23 @@
 // Adapted from: Ruby Kickstart
 
 function comes_after(str, l) {
-  const arr = str.split(" ");
-  const map = arr.map((x) => x.match(l));
-
-  return map;
+  const arr = str.split(" ").filter((x) => x.match(l));
+  const map = arr.map((word) => {
+    let answer = "";
+    const sliced = word.split("").slice(word.indexOf(l));
+    sliced.forEach((letter, index) => {
+      if (letter === l) answer += sliced[index + 1];
+    });
+    return answer;
+  });
+  return map
+    .map((x) =>
+      x
+        .split("")
+        .filter((y) => y.match(/[a-z]/i))
+        .join("")
+    )
+    .join("");
 }
 
 console.log(comes_after("Pirates say arrrrrrrrr.", "r")); //'arrrrrrrr'
