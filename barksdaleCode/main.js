@@ -17,7 +17,14 @@
 // Write a function called decode(). Given an encoded string of exactly 10 digits, return the actual phone number in string form. Don't worry about input validation, parenthesis, or hyphens.
 
 function decode(string) {
-  //your code here
+  const strArr = string.split("");
+  const keyPad = "5123467890";
+  const barksDale = "0987643215";
+  const answer = strArr.map((x, i) => {
+    return barksDale[keyPad.indexOf(x)];
+  });
+
+  return answer.join("");
 }
 
 console.log(decode("4103432323")); // "6957678787
