@@ -8,7 +8,7 @@
 // input string is never bigger than 1000 characters
 // brainfuck interpreter is set to 8 bits cell, and 2048 cells of memory, which should be enough, but you can change it in config
 
-const prog = (string) => {
+const bf = (string) => {
   const strArr = string.split("");
   const answer = strArr.reverse().join("");
   return answer;
