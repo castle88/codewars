@@ -1,9 +1,9 @@
 function redistributeWealth(wealth) {
-  const distributed = wealth.map((citizen) => {
-    const avg = wealth.reduce((acc, cur) => (acc += cur), 0) / wealth.length;
-    return avg;
-  });
-  wealth = distributed;
+  const avg = wealth.reduce((acc, cur) => (acc += cur), 0) / wealth.length;
+  for (key in wealth) {
+    wealth[key] = avg;
+  }
+  return wealth;
 }
 
 const wealthEqual = [5, 5, 5, 5, 5]; // already equal
