@@ -18,9 +18,7 @@ function outed(meet, boss) {
       happy.push(meet[key]);
     }
   }
-  //   return happy.reduce((acc, cur) => (acc += cur), 0) / happy.length
-  //     ? "Nice Work Champ!"
-  //     : "Get Out Now!";
+
   return happy.reduce((acc, cur) => (acc += cur), 0) / happy.length > 5
     ? "Nice Work Champ!"
     : "Get Out Now!";
