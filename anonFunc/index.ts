@@ -5,8 +5,9 @@
 // Output
 // Your output. Output a filtered version of the second parameter using the function found in the first parameter.
 
-var FindFunction = function (func, arr) {
-  return; //Complete this function
+const FindFunction = (func: any[], arr: any[]) => {
+  const filterer = func.filter((x) => typeof x === "function");
+  return arr.filter(filterer[0]);
 };
 
 console.log(FindFunction([(a) => a % 2 == 0, 9, 3, 1, 0], [1, 2, 3, 4])); //  [2,4]
