@@ -18,7 +18,7 @@
 
 //     [output] an integer
 
-function rangeBitCount(a: number, b: number) {
+function rangeBitCount(a: number, b: number): number {
   const bin: string[] = [];
   for (let i = a; i <= b; i++) {
     const n = i.toString(2);
