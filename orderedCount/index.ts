@@ -20,7 +20,7 @@ const orderedCount = function (text: string): (string | number)[] {
     sorted.push([key, count[key]]);
   }
 
-  return sorted.sort((a, b) => a[1] - b[1]);
+  return sorted.sort((a, b) => Number(a[0]) - Number(b[1]));
 };
 
 const examples = [
