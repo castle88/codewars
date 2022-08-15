@@ -4,7 +4,7 @@
 
 // £££ GOOD LUCK! £££
 
-function getNewNotes(salary, bills) {
+function getNewNotes(salary: number, bills: number[]): number {
   const totalBills = bills.reduce(
     (acc: number, cur: number): number => (acc += cur),
     0
