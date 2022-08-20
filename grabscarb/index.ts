@@ -14,20 +14,40 @@
 
 // Good luck!
 
-function grabscrab(anagram: string, dictionary: string[]): string[] {
-  const answer = [];
-
-  dictionary.forEach((word) => {
-    if (word.length === anagram.length) {
-    }
+function grabscrab(anagram: string, dictionary: string[]) {
+  const anagramCharCount = countChar(anagram.split(""));
+  const dictionaryCount = dictionary.map((word: string) => {
+    return countChar(word.split(""));
   });
 
-  return answer;
+  const match = dictionary.map((word) => {
+    const test = countChar(word.split(""));
+    const matches: boolean[] = [];
+    for (let key in anagramCharCount) {
+      matches.push(anagramCharCount[key] === test[key]);
+    }
+    return matches.filter((x) => x).length === word.length;
+  });
+
+  return match;
 }
 
+const countChar = (arr: string[]) => {
+  const count = arr.reduce((acc: any, cur: string) => {
+    if (acc[cur]) {
+      acc[cur] += 1;
+    } else {
+      acc[cur] = 1;
+    }
+    return acc;
+  }, {});
+
+  return count;
+};
+
 console.log(grabscrab("trisf", ["first"])); //  ["first"]
-console.log(grabscrab("oob", ["bob", "baobab"])); //  []
+// console.log(grabscrab("oob", ["bob", "baobab"])); //  []
 console.log(grabscrab("ainstuomn", ["mountains", "hills", "mesa"])); //  ["mountains"]
-console.log(grabscrab("oolp", ["donkey", "pool", "horse", "loop"])); //  ["pool", "loop"]
-console.log(grabscrab("ortsp", ["sport", "parrot", "ports", "matey"])); //  ["sport", "ports"]
-console.log(grabscrab("ourf", ["one", "two", "three"])); //  []
+// console.log(grabscrab("oolp", ["donkey", "pool", "horse", "loop"])); //  ["pool", "loop"]
+// console.log(grabscrab("ortsp", ["sport", "parrot", "ports", "matey"])); //  ["sport", "ports"]
+// console.log(grabscrab("ourf", ["one", "two", "three"])); //  []
