@@ -26,7 +26,7 @@ function grabscrab(anagram: string, dictionary: string[]) {
     for (let key in anagramCharCount) {
       matches.push(anagramCharCount[key] === test[key]);
     }
-    return matches.filter((x) => x).length === word.length;
+    return matches.filter(x => x)
   });
 
   return match;
@@ -44,6 +44,9 @@ const countChar = (arr: string[]) => {
 
   return count;
 };
+
+const alpha = { a: 1, b: 1}
+console.log(alpha['b'] === alpha['a'])
 
 console.log(grabscrab("trisf", ["first"])); //  ["first"]
 // console.log(grabscrab("oob", ["bob", "baobab"])); //  []
